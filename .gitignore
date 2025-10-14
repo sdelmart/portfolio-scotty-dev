@@ -59,3 +59,4 @@ temp/
 # Build outputs (si vous utilisez un build system)
 dist/
 build/
+DEPLOIEMENT.txt
