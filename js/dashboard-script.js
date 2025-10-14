@@ -1,5 +1,5 @@
 // Dashboard Script - API Communication
-const API_BASE_URL = 'http://127.0.0.1:5001/api';
+const API_BASE_URL = 'https://scotty-dashboard-api.onrender.com/api';
 
 
 // Helper pour rafraîchir les stats après une action

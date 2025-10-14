@@ -58,7 +58,7 @@ git push -u origin main
 
 1. Aller sur [netlify.com](https://www.netlify.com)
 2. S'inscrire avec GitHub
-
+j'ai 
 ### 2.2 Importer le projet
 
 1. Cliquer sur "Add new site" → "Import an existing project"
