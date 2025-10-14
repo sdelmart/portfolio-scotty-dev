@@ -1,0 +1,61 @@
+# Fichiers macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Fichiers de backup
+*.backup
+*.backup2
+*.bak
+*~
+
+# Environnement
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python (si vous ajoutez des scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# Fichiers temporaires
+tmp/
+temp/
+*.tmp
+
+# Build outputs (si vous utilisez un build system)
+dist/
+build/
