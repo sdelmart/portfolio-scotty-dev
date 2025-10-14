@@ -1,6 +1,6 @@
 // ========== CHARGEMENT DES STATISTIQUES ==========
 (function() {
-    var API_URL = 'http://127.0.0.1:5001';
+    var API_URL = 'https://scotty-dashboard-api.onrender.com';
     
     function chargerStatistiques() {
         console.log('🔄 Chargement des statistiques...');
