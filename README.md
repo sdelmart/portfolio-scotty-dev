@@ -1,13 +1,13 @@
-# 🎨 Portfolio Scotty Dev
+# Portfolio Scotty Dev
 
 Portfolio personnel avec dashboard étudiant interactif.
 
-## 🌐 Démo en ligne
+## Démo en ligne
 
 - **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app) *(à venir)*
 - **Dashboard** : [scotty-dev.netlify.app/dashboard.html](https://scotty-dev.netlify.app/dashboard.html) *(à venir)*
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 ### Portfolio
 - 🏠 Page d'accueil avec présentation
@@ -24,7 +24,7 @@ Portfolio personnel avec dashboard étudiant interactif.
 - 🔗 Liens rapides personnalisables
 - 📊 Statistiques de productivité
 
-## 🛠️ Technologies
+## Technologies
 
 ### Frontend
 - HTML5, CSS3, JavaScript
@@ -36,7 +36,7 @@ Portfolio personnel avec dashboard étudiant interactif.
 - SQLite / PostgreSQL
 - REST API
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 portfolio rouge/
@@ -60,7 +60,7 @@ portfolio rouge/
 └── configure-api.sh      # Configurer l'URL de l'API
 ```
 
-## 🚀 Démarrage Local
+## Démarrage Local
 
 ### Prérequis
 - Python 3.8+
@@ -90,7 +90,7 @@ portfolio rouge/
    ./stop.command
    ```
 
-## 🌍 Déploiement en Production
+## Déploiement en Production
 
 ### Guide Complet
 Consultez le [Guide de Déploiement Détaillé](docs/GUIDE_DEPLOIEMENT.md)
@@ -116,7 +116,7 @@ Consultez le [Guide de Déploiement Détaillé](docs/GUIDE_DEPLOIEMENT.md)
    ```
    Entrer l'URL fournie par Render.
 
-## 📊 API Endpoints
+## API Endpoints
 
 ### Base URL (local)
 ```
@@ -143,7 +143,7 @@ https://scotty-dashboard-api.onrender.com/api
 - `GET /weather` - Données météo
 - `GET /links` - Liens rapides
 
-## 🎨 Personnalisation
+## Personnalisation
 
 ### Couleurs
 Les couleurs principales sont définies dans `css/style.css` :
@@ -162,7 +162,7 @@ Utiliser le script fourni :
 ./configure-api.sh
 ```
 
-## 🤝 Contribution
+## Contribution
 
 Les contributions sont les bienvenues ! N'hésitez pas à :
 1. Fork le projet
@@ -171,9 +171,6 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 4. Push vers la branche (`git push origin feature/amelioration`)
 5. Ouvrir une Pull Request
 
-## 📝 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👤 Auteur
 
@@ -181,12 +178,4 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 - GitHub: [@sdelmart](https://github.com/sdelmart)
 - Portfolio: [scotty-dev.netlify.app](https://scotty-dev.netlify.app)
 
-## 🙏 Remerciements
-
-- Design inspiré par les tendances modernes du web
-- Icônes de [DevIcon](https://devicon.dev/)
-- Police Google Fonts
-
 ---
-
-⭐ N'oubliez pas de mettre une étoile si ce projet vous plaît !

@@ -752,6 +752,16 @@ body::after {
   font-size: 0.9rem;
   border: 1px solid rgba(255, 56, 56, 0.3);
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-tag img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .skill-tag:hover {
@@ -810,7 +820,7 @@ body::after {
 .project-image img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-content {
@@ -843,6 +853,32 @@ body::after {
   border-radius: 15px;
   font-size: 0.8rem;
   border: 1px solid rgba(255, 56, 56, 0.3);
+}
+
+.project-tech a {
+  background: rgba(255, 56, 56, 0.1);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 56, 56, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-tech a img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.project-tech a:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
 }
 
 .project-links {

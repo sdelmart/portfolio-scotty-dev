@@ -100,7 +100,7 @@ function initOrbitAnimations() {
 
     planets.forEach((planet, index) => {
         const startAngle = Math.random() * 360;
-        const radius = 120 + (index * 40);
+        const radius = 120 + (index * 25);
 
         const duration = 15 + Math.random() * 15;
         const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
