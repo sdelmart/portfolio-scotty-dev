@@ -224,4 +224,4 @@ function initSectionAnimations() {
 
 
 
-console.log('🚀 Gustiawan Portfolio loaded successfully!');
+console.log('Portfolio bien chargé !');
