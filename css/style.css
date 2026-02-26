@@ -854,6 +854,12 @@ body::after {
   object-position: center;
 }
 
+.projects-grid .project-card .project-image img.project-image-calculator {
+  object-position: left center;
+  transform: scale(1.1);
+  transform-origin: left center;
+}
+
 .project-content {
   padding: 25px;
 }
