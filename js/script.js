@@ -1,11 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all features
-    initNavbar();
-    initTypingEffect();
-    initOrbitAnimations();
-    initSunPhotoModal();
-    initSmoothScroll();
-    initSectionAnimations();
+    const initializers = [
+        initNavbar,
+        initTypingEffect,
+        initOrbitAnimations,
+        initSunPhotoModal,
+        initSmoothScroll,
+        initSectionAnimations
+    ];
+
+    initializers.forEach((initializer) => {
+        try {
+            initializer();
+        } catch (error) {
+            console.error(`Init error in ${initializer.name}:`, error);
+        }
+    });
 });
 
 function initNavbar() {
@@ -52,6 +61,10 @@ function initNavbar() {
     }
 
     if (sectionNavLinks.length > 0) {
+        if (!('IntersectionObserver' in window)) {
+            return;
+        }
+
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -224,6 +237,18 @@ function initSmoothScroll() {
 
 function initSectionAnimations() {
     const elements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up');
+
+    if (elements.length === 0) {
+        return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        elements.forEach(element => {
+            element.style.opacity = '1';
+            element.style.transform = 'translate(0, 0)';
+        });
+        return;
+    }
 
     const elementObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
