@@ -464,8 +464,16 @@
 }
 
 @media (max-width: 480px) {
+    .dashboard-main {
+        padding-top: 72px;
+    }
+
+    .dashboard-hero {
+        padding: 40px 0 24px;
+    }
+
     .dashboard-card {
-        padding: 20px;
+        padding: 16px;
     }
     
     .dashboard-title {
@@ -475,6 +483,10 @@
     .weather-display {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .items-list {
+        max-height: 320px;
     }
 }
 
@@ -569,5 +581,11 @@
     
     .stat-value {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
 }

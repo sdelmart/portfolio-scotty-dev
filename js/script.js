@@ -13,6 +13,20 @@ function initNavbar() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    if (!hamburger || !navMenu || navLinks.length === 0) {
+        return;
+    }
+
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const sectionNavLinks = Array.from(navLinks).filter(link => {
+        const href = link.getAttribute('href') || '';
+        return href.startsWith('#');
+    });
+    const pageNavLinks = Array.from(navLinks).filter(link => {
+        const href = link.getAttribute('href') || '';
+        return !href.startsWith('#');
+    });
+
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
@@ -25,30 +39,46 @@ function initNavbar() {
         });
     });
 
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove active class from all links
-                navLinks.forEach(link => link.classList.remove('active'));
-                
-                // Add active class to corresponding link
-                const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
+    if (sectionNavLinks.length === 0) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activePageLink = pageNavLinks.find(link => {
+            const href = link.getAttribute('href') || '';
+            const targetPath = href.split('#')[0];
+            return targetPath === currentPath;
         });
-    }, {
-        threshold: 0.3,
-        rootMargin: '-100px 0px -100px 0px'
-    });
-    
-    sections.forEach(section => observer.observe(section));
+        if (activePageLink) {
+            activePageLink.classList.add('active');
+        }
+    }
+
+    if (sectionNavLinks.length > 0) {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionNavLinks.forEach(link => link.classList.remove('active'));
+
+                    const activeLink = navMenu.querySelector(`a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '-100px 0px -100px 0px'
+        });
+
+        sections.forEach(section => observer.observe(section));
+    }
 }
 
 function initTypingEffect() {
     const typingText = document.getElementById('typing-text');
+    if (!typingText) {
+        return;
+    }
+
     const phrases = [
         'Web Developer',
         'Front-End', 
@@ -215,13 +245,5 @@ function initSectionAnimations() {
 
     elements.forEach(element => elementObserver.observe(element));
 }
-
-
-
-
-
-
-
-
 
 console.log('Portfolio bien chargé !');

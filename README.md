@@ -5,7 +5,7 @@ Portfolio personnel avec dashboard étudiant interactif.
 ## Démo en ligne
 
 - **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app) *(à venir)*
-- **Dashboard** : [scotty-dev.netlify.app/dashboard.html](https://scotty-dev.netlify.app/dashboard.html) *(à venir)*
+- **Dashboard** : [scotty-dev.netlify.app/pages/dashboard.html](https://scotty-dev.netlify.app/pages/dashboard.html) *(à venir)*
 
 ## Fonctionnalités
 
@@ -53,7 +53,10 @@ portfolio rouge/
 │   ├── GUIDE_DEPLOIEMENT.md
 │   └── DEPLOIEMENT_FLASK.md
 ├── index.html             # Page d'accueil
-├── dashboard.html         # Dashboard
+├── pages/                 # Pages secondaires
+│   ├── portfolio.html
+│   ├── dashboard.html
+│   └── calculatrice.html
 ├── netlify.toml          # Config Netlify
 ├── start.command         # Démarrer Flask localement
 ├── stop.command          # Arrêter Flask

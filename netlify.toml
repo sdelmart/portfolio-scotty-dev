@@ -8,6 +8,21 @@
   # Pas de variables d'environnement pour le build
 
 [[redirects]]
+  from = "/portfolio.html"
+  to = "/pages/portfolio.html"
+  status = 301
+
+[[redirects]]
+  from = "/dashboard.html"
+  to = "/pages/dashboard.html"
+  status = 301
+
+[[redirects]]
+  from = "/calculatrice.html"
+  to = "/pages/calculatrice.html"
+  status = 301
+
+[[redirects]]
   # Redirection pour le SPA (Single Page Application)
   from = "/*"
   to = "/index.html"

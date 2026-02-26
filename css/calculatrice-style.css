@@ -126,7 +126,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .calculatrice-section {
-    padding: 60px 0 40px 0;
+    padding: 90px 0 40px 0;
   }
 
   .calculatrice {
@@ -151,7 +151,7 @@
 
 @media (max-width: 480px) {
   .calculatrice-section {
-    padding: 40px 0 30px 0;
+    padding: 80px 0 30px 0;
   }
 
   .calculatrice {
@@ -171,6 +171,7 @@
   .bouton {
     padding: 12px;
     font-size: 1rem;
+    min-height: 48px;
   }
 }
 
