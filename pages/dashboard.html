@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord - Scott Dev</title>
+    <meta name="description" content="Dashboard étudiant de Scott Delmart : tâches, objectifs, rappels, météo et statistiques de productivité.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scott Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/dashboard.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="Tableau de bord - Scott Dev">
+    <meta property="og:description" content="Dashboard étudiant : organisation, objectifs quotidiens, rappels et suivi de progression.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/dashboard.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/img-optimized.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tableau de bord - Scott Dev">
+    <meta name="twitter:description" content="Dashboard étudiant : organisation, objectifs quotidiens, rappels et suivi de progression.">
+    <meta name="twitter:image" content="https://scotty-dev.netlify.app/assets/images/img-optimized.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/dashboard-style.css">
+    <link rel="stylesheet" href="../css/style.css?v=20260226f">
+    <link rel="stylesheet" href="../css/dashboard-style.css?v=20260226f">
 </head>
 <body>
     <header id="navbar">
-        <nav class="nav-container">
+        <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
                 <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span>
                 </a>
@@ -35,11 +50,11 @@
                 </a>
             </div>
             
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -111,14 +126,14 @@
                             <span class="task-counter" id="task-counter">0</span>
                         </h2>
                         <form id="todo-form" class="input-group">
-                            <input type="text" id="todo-input" placeholder="Nouvelle tâche..." required>
-                            <select id="todo-priority" class="priority-select">
+                            <input type="text" id="todo-input" placeholder="Nouvelle tâche..." aria-label="Nouvelle tâche" required>
+                            <select id="todo-priority" class="priority-select" aria-label="Priorité de la tâche">
                                 <option value="low">🟢 Basse</option>
                                 <option value="medium" selected>🟡 Moyenne</option>
                                 <option value="high">🔴 Haute</option>
                             </select>
-                            <input type="date" id="todo-due" class="date-input">
-                            <button type="submit" class="add-btn">+</button>
+                            <input type="date" id="todo-due" class="date-input" aria-label="Date limite de la tâche">
+                            <button type="submit" class="add-btn" aria-label="Ajouter la tâche">+</button>
                         </form>
                         <div id="todos-list" class="items-list"></div>
                     </div>
@@ -141,8 +156,8 @@
                             <span class="progress-text" id="goals-percentage">0%</span>
                         </div>
                         <form id="goal-form" class="input-group">
-                            <input type="text" id="goal-input" placeholder="Nouvel objectif..." required>
-                            <button type="submit" class="add-btn">+</button>
+                            <input type="text" id="goal-input" placeholder="Nouvel objectif..." aria-label="Nouvel objectif" required>
+                            <button type="submit" class="add-btn" aria-label="Ajouter l'objectif">+</button>
                         </form>
                         <div id="goals-list" class="items-list"></div>
                     </div>
@@ -151,14 +166,14 @@
                     <div class="dashboard-card reminders-card">
                         <h2>⏰ Rappels</h2>
                         <form id="reminder-form" class="input-group">
-                            <input type="text" id="reminder-title" placeholder="Titre du rappel..." required>
-                            <select id="reminder-type" class="priority-select">
+                            <input type="text" id="reminder-title" placeholder="Titre du rappel..." aria-label="Titre du rappel" required>
+                            <select id="reminder-type" class="priority-select" aria-label="Type de rappel">
                                 <option value="general">📋 Général</option>
                                 <option value="exam">📝 Examen</option>
                                 <option value="assignment">📚 Devoir</option>
                             </select>
-                            <input type="date" id="reminder-date" class="date-input" required>
-                            <button type="submit" class="add-btn">+</button>
+                            <input type="date" id="reminder-date" class="date-input" aria-label="Date du rappel" required>
+                            <button type="submit" class="add-btn" aria-label="Ajouter le rappel">+</button>
                         </form>
                         <div id="reminders-list" class="items-list"></div>
                     </div>
@@ -168,7 +183,7 @@
         </section>
     </main>
 
-    <script src="../js/script.js?v=20251015"></script>
+    <script src="../js/script.js?v=20260226f"></script>
     <script src="../js/dashboard-script.js?v=20251015"></script>
     <script src="../js/dashboard-stats.js?v=20251015"></script>
 </body>

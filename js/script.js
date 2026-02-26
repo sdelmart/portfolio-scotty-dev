@@ -36,28 +36,44 @@ function initNavbar() {
         return !href.startsWith('#');
     });
 
+    const clearActiveState = () => {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        });
+    };
+
+    const setActiveLink = (link, ariaValue = 'page') => {
+        if (!link) {
+            return;
+        }
+        clearActiveState();
+        link.classList.add('active');
+        link.setAttribute('aria-current', ariaValue);
+    };
+
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        const isExpanded = hamburger.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', String(isExpanded));
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 
     if (sectionNavLinks.length === 0) {
-        navLinks.forEach(link => link.classList.remove('active'));
         const activePageLink = pageNavLinks.find(link => {
             const href = link.getAttribute('href') || '';
             const targetPath = href.split('#')[0];
             return targetPath === currentPath;
         });
-        if (activePageLink) {
-            activePageLink.classList.add('active');
-        }
+        setActiveLink(activePageLink, 'page');
     }
 
     if (sectionNavLinks.length > 0) {
@@ -69,12 +85,8 @@ function initNavbar() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    sectionNavLinks.forEach(link => link.classList.remove('active'));
-
                     const activeLink = navMenu.querySelector(`a[href="#${entry.target.id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active');
-                    }
+                    setActiveLink(activeLink, 'location');
                 }
             });
         }, {

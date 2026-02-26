@@ -22,13 +22,6 @@
   to = "/pages/calculatrice.html"
   status = 301
 
-[[redirects]]
-  # Redirection pour le SPA (Single Page Application)
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-
 # Headers de sécurité
 [[headers]]
   for = "/*"

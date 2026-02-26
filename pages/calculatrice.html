@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculatrice - Scott Dev</title>
+    <meta name="description" content="Projet calculatrice de Scott Delmart : interface moderne, support clavier/souris et calculs instantanés.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scott Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/calculatrice.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="Calculatrice - Scott Dev">
+    <meta property="og:description" content="Projet calculatrice avec design moderne, support clavier/souris et calculs instantanés.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/calculatrice.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/Calculatrice-optimized.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculatrice - Scott Dev">
+    <meta name="twitter:description" content="Projet calculatrice avec design moderne, support clavier/souris et calculs instantanés.">
+    <meta name="twitter:image" content="https://scotty-dev.netlify.app/assets/images/Calculatrice-optimized.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/calculatrice-style.css">
+    <link rel="stylesheet" href="../css/style.css?v=20260226f">
+    <link rel="stylesheet" href="../css/calculatrice-style.css?v=20260226f">
 </head>
 <body>
     <header id="navbar">
-        <nav class="nav-container animate-on-scroll slide-in-top">
+        <nav class="nav-container animate-on-scroll slide-in-top" aria-label="Navigation principale">
             <div class="logo">
                 <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span>
                 </a>
@@ -35,11 +50,11 @@
                 </a>
             </div>
             
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -84,6 +99,7 @@
         </div>
     </footer>
 
+    <script src="../js/script.js?v=20260226f"></script>
     <script src="../js/calculatrice-script.js?v=20260226"></script>
 </body>
 </html>
