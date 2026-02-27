@@ -4,8 +4,8 @@ Portfolio personnel avec dashboard étudiant interactif.
 
 ## Démo en ligne
 
-- **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app) *(à venir)*
-- **Dashboard** : [scotty-dev.netlify.app/pages/dashboard.html](https://scotty-dev.netlify.app/pages/dashboard.html) *(à venir)*
+- **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app) 
+- **Dashboard** : [scotty-dev.netlify.app/pages/dashboard.html](https://scotty-dev.netlify.app/pages/dashboard.html)
 
 ## Fonctionnalités
 
