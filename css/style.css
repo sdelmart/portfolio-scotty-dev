@@ -112,14 +112,15 @@ body::after {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 15px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .logo {
+  flex: 1;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
@@ -145,6 +146,13 @@ body::after {
   display: flex;
   list-style: none;
   gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
@@ -153,6 +161,9 @@ body::after {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
 }
 
 .nav-link.active,
@@ -179,19 +190,53 @@ body::after {
 .nav-social {
   display: flex;
   gap: 15px;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .social-icon {
   color: #888888; /* grey color for non-hover state */
   transition: all 0.3s ease;
-  padding: 8px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  display: block;
 }
 
 .social-icon:hover {
   color: white;
   transform: scale(1.1);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.lang-toggle {
+  color: #888888;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  margin-left: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 a:focus-visible,
@@ -293,11 +338,19 @@ select:focus-visible {
 
 .hero-social-icon {
   color: var(--muted);
-  padding: 10px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   transition: all 0.3s ease;
   background: rgba(14, 33, 64, 0.5);
   backdrop-filter: blur(5px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-social-icon svg {
+  display: block;
 }
 
 .hero-social-icon:hover {
@@ -312,6 +365,37 @@ select:focus-visible {
   display: flex;
   justify-content: center;
   animation: slideInRight 1s ease-out;
+}
+
+.quick-stats {
+  padding: 10px 0 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .avatar-container {
@@ -558,6 +642,10 @@ select:focus-visible {
     padding: 10px 0;
   }
 
+  .lang-toggle {
+    margin-top: 8px;
+  }
+
   .nav-social {
     display: none;
   }
@@ -589,6 +677,10 @@ select:focus-visible {
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 
   .avatar-container {
@@ -1004,10 +1096,18 @@ select:focus-visible {
 .social-link {
   color: var(--muted);
   transition: all 0.3s ease;
-  padding: 12px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 56, 56, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link svg {
+  display: block;
 }
 
 .social-link:hover {
