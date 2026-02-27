@@ -14,6 +14,7 @@ Portfolio personnel avec dashboard étudiant interactif.
 - 👨‍💻 Section À propos
 - 💼 Projets et réalisations
 - 📧 Formulaire de contact
+- 💬 Chatbot FAQ gratuit (sans API externe)
 - 🎯 Design moderne et responsive
 
 ### Dashboard Étudiant
@@ -30,6 +31,7 @@ Portfolio personnel avec dashboard étudiant interactif.
 - HTML5, CSS3, JavaScript
 - Design responsive
 - Animations CSS
+- Chatbot FAQ local (questions/réponses prédéfinies)
 
 ### Backend (API)
 - Flask (Python)
@@ -62,6 +64,16 @@ portfolio rouge/
 ├── stop.command          # Arrêter Flask
 └── configure-api.sh      # Configurer l'URL de l'API
 ```
+
+## Chatbot FAQ (gratuit)
+
+Le chatbot est entièrement local et ne consomme aucune API externe (coût 0€).
+
+- Interface du bot : `index.html`
+- Styles du bot : `css/style.css`
+- Réponses et mots-clés : `js/script.js` (fonction `initChatbot`, tableau `faq`)
+
+Pour modifier les réponses, édite les entrées `keys` et `answer` dans `js/script.js`.
 
 ## Démarrage Local
 

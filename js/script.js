@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         initOrbitAnimations,
         initSunPhotoModal,
         initSmoothScroll,
-        initSectionAnimations
+        initSectionAnimations,
+        initChatbot
     ];
 
     initializers.forEach((initializer) => {
@@ -281,6 +282,121 @@ function initSectionAnimations() {
     });
 
     elements.forEach(element => elementObserver.observe(element));
+}
+
+function initChatbot() {
+    const toggleButton = document.getElementById('chatbot-toggle');
+    const panel = document.getElementById('chatbot-panel');
+    const closeButton = document.getElementById('chatbot-close');
+    const messages = document.getElementById('chatbot-messages');
+    const form = document.getElementById('chatbot-form');
+    const input = document.getElementById('chatbot-input');
+    const chips = document.querySelectorAll('.chatbot-chip');
+
+    if (!toggleButton || !panel || !closeButton || !messages || !form || !input) {
+        return;
+    }
+
+    const hasContactSection = Boolean(document.getElementById('contact'));
+    const contactHref = hasContactSection ? '#contact' : '/#contact';
+    const hasProjectsSection = Boolean(document.getElementById('projects'));
+    const projectsHref = hasProjectsSection ? '#projects' : '/#projects';
+
+    const faq = [
+        { keys: ['qui es-tu', 'qui tu es', 'présente toi', 'présente-toi'], answer: 'Je suis Scotty, étudiant en BUT Informatique, passionné de jeux vidéos et d\'informatique, et ceci est mon site personnel crée au cours des mes années universitaires.' },
+        { keys: ['but', 'étudies', 'etudes', 'informatique'], answer: 'Je suis en BUT Informatique et je développe ce portfolio pour présenter mon profil et mes projets.' },
+        { keys: ['compétences', 'competences', 'stack', 'technos'], answer: 'Mes technos principales: HTML, CSS, JavaScript, Python, Java, C++, Rust, C, PhP, ainsi des bases React/Node.js.' },
+        { keys: ['projets', 'projet', 'calculatrice', 'dashboard'], answer: 'Tu peux voir mes projets dans la section Projets. Je peux aussi t’y emmener.', projectsCta: true },
+        { keys: ['alternance', 'stage', 'dispo', 'disponible'], answer: 'Oui, je suis ouvert aux opportunités (stage/alternance). Tu peux me contacter via le formulaire.' },
+        { keys: ['contact', 'mail', 'email', 'contacter'], answer: 'Tu peux me contacter dans la section Contact de la page. Je peux aussi t’y emmener.', contactCta: true }
+    ];
+
+    const appendBubble = (text, role = 'bot', options = {}) => {
+        const bubble = document.createElement('p');
+        bubble.className = `chatbot-bubble chatbot-bubble-${role}`;
+        bubble.textContent = text;
+        messages.appendChild(bubble);
+
+        if (options.contactCta) {
+            const cta = document.createElement('a');
+            cta.className = 'chatbot-chip';
+            cta.href = contactHref;
+            cta.textContent = 'Aller au contact';
+            cta.style.textDecoration = 'none';
+            cta.style.display = 'inline-block';
+            messages.appendChild(cta);
+        }
+
+        if (options.projectsCta) {
+            const cta = document.createElement('a');
+            cta.className = 'chatbot-chip';
+            cta.href = projectsHref;
+            cta.textContent = 'Voir les projets';
+            cta.style.textDecoration = 'none';
+            cta.style.display = 'inline-block';
+            messages.appendChild(cta);
+        }
+
+        messages.scrollTop = messages.scrollHeight;
+    };
+
+    const answerQuestion = (question) => {
+        const normalized = question.toLowerCase().trim();
+        const found = faq.find(item => item.keys.some(key => normalized.includes(key)));
+
+        setTimeout(() => {
+            if (found) {
+                appendBubble(found.answer, 'bot', {
+                    contactCta: Boolean(found.contactCta),
+                    projectsCta: Boolean(found.projectsCta)
+                });
+                return;
+            }
+
+            appendBubble('Je n\'ai pas encore cette réponse. Tu peux me demander: profil, BUT info, compétences, projets ou contact.', 'bot');
+        }, 500);
+    };
+
+    const openPanel = () => {
+        panel.hidden = false;
+        toggleButton.setAttribute('aria-expanded', 'true');
+        input.focus();
+    };
+
+    const closePanel = () => {
+        panel.hidden = true;
+        toggleButton.setAttribute('aria-expanded', 'false');
+    };
+
+    toggleButton.addEventListener('click', () => {
+        if (panel.hidden) {
+            openPanel();
+            return;
+        }
+        closePanel();
+    });
+
+    closeButton.addEventListener('click', closePanel);
+
+    chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+            const question = chip.dataset.question || '';
+            appendBubble(question, 'user');
+            answerQuestion(question);
+        });
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const question = input.value.trim();
+        if (!question) {
+            return;
+        }
+
+        appendBubble(question, 'user');
+        answerQuestion(question);
+        input.value = '';
+    });
 }
 
 console.log('Portfolio bien chargé !');

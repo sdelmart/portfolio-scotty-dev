@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20260226f">
+    <link rel="stylesheet" href="../css/style.css?v=20260227a">
     <link rel="stylesheet" href="../css/portfolio-style.css?v=20260226f">
 </head>
 <body>
@@ -579,6 +579,31 @@
         </section>
     </main>
 
-    <script src="../js/script.js?v=20260226f"></script>
+    <button id="chatbot-toggle" class="chatbot-toggle" type="button" aria-label="Ouvrir le chatbot" aria-controls="chatbot-panel" aria-expanded="false">💬</button>
+
+    <aside id="chatbot-panel" class="chatbot-panel" aria-label="Assistant du site" hidden>
+        <div class="chatbot-header">
+            <h3>Assistant Scotty</h3>
+            <button id="chatbot-close" class="chatbot-close" type="button" aria-label="Fermer le chatbot">✕</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages" aria-live="polite">
+            <p class="chatbot-bubble chatbot-bubble-bot">Salut 👋 Je peux répondre sur mon profil, mes projets et le contact.</p>
+        </div>
+        <div class="chatbot-quick-actions" aria-label="Questions rapides">
+            <button class="chatbot-chip" type="button" data-question="Qui es-tu ?">Qui es-tu ?</button>
+            <button class="chatbot-chip" type="button" data-question="Tu étudies quoi ?">Tu étudies quoi ?</button>
+            <button class="chatbot-chip" type="button" data-question="Tes compétences ?">Tes compétences ?</button>
+            <button class="chatbot-chip" type="button" data-question="Quels projets ?">Quels projets ?</button>
+            <button class="chatbot-chip" type="button" data-question="Tu cherches une alternance ?">Tu cherches une alternance ?</button>
+            <button class="chatbot-chip" type="button" data-question="Comment te contacter ?">Comment te contacter ?</button>
+        </div>
+        <form id="chatbot-form" class="chatbot-form">
+            <label class="sr-only" for="chatbot-input">Pose ta question</label>
+            <input id="chatbot-input" type="text" placeholder="Pose une question..." autocomplete="off">
+            <button type="submit">Envoyer</button>
+        </form>
+    </aside>
+
+    <script src="../js/script.js?v=20260227a"></script>
 </body>
 </html>
