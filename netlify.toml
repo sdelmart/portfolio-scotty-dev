@@ -3,6 +3,9 @@
 [build]
   # Pas de build nécessaire car c'est du HTML/CSS/JS statique
   publish = "."
+
+[functions]
+  directory = "netlify/functions"
   
 [build.environment]
   # Pas de variables d'environnement pour le build

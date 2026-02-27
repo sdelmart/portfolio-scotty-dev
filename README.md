@@ -119,6 +119,21 @@ Consultez le [Guide de Déploiement Détaillé](docs/GUIDE_DEPLOIEMENT.md)
    ```
    Entrer l'URL fournie par Render.
 
+### Notifications email personnalisées (Formulaire)
+
+Le projet inclut une fonction Netlify `submission-created` qui envoie un email formaté à chaque soumission du formulaire `contact`.
+
+Variables à configurer dans **Netlify → Site configuration → Environment variables** :
+
+- `RESEND_API_KEY` : clé API Resend
+- `FORM_NOTIFICATION_TO` : adresse qui reçoit les messages
+- `FORM_NOTIFICATION_FROM` *(optionnel)* : expéditeur vérifié (ex: `Portfolio Scotty <noreply@votre-domaine.com>`)
+
+Ensuite :
+1. Redéployer le site
+2. Soumettre un message de test depuis le formulaire
+3. Vérifier les logs de la fonction `submission-created` si besoin
+
 ## API Endpoints
 
 ### Base URL (local)
