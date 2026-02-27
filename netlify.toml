@@ -4,9 +4,6 @@
   # Pas de build nécessaire car c'est du HTML/CSS/JS statique
   publish = "."
 
-[functions]
-  directory = "netlify/functions"
-  
 [build.environment]
   # Pas de variables d'environnement pour le build
 
@@ -24,6 +21,16 @@
   from = "/calculatrice.html"
   to = "/pages/calculatrice.html"
   status = 301
+
+[[redirects]]
+  from = "/merci.html"
+  to = "/pages/merci.html"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/pages/404.html"
+  status = 404
 
 # Headers de sécurité
 [[headers]]

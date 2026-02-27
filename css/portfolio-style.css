@@ -119,19 +119,19 @@
 
 .level-1 {
     background: rgba(255, 255, 255, 0.1);
-    color: #aaa;
+    color: #111111;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .level-2 {
     background: rgba(255, 165, 0, 0.15);
-    color: #FFA500;
+    color: #111111;
     border: 1px solid rgba(255, 165, 0, 0.3);
 }
 
 .level-3 {
     background: rgba(56, 182, 255, 0.15);
-    color: #38B6FF;
+    color: #111111;
     border: 1px solid rgba(56, 182, 255, 0.3);
 }
 

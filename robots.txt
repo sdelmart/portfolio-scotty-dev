@@ -1,4 +1,12 @@
+# robots.txt
+# Ce fichier donne des consignes SEO aux robots des moteurs de recherche.
+# Il n'est PAS un mécanisme de sécurité : il sert uniquement à guider le crawl.
+
+# Appliquer les règles à tous les robots (Googlebot, Bingbot, etc.)
 User-agent: *
+
+# Autoriser l'exploration de tout le site
 Allow: /
 
+# Indiquer où trouver le sitemap pour faciliter l'indexation des pages
 Sitemap: https://scotty-dev.netlify.app/sitemap.xml

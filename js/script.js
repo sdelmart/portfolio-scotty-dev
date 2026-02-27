@@ -26,7 +26,7 @@ function initNavbar() {
         return;
     }
 
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = globalThis.location.pathname.split('/').pop() || 'index.html';
     const sectionNavLinks = Array.from(navLinks).filter(link => {
         const href = link.getAttribute('href') || '';
         return href.startsWith('#');
@@ -77,7 +77,7 @@ function initNavbar() {
     }
 
     if (sectionNavLinks.length > 0) {
-        if (!('IntersectionObserver' in window)) {
+        if (!('IntersectionObserver' in globalThis)) {
             return;
         }
 
@@ -209,7 +209,7 @@ function initSunPhotoModal() {
             modal.style.display = 'none';
         });
 
-        window.addEventListener('click', (e) => {
+        globalThis.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
@@ -236,9 +236,9 @@ function initSmoothScroll() {
             if (targetElement) {
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + globalThis.pageYOffset - headerOffset;
 
-                window.scrollTo({
+                globalThis.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
@@ -254,7 +254,7 @@ function initSectionAnimations() {
         return;
     }
 
-    if (!('IntersectionObserver' in window)) {
+    if (!('IntersectionObserver' in globalThis)) {
         elements.forEach(element => {
             element.style.opacity = '1';
             element.style.transform = 'translate(0, 0)';
