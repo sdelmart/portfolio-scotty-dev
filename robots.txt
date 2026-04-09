@@ -9,4 +9,5 @@ User-agent: *
 Allow: /
 
 # Indiquer où trouver le sitemap pour faciliter l'indexation des pages
+Sitemap: https://scotty-dev.netlify.app/sitemap_index.xml
 Sitemap: https://scotty-dev.netlify.app/sitemap.xml
