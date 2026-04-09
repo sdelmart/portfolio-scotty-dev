@@ -63,6 +63,26 @@
   status = 301
 
 [[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap_index.xml"
+  to = "/sitemap_index.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap_google.xml"
+  to = "/sitemap_google.xml"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/pages/404.html"
   status = 404
