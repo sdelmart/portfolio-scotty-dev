@@ -462,26 +462,55 @@ function initSunPhotoModal() {
 
 function initSmoothScroll() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
+    const isHomePage = globalThis.location.pathname === '/' || globalThis.location.pathname.endsWith('/index.html');
+
+    const scrollToTarget = (targetId) => {
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) {
+            return;
+        }
+
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + globalThis.pageYOffset - headerOffset;
+
+        globalThis.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    };
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
 
             const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + globalThis.pageYOffset - headerOffset;
-
-                globalThis.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            scrollToTarget(targetId);
         });
     });
+
+    // Avoid accidental full-page reloads when links target index fragments from the home page.
+    if (isHomePage) {
+        const samePageAnchors = document.querySelectorAll('a[href^="index.html#"], a[href^="/#"]');
+
+        samePageAnchors.forEach(link => {
+            link.addEventListener('click', (event) => {
+                const rawHref = link.getAttribute('href') || '';
+                const hashIndex = rawHref.indexOf('#');
+                if (hashIndex < 0) {
+                    return;
+                }
+
+                event.preventDefault();
+                const targetId = rawHref.slice(hashIndex + 1);
+                if (!targetId) {
+                    return;
+                }
+
+                scrollToTarget(targetId);
+            });
+        });
+    }
 }
 
 function initSectionAnimations() {

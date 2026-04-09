@@ -1,6 +1,7 @@
 // ========== CHARGEMENT DES STATISTIQUES ==========
 (function() {
     var API_URL = 'https://scotty-dashboard-api.onrender.com';
+    var hasInitialized = false;
     
     function chargerStatistiques() {
         console.log('🔄 Chargement des statistiques...');
@@ -14,8 +15,7 @@
         
         // Vérifier que les éléments existent
         if (!statsElements.activeTodos) {
-            console.log('⏳ Elements stats non trouves, nouvelle tentative dans 1s...');
-            setTimeout(chargerStatistiques, 1000);
+            console.log('⏭️ Elements stats non trouves, arret du chargement auto.');
             return;
         }
         
@@ -72,18 +72,24 @@
     
     // Exposer la fonction globalement pour que les autres scripts puissent l'appeler
     window.refreshStats = chargerStatistiques;
+
+    function initializeStats() {
+        if (hasInitialized) {
+            return;
+        }
+        hasInitialized = true;
+
+        console.log('📄 Initialisation stats dans 1.5s...');
+        setTimeout(chargerStatistiques, 1500);
+
+        // Recharger automatiquement toutes les 15 secondes (sans boucle agressive au chargement)
+        setInterval(chargerStatistiques, 15000);
+    }
     
     // Attendre le chargement de la page
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('📄 DOM pret, demarrage dans 1.5s...');
-            setTimeout(chargerStatistiques, 1500);
-        });
+        document.addEventListener('DOMContentLoaded', initializeStats, { once: true });
     } else {
-        console.log('📄 DOM deja pret, demarrage dans 1.5s...');
-        setTimeout(chargerStatistiques, 1500);
+        initializeStats();
     }
-    
-    // Recharger automatiquement toutes les 15 secondes (réduit de 30s à 15s)
-    setInterval(chargerStatistiques, 15000);
 })();
