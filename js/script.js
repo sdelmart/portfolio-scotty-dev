@@ -288,6 +288,7 @@ const I18N = {
 };
 
 let currentLanguage = 'fr';
+let hasLanguageApplied = false;
 const typingState = {
     phrases: I18N.fr.hero.typing,
     currentPhraseIndex: 0,
@@ -295,6 +296,148 @@ const typingState = {
     isDeleting: false,
     started: false
 };
+
+const PORTFOLIO_REPLACEMENTS_EN = [
+    ['Compétence', 'Skill'],
+    ['Indicateur', 'Indicator'],
+    ['Niveau', 'Level'],
+    ['Preuves (SAE)', 'Evidence (SAE)'],
+    ['Concevoir / Coder / Tester / Intégrer', 'Design / Code / Test / Integrate'],
+    ['Optimiser selon critères spécifiques', 'Optimize according to specific criteria'],
+    ['Installer / Configurer / Maintenir', 'Install / Configure / Maintain'],
+    ['Concevoir / Gérer / Exploiter les données', 'Design / Manage / Use data'],
+    ['Organiser / Piloter un projet', 'Organize / Lead a project'],
+    ['Travailler en équipe informatique', 'Work in an IT team'],
+    ['Maîtrise avancée', 'Advanced mastery'],
+    ['Maîtrise partielle', 'Partial mastery'],
+    ['Autonomie', 'Autonomy'],
+    ['Réaliser un développement d\'application', 'Build an application'],
+    ['Concevoir, coder, tester et intégrer une solution informatique', 'Design, code, test and integrate a software solution'],
+    ['Réalisation de mini-jeux en Python', 'Python mini-games development'],
+    ['Création de mini-jeux en console en utilisant le langage Python. Un projet complet couvrant la conception, le développement et les tests de plusieurs jeux interactifs.', 'Creation of console mini-games using Python. A complete project covering design, development, and testing of multiple interactive games.'],
+    ['Jeux développés', 'Games developed'],
+    ['Allumettes', 'Nim matches'],
+    ['Devinette', 'Guessing game'],
+    ['Puissance 4', 'Connect Four'],
+    ['Morpion', 'Tic-tac-toe'],
+    ['Mon rôle', 'My role'],
+    ['Création des mini-jeux — Développement de la logique de jeu, des interfaces console et de la gestion des entrées utilisateur.', 'Built the mini-games: game logic, console UI, and user input handling.'],
+    ['Livrables', 'Deliverables'],
+    ['Compte rendu de +20 pages expliquant le fonctionnement des mini-jeux + oral de présentation de 10 minutes.', '20+ page report explaining how the mini-games work + 10-minute oral presentation.'],
+    ['Développement d\'une application Java — Latice', 'Java application development — Latice'],
+    ['Développement complet d\'un jeu de société (Latice) en Java. Conception orientée objet, implémentation des règles du jeu et gestion des interactions entre joueurs.', 'Full development of a board game (Latice) in Java. Object-oriented design, game rules implementation, and player interaction management.'],
+    ['Développement de l\'application — Implémentation des règles, gestion du plateau et des cartes.', 'Application development: rule implementation, board and cards management.'],
+    ['Application fonctionnelle + compte rendu technique.', 'Working application + technical report.'],
+    ['Optimiser des applications', 'Optimize applications'],
+    ['Optimiser en fonction de critères spécifiques : précision, consommation de ressources', 'Optimize based on specific criteria: accuracy and resource usage'],
+    ['Optimisation de l\'application Python', 'Python application optimization'],
+    ['Ajout d\'intelligence artificielle pour les mini-jeux en Python. Possibilité de jouer contre un bot avec différents niveaux de difficulté (facile, difficile) grâce à des algorithmes optimisés.', 'Added AI for Python mini-games. You can play against a bot with multiple difficulty levels (easy, hard) using optimized algorithms.'],
+    ['Mise en place des tests — Validation du bon fonctionnement des algorithmes d\'IA et des niveaux de difficulté.', 'Set up tests to validate AI algorithms and difficulty levels.'],
+    ['Application optimisée avec IA + rapport de tests.', 'AI-optimized application + test report.'],
+    ['Optimisation et IHM — Application Java (Latice)', 'Optimization and GUI — Java application (Latice)'],
+    ['Mise en place du jeu Latice en IHM sur un plateau graphique. Création des cartes et du plateau pour un jeu fonctionnel à 100% depuis l\'interface graphique.', 'Built Latice with a GUI board. Created cards and board for a fully playable game from the graphical interface.'],
+    ['Ajout des boutons et fonctionnalités back-end de l\'IHM — Liaison entre la logique métier et l\'interface utilisateur.', 'Added GUI buttons and back-end features, connecting business logic to the user interface.'],
+    ['Application avec interface graphique complète et fonctionnelle.', 'Application with a complete and functional graphical interface.'],
+    ['Administrer des systèmes informatiques communicants', 'Administer connected information systems'],
+    ['Installer, configurer, mettre à disposition et maintenir une infrastructure service/réseau', 'Install, configure, deploy, and maintain a service/network infrastructure'],
+    ['Configuration d\'un poste de travail', 'Workstation setup'],
+    ['Installation complète d\'une distribution Linux sur un poste de travail (de A à Z). Configuration de l\'environnement de développement et création d\'une bibliothèque fonctionnelle en bash.', 'Complete Linux distribution installation on a workstation (A to Z). Development environment setup and creation of a functional Bash library system.'],
+    ['Réalisations', 'Achievements'],
+    ['Installation de Linux et configuration système', 'Linux installation and system configuration'],
+    ['Installation de VSCode pour Python', 'VS Code setup for Python'],
+    ['Installation graphique avec l\'IDE de notre choix', 'Graphical installation with the IDE of our choice'],
+    ['Bibliothèque fonctionnelle en bash (Ajouter/Supprimer un livre, Lister, Réserver)', 'Functional Bash library system (add/remove a book, list, reserve)'],
+    ['Création des scripts bash — Développement de l\'ensemble des fonctionnalités de la bibliothèque en ligne de commande.', 'Built Bash scripts with all command-line library features.'],
+    ['Compte rendu + oral de présentation de 10 minutes.', 'Report + 10-minute oral presentation.'],
+    ['Simulation d\'un réseau avec Kathara', 'Network simulation with Kathara'],
+    ['Création d\'un réseau informatique complet avec plusieurs machines, serveur DHCP et DNS sur Kathara. Mise en place de l\'accès internet, du transfert de fichiers et de l\'analyse réseau.', 'Created a full network with multiple machines, DHCP and DNS servers in Kathara. Set up internet access, file transfer, and network analysis.'],
+    ['Réseau avec plusieurs machines, serveur DHCP, DNS', 'Network with multiple machines, DHCP and DNS servers'],
+    ['Accès internet depuis chaque machine par nom de domaine', 'Internet access from each machine via domain name'],
+    ['Transfert de fichiers (envoi + réception)', 'File transfer (send + receive)'],
+    ['Analyse avec WireShark (transferts UDP/TCP)', 'Analysis with Wireshark (UDP/TCP transfers)'],
+    ['Réalisation complète du projet — Conception réseau, routage, SSH, configuration DHCP/DNS et analyse WireShark.', 'Delivered the full project: network design, routing, SSH, DHCP/DNS setup, and Wireshark analysis.'],
+    ['Compte rendu + démonstration devant le professeur.', 'Report + live demo to the teacher.'],
+    ['Gérer des données de l\'information', 'Manage information data'],
+    ['Concevoir, gérer, administrer et exploiter les données d\'une entreprise', 'Design, manage, administer, and use company data'],
+    ['Gestion et transformation d\'une Base de Données existante', 'Management and transformation of an existing database'],
+    ['Tri et gestion d\'une base de données contenant plusieurs milliers de jeux. Filtrage des données à l\'aide de requêtes SQL et création d\'affichages graphiques pour certaines requêtes.', 'Sorted and managed a database with several thousand games. Filtered data with SQL queries and built charts for selected queries.'],
+    ['Tri d\'une base de données de milliers de jeux', 'Sorted a database containing thousands of games'],
+    ['Filtrage par requêtes SQL', 'Filtering using SQL queries'],
+    ['Affichage graphique des résultats', 'Graphical display of results'],
+    ['Écriture des requêtes SQL — Conception et optimisation des requêtes pour filtrer et analyser les données.', 'Wrote SQL queries and optimized them for filtering and data analysis.'],
+    ['Compte rendu + oral de démonstration.', 'Report + oral demo.'],
+    ['Visualisation de données', 'Data visualization'],
+    ['Projet de visualisation de données permettant de représenter graphiquement des ensembles de données complexes pour faciliter leur analyse et leur compréhension.', 'Data visualization project to graphically represent complex datasets for easier analysis and understanding.'],
+    ['Participation à la conception et à la réalisation des visualisations de données.', 'Contributed to the design and implementation of data visualizations.'],
+    ['Compte rendu + démonstration des visualisations.', 'Report + visualization demo.'],
+    ['Conduire un projet', 'Lead a project'],
+    ['Satisfaire les besoins utilisateurs, organiser et piloter un projet (classique ou agile)', 'Meet user needs and organize/lead a project (traditional or agile)'],
+    ['Recueil des besoins', 'Requirements gathering'],
+    ['Modernisation du système de gestion des emprunts et retours d\'une bibliothèque universitaire disposant de 10 000 livres. Passage d\'une gestion manuelle à une solution automatisée.', 'Modernized the loan/return management system of a university library with 10,000 books. Moved from manual management to an automated solution.'],
+    ['Objectifs', 'Goals'],
+    ['Automatiser la gestion des emprunts et retours', 'Automate loan and return management'],
+    ['Faciliter la recherche des livres par les étudiants', 'Make book search easier for students'],
+    ['Améliorer la productivité des bibliothécaires', 'Improve librarians\' productivity'],
+    ['Rédaction du cahier des charges et du MoSCoW — Définition des exigences fonctionnelles et priorisation des besoins.', 'Wrote the requirements specification and MoSCoW prioritization, defining functional requirements and priority levels.'],
+    ['Compte rendu + oral de présentation.', 'Report + oral presentation.'],
+    ['Gestion de projet — Goût d\'Immo', 'Project management — Goût d\'Immo'],
+    ['Analyse et mise en œuvre du projet Goût d\'Immo, une plateforme numérique dédiée à la gestion des biens immobiliers. Étude stratégique, choix technologique réfléchi et planification rigoureuse pour offrir un outil performant et adapté.', 'Analyzed and implemented the Goût d\'Immo project, a digital platform for real estate management. Strategic analysis, thoughtful technology choices, and rigorous planning to deliver an effective solution.'],
+    ['Création du diagramme de Gantt et mise en application de la méthode RACI — Planification des tâches, affectation des responsabilités et suivi de l\'avancement du projet.', 'Built the Gantt chart and applied the RACI method: task planning, responsibility assignment, and progress tracking.'],
+    ['Collaborer au sein d\'une équipe informatique', 'Collaborate within an IT team'],
+    ['Acquérir, développer et exploiter les aptitudes nécessaires pour travailler dans une équipe informatique', 'Acquire, develop, and apply the skills needed to work in an IT team'],
+    ['Recherche d\'un profil informatique et entretien', 'IT profile research and interview'],
+    ['Recherche et interview d\'un professionnel dans le domaine informatique pour en apprendre davantage sur le métier. Entretien avec un Développeur BDD permettant de comprendre les réalités du terrain.', 'Researched and interviewed an IT professional to better understand the role. Interview with a database developer to understand real-world practice.'],
+    ['Recherche du profil (Développeur BDD) + rédaction du rapport — Préparation de l\'interview, conduite de l\'entretien et rédaction du compte rendu.', 'Researched the profile (database developer) and wrote the report: interview preparation, execution, and documentation.'],
+    ['Livrable', 'Deliverable'],
+    ['Compte rendu détaillé de l\'entretien.', 'Detailed interview report.'],
+    ['Recherche sur un métier de l\'informatique', 'Research on an IT profession'],
+    ['Recherche approfondie sur un métier de l\'informatique suite à une conférence. Analyse du métier, des compétences requises et des perspectives d\'évolution dans le secteur.', 'In-depth research on an IT profession after a conference. Analysis of the role, required skills, and career perspectives in the sector.'],
+    ['Recherche documentaire et rédaction suite à la conférence — Synthèse des informations recueillies et analyse du métier étudié.', 'Desk research and writing after the conference: synthesis of collected information and role analysis.'],
+    ['Compte rendu de recherche.', 'Research report.'],
+    ['Initialisation', 'Initialization'],
+    ['Découverte des concepts fondamentaux et premières mises en pratique.', 'Discovery of core concepts and first practical applications.'],
+    ['Capacité à appliquer les concepts avec accompagnement dans des situations simples.', 'Ability to apply concepts with guidance in simple situations.'],
+    ['Application autonome des compétences dans des contextes variés et complexes.', 'Autonomous application of skills in varied and complex contexts.'],
+    ['Expertise et capacité à transmettre — résolution de problèmes complexes de manière innovante.', 'Expertise and ability to transfer knowledge, solving complex problems in innovative ways.']
+];
+
+function applyPortfolioDeepTranslation(language) {
+    const path = globalThis.location.pathname;
+    const isPortfolioPage = path.endsWith('/pages/portfolio.html') || path.endsWith('portfolio.html');
+    if (!isPortfolioPage) {
+        return;
+    }
+
+    const main = document.querySelector('main');
+    if (!main) {
+        return;
+    }
+
+    if (!main.dataset.frContent) {
+        main.dataset.frContent = main.innerHTML;
+    }
+
+    if (main.dataset.renderedLang === language) {
+        return;
+    }
+
+    if (language === 'fr') {
+        const currentScrollY = globalThis.scrollY;
+        main.innerHTML = main.dataset.frContent;
+        main.dataset.renderedLang = 'fr';
+        globalThis.scrollTo({ top: currentScrollY, behavior: 'auto' });
+        return;
+    }
+
+    const currentScrollY = globalThis.scrollY;
+    let translatedHtml = main.dataset.frContent;
+    PORTFOLIO_REPLACEMENTS_EN.forEach(([fr, en]) => {
+        translatedHtml = translatedHtml.split(fr).join(en);
+    });
+    main.innerHTML = translatedHtml;
+    main.dataset.renderedLang = 'en';
+    globalThis.scrollTo({ top: currentScrollY, behavior: 'auto' });
+}
 
 function getNestedValue(object, path) {
     return path.split('.').reduce((accumulator, key) => {
@@ -322,7 +465,11 @@ function setTypingPhrases(phrases) {
 
 function applyLanguage(language) {
     const selectedLanguage = I18N[language] ? language : 'fr';
+    if (hasLanguageApplied && selectedLanguage === currentLanguage) {
+        return;
+    }
     currentLanguage = selectedLanguage;
+    hasLanguageApplied = true;
     const dictionary = I18N[selectedLanguage];
 
     document.documentElement.lang = selectedLanguage;
@@ -382,6 +529,8 @@ function applyLanguage(language) {
     }
 
     setTypingPhrases(dictionary.hero.typing);
+
+    applyPortfolioDeepTranslation(selectedLanguage);
 }
 
 function initLanguageAndContent() {

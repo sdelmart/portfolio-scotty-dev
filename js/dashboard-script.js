@@ -20,6 +20,9 @@ const DASHBOARD_UI_TEXT = {
     }
 };
 
+let hasLoadedTodosOnce = false;
+let hasLoadedWeatherOnce = false;
+
 function getDashboardText(key) {
     const lang = (document.documentElement.lang || 'fr').startsWith('en') ? 'en' : 'fr';
     return DASHBOARD_UI_TEXT[lang]?.[key] || DASHBOARD_UI_TEXT.fr[key] || '';
@@ -46,12 +49,15 @@ function showError(elementId, message) {
 }
 
 async function loadTodos() {
-    showLoading('todos-list');
+    if (!hasLoadedTodosOnce) {
+        showLoading('todos-list');
+    }
     try {
         const response = await fetch(API_BASE_URL + '/todos');
         const todos = await response.json();
         displayTodos(todos);
         updateTodosCount(todos);
+        hasLoadedTodosOnce = true;
     } catch (error) {
         console.error('Erreur:', error);
         showError('todos-list', getDashboardText('error'));
@@ -131,11 +137,14 @@ async function deleteTodo(id) {
 
 async function loadWeather() {
     // HTML uses weather-widget
-    showLoading('weather-widget');
+    if (!hasLoadedWeatherOnce) {
+        showLoading('weather-widget');
+    }
     try {
         const response = await fetch(API_BASE_URL + '/weather');
         const data = await response.json();
         displayWeather(data);
+        hasLoadedWeatherOnce = true;
     } catch (error) {
         console.error('Erreur:', error);
         showError('weather-widget', getDashboardText('weatherError'));
