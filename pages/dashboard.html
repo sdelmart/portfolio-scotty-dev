@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de bord - Scott Dev</title>
-    <meta name="description" content="Dashboard étudiant de Scott Delmart : tâches, objectifs, rappels, météo et statistiques de productivité.">
+    <title data-i18n-title="pages.dashboard.title">Tableau de bord - Scott Dev</title>
+    <meta name="description" data-i18n-description="pages.dashboard.description" content="Dashboard étudiant de Scott Delmart : tâches, objectifs, rappels, météo et statistiques de productivité.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Scott Delmart">
     <meta name="theme-color" content="#570000">
@@ -34,12 +34,12 @@
             </div>
             
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="../index.html#home" class="nav-link">Accueil</a></li>
-                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
-                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="dashboard.html" class="nav-link">Tableau de bord</a></li>
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="dashboard.html" class="nav-link" data-i18n="nav.dashboard">Tableau de bord</a></li>
             </ul>
             
             <div class="nav-social">
@@ -48,6 +48,7 @@
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
+                <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
             </div>
             
             <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
@@ -62,8 +63,8 @@
         <section class="dashboard-hero">
             <div class="container">
                 <h1 class="dashboard-title">
-                     Tableau de bord étudiant
-                    <span class="subtitle">Gérez votre productivité étudiante</span>
+                     <span data-i18n="pages.dashboard.heroTitle">Tableau de bord étudiant</span>
+                    <span class="subtitle" data-i18n="pages.dashboard.heroSubtitle">Gérez votre productivité étudiante</span>
                 </h1>
             </div>
         </section>
@@ -72,33 +73,33 @@
         <section class="dashboard-stats-section">
             <div class="container">
                 <div class="dashboard-card stats-card">
-                    <h2>📈 Statistiques</h2>
+                    <h2 data-i18n="pages.dashboard.statsTitle">📈 Statistiques</h2>
                     <div id="overall-stats" class="stats-grid">
                         <div class="stat-item">
                             <span class="stat-icon">✅</span>
                             <div class="stat-content">
-                                <div class="stat-label">Tâches actives</div>
+                                <div class="stat-label" data-i18n="pages.dashboard.activeTodos">Tâches actives</div>
                                 <div class="stat-value" id="stat-active-todos">-</div>
                             </div>
                         </div>
                         <div class="stat-item">
                             <span class="stat-icon">✔️</span>
                             <div class="stat-content">
-                                <div class="stat-label">Tâches terminées</div>
+                                <div class="stat-label" data-i18n="pages.dashboard.completedTodos">Tâches terminées</div>
                                 <div class="stat-value" id="stat-completed-todos">-</div>
                             </div>
                         </div>
                         <div class="stat-item">
                             <span class="stat-icon">🎯</span>
                             <div class="stat-content">
-                                <div class="stat-label">Objectifs atteints</div>
+                                <div class="stat-label" data-i18n="pages.dashboard.reachedGoals">Objectifs atteints</div>
                                 <div class="stat-value" id="stat-goals-progress">-</div>
                             </div>
                         </div>
                         <div class="stat-item">
                             <span class="stat-icon">⏰</span>
                             <div class="stat-content">
-                                <div class="stat-label">Rappels actifs</div>
+                                <div class="stat-label" data-i18n="pages.dashboard.activeReminders">Rappels actifs</div>
                                 <div class="stat-value" id="stat-active-reminders">-</div>
                             </div>
                         </div>
@@ -113,24 +114,24 @@
                     
                     <!-- Météo -->
                     <div class="dashboard-card weather-card">
-                        <h2>🌤️ Météo</h2>
+                        <h2 data-i18n="pages.dashboard.weather">🌤️ Météo</h2>
                         <div id="weather-widget" class="weather-content">
-                            <div class="loading">Chargement...</div>
+                            <div class="loading" data-i18n="pages.dashboard.loading">Chargement...</div>
                         </div>
                     </div>
 
                     <!-- Tâches -->
                     <div class="dashboard-card todos-card">
                         <h2>
-                            ✅ Mes Tâches
+                            <span data-i18n="pages.dashboard.myTodos">✅ Mes Tâches</span>
                             <span class="task-counter" id="task-counter">0</span>
                         </h2>
                         <form id="todo-form" class="input-group">
-                            <input type="text" id="todo-input" placeholder="Nouvelle tâche..." aria-label="Nouvelle tâche" required>
+                            <input type="text" id="todo-input" placeholder="Nouvelle tâche..." data-i18n-placeholder="pages.dashboard.newTodo" aria-label="Nouvelle tâche" required>
                             <select id="todo-priority" class="priority-select" aria-label="Priorité de la tâche">
-                                <option value="low">🟢 Basse</option>
-                                <option value="medium" selected>🟡 Moyenne</option>
-                                <option value="high">🔴 Haute</option>
+                                <option value="low" data-i18n="pages.dashboard.low">🟢 Basse</option>
+                                <option value="medium" data-i18n="pages.dashboard.medium" selected>🟡 Moyenne</option>
+                                <option value="high" data-i18n="pages.dashboard.high">🔴 Haute</option>
                             </select>
                             <input type="date" id="todo-due" class="date-input" aria-label="Date limite de la tâche">
                             <button type="submit" class="add-btn" aria-label="Ajouter la tâche">+</button>
@@ -140,15 +141,15 @@
 
                     <!-- Liens Rapides -->
                     <div class="dashboard-card links-card">
-                        <h2>🔗 Liens Rapides</h2>
+                        <h2 data-i18n="pages.dashboard.quickLinks">🔗 Liens Rapides</h2>
                         <div id="links-list" class="links-grid">
-                            <div class="loading">Chargement...</div>
+                            <div class="loading" data-i18n="pages.dashboard.loading">Chargement...</div>
                         </div>
                     </div>
 
                     <!-- Objectifs Quotidiens -->
                     <div class="dashboard-card goals-card">
-                        <h2>🎯 Objectifs du Jour</h2>
+                        <h2 data-i18n="pages.dashboard.dailyGoals">🎯 Objectifs du Jour</h2>
                         <div class="goals-stats" id="goals-stats">
                             <div class="progress-bar">
                                 <div class="progress-fill" id="goals-progress"></div>
@@ -156,7 +157,7 @@
                             <span class="progress-text" id="goals-percentage">0%</span>
                         </div>
                         <form id="goal-form" class="input-group">
-                            <input type="text" id="goal-input" placeholder="Nouvel objectif..." aria-label="Nouvel objectif" required>
+                            <input type="text" id="goal-input" placeholder="Nouvel objectif..." data-i18n-placeholder="pages.dashboard.newGoal" aria-label="Nouvel objectif" required>
                             <button type="submit" class="add-btn" aria-label="Ajouter l'objectif">+</button>
                         </form>
                         <div id="goals-list" class="items-list"></div>
@@ -164,13 +165,13 @@
 
                     <!-- Rappels -->
                     <div class="dashboard-card reminders-card">
-                        <h2>⏰ Rappels</h2>
+                        <h2 data-i18n="pages.dashboard.reminders">⏰ Rappels</h2>
                         <form id="reminder-form" class="input-group">
-                            <input type="text" id="reminder-title" placeholder="Titre du rappel..." aria-label="Titre du rappel" required>
+                            <input type="text" id="reminder-title" placeholder="Titre du rappel..." data-i18n-placeholder="pages.dashboard.reminderTitle" aria-label="Titre du rappel" required>
                             <select id="reminder-type" class="priority-select" aria-label="Type de rappel">
-                                <option value="general">📋 Général</option>
-                                <option value="exam">📝 Examen</option>
-                                <option value="assignment">📚 Devoir</option>
+                                <option value="general" data-i18n="pages.dashboard.reminderGeneral">📋 Général</option>
+                                <option value="exam" data-i18n="pages.dashboard.reminderExam">📝 Examen</option>
+                                <option value="assignment" data-i18n="pages.dashboard.reminderAssignment">📚 Devoir</option>
                             </select>
                             <input type="date" id="reminder-date" class="date-input" aria-label="Date du rappel" required>
                             <button type="submit" class="add-btn" aria-label="Ajouter le rappel">+</button>
@@ -187,29 +188,29 @@
 
     <aside id="chatbot-panel" class="chatbot-panel" aria-label="Assistant du site" hidden>
         <div class="chatbot-header">
-            <h3>Assistant Scotty</h3>
+            <h3 data-i18n="chatbot.title">Assistant Scotty</h3>
             <button id="chatbot-close" class="chatbot-close" type="button" aria-label="Fermer le chatbot">✕</button>
         </div>
         <div id="chatbot-messages" class="chatbot-messages" aria-live="polite">
-            <p class="chatbot-bubble chatbot-bubble-bot">Salut 👋 Je peux répondre sur mon profil, mes projets et le contact.</p>
+            <p class="chatbot-bubble chatbot-bubble-bot" data-i18n="chatbot.welcome">Salut 👋 Je peux répondre sur mon profil, mes projets et le contact.</p>
         </div>
         <div class="chatbot-quick-actions" aria-label="Questions rapides">
-            <button class="chatbot-chip" type="button" data-question="Qui es-tu ?">Qui es-tu ?</button>
-            <button class="chatbot-chip" type="button" data-question="Tu étudies quoi ?">Tu étudies quoi ?</button>
-            <button class="chatbot-chip" type="button" data-question="Tes compétences ?">Tes compétences ?</button>
-            <button class="chatbot-chip" type="button" data-question="Quels projets ?">Quels projets ?</button>
-            <button class="chatbot-chip" type="button" data-question="Tu cherches une alternance ?">Tu cherches une alternance ?</button>
-            <button class="chatbot-chip" type="button" data-question="Comment te contacter ?">Comment te contacter ?</button>
+            <button class="chatbot-chip" type="button" data-question="Qui es-tu ?" data-i18n="chatbot.q1">Qui es-tu ?</button>
+            <button class="chatbot-chip" type="button" data-question="Tu étudies quoi ?" data-i18n="chatbot.q2">Tu étudies quoi ?</button>
+            <button class="chatbot-chip" type="button" data-question="Tes compétences ?" data-i18n="chatbot.q3">Tes compétences ?</button>
+            <button class="chatbot-chip" type="button" data-question="Quels projets ?" data-i18n="chatbot.q4">Quels projets ?</button>
+            <button class="chatbot-chip" type="button" data-question="Tu cherches une alternance ?" data-i18n="chatbot.q5">Tu cherches une alternance ?</button>
+            <button class="chatbot-chip" type="button" data-question="Comment te contacter ?" data-i18n="chatbot.q6">Comment te contacter ?</button>
         </div>
         <form id="chatbot-form" class="chatbot-form">
-            <label class="sr-only" for="chatbot-input">Pose ta question</label>
-            <input id="chatbot-input" type="text" placeholder="Pose une question..." autocomplete="off">
-            <button type="submit">Envoyer</button>
+            <label class="sr-only" for="chatbot-input" data-i18n="chatbot.label">Pose ta question</label>
+            <input id="chatbot-input" type="text" placeholder="Pose une question..." data-i18n-placeholder="chatbot.placeholder" autocomplete="off">
+            <button type="submit" data-i18n="chatbot.send">Envoyer</button>
         </form>
     </aside>
 
-    <script src="../js/script.js?v=20260227a"></script>
-    <script src="../js/dashboard-script.js?v=20251015"></script>
+    <script src="../js/script.js?v=20260409c"></script>
+    <script src="../js/dashboard-script.js?v=20260409a"></script>
     <script src="../js/dashboard-stats.js?v=20260409a"></script>
 </body>
 </html>

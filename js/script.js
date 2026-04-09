@@ -32,6 +32,68 @@ const I18N = {
             portfolio: 'Portfolio',
             dashboard: 'Tableau de bord'
         },
+        pages: {
+            portfolio: {
+                title: 'Portfolio - Scotty Dev',
+                description: 'Portfolio détaillé de Scott Delmart : compétences BUT Informatique, SAE, projets et niveaux de maîtrise.',
+                heroTitle: 'Mon Portfolio',
+                heroSubtitle: 'Compétences du Programme National — BUT Informatique',
+                intro: 'Retrouvez ici l\'ensemble de mes compétences et projets réalisés au cours de ma formation. Chaque compétence est illustrée par des projets concrets avec mes rôles et livrables associés.',
+                overview: 'Vue d\'ensemble',
+                levelsScale: 'Échelle de niveaux',
+                ctaTitle: 'Intéressé par mon profil ?',
+                ctaText: 'N\'hésitez pas à me contacter pour discuter de projets passionnants ou d\'opportunités de collaboration.',
+                ctaContact: 'Me contacter',
+                ctaCv: 'Télécharger mon CV'
+            },
+            dashboard: {
+                title: 'Tableau de bord - Scott Dev',
+                description: 'Dashboard étudiant de Scott Delmart : tâches, objectifs, rappels, météo et statistiques de productivité.',
+                heroTitle: 'Tableau de bord étudiant',
+                heroSubtitle: 'Gérez votre productivité étudiante',
+                statsTitle: '📈 Statistiques',
+                activeTodos: 'Tâches actives',
+                completedTodos: 'Tâches terminées',
+                reachedGoals: 'Objectifs atteints',
+                activeReminders: 'Rappels actifs',
+                weather: '🌤️ Météo',
+                myTodos: '✅ Mes Tâches',
+                newTodo: 'Nouvelle tâche...',
+                low: '🟢 Basse',
+                medium: '🟡 Moyenne',
+                high: '🔴 Haute',
+                quickLinks: '🔗 Liens Rapides',
+                dailyGoals: '🎯 Objectifs du Jour',
+                newGoal: 'Nouvel objectif...',
+                reminders: '⏰ Rappels',
+                reminderTitle: 'Titre du rappel...',
+                reminderGeneral: '📋 Général',
+                reminderExam: '📝 Examen',
+                reminderAssignment: '📚 Devoir',
+                loading: 'Chargement...'
+            },
+            calculator: {
+                title: 'Calculatrice - Scott Dev',
+                description: 'Projet calculatrice de Scott Delmart : interface moderne, support clavier/souris et calculs instantanés.',
+                heading: 'Calculatrice',
+                rights: 'Tous droits réservés.'
+            },
+            thanks: {
+                title: 'Merci ! | Scotty Dev',
+                heading: 'Merci pour votre message ✉️',
+                message: 'Votre demande a bien été envoyée. Je vous répondrai rapidement.',
+                backHome: 'Retour à l\'accueil'
+            },
+            notFound: {
+                title: '404 - Page introuvable | Scotty Dev',
+                description: 'La page demandée est introuvable. Retournez à l\'accueil du portfolio de Scotty Dev.',
+                heading: 'Page introuvable',
+                message: 'Le lien demandé n\'existe plus ou a été déplacé. Tu peux revenir à l\'accueil ou continuer vers les pages principales du site.',
+                backHome: 'Retour à l\'accueil',
+                viewPortfolio: 'Voir le portfolio',
+                openDashboard: 'Ouvrir le dashboard'
+            }
+        },
         hero: {
             greeting: 'Bonjour, je suis Scotty 👋',
             quote: 'Créer des expériences web magnifiques et fonctionnelles',
@@ -101,6 +163,68 @@ const I18N = {
             contact: 'Contact',
             portfolio: 'Portfolio',
             dashboard: 'Dashboard'
+        },
+        pages: {
+            portfolio: {
+                title: 'Portfolio - Scotty Dev',
+                description: 'Detailed portfolio of Scott Delmart: computer science skills, projects and proficiency levels.',
+                heroTitle: 'My Portfolio',
+                heroSubtitle: 'National Program Skills — Computer Science B.U.T.',
+                intro: 'Here you can find all my skills and projects completed during my studies. Each skill is supported by concrete projects with my role and deliverables.',
+                overview: 'Overview',
+                levelsScale: 'Skill scale',
+                ctaTitle: 'Interested in my profile?',
+                ctaText: 'Feel free to contact me to discuss exciting projects or collaboration opportunities.',
+                ctaContact: 'Contact me',
+                ctaCv: 'Download my CV'
+            },
+            dashboard: {
+                title: 'Dashboard - Scott Dev',
+                description: 'Student dashboard by Scott Delmart: tasks, goals, reminders, weather and productivity stats.',
+                heroTitle: 'Student dashboard',
+                heroSubtitle: 'Manage your student productivity',
+                statsTitle: '📈 Statistics',
+                activeTodos: 'Active tasks',
+                completedTodos: 'Completed tasks',
+                reachedGoals: 'Goals reached',
+                activeReminders: 'Active reminders',
+                weather: '🌤️ Weather',
+                myTodos: '✅ My Tasks',
+                newTodo: 'New task...',
+                low: '🟢 Low',
+                medium: '🟡 Medium',
+                high: '🔴 High',
+                quickLinks: '🔗 Quick Links',
+                dailyGoals: '🎯 Daily Goals',
+                newGoal: 'New goal...',
+                reminders: '⏰ Reminders',
+                reminderTitle: 'Reminder title...',
+                reminderGeneral: '📋 General',
+                reminderExam: '📝 Exam',
+                reminderAssignment: '📚 Assignment',
+                loading: 'Loading...'
+            },
+            calculator: {
+                title: 'Calculator - Scott Dev',
+                description: 'Calculator project by Scott Delmart: modern interface, keyboard/mouse support and instant calculations.',
+                heading: 'Calculator',
+                rights: 'All rights reserved.'
+            },
+            thanks: {
+                title: 'Thank You! | Scotty Dev',
+                heading: 'Thanks for your message ✉️',
+                message: 'Your request has been sent successfully. I will reply soon.',
+                backHome: 'Back to home'
+            },
+            notFound: {
+                title: '404 - Page not found | Scotty Dev',
+                description: 'The requested page cannot be found. Return to the Scotty Dev portfolio homepage.',
+                heading: 'Page not found',
+                message: 'The requested link no longer exists or has been moved. You can go back home or continue to the main pages.',
+                backHome: 'Back to home',
+                viewPortfolio: 'View portfolio',
+                openDashboard: 'Open dashboard'
+            }
         },
         hero: {
             greeting: 'Hi, I\'m Scotty 👋',
@@ -202,11 +326,28 @@ function applyLanguage(language) {
     const dictionary = I18N[selectedLanguage];
 
     document.documentElement.lang = selectedLanguage;
-    document.title = dictionary.title;
+
+    const titleElement = document.querySelector('title');
+    const titleKey = titleElement?.dataset?.i18nTitle;
+    if (titleKey) {
+        const translatedTitle = getNestedValue(dictionary, titleKey);
+        if (typeof translatedTitle === 'string') {
+            document.title = translatedTitle;
+        }
+    } else {
+        document.title = dictionary.title;
+    }
 
     const descriptionMeta = document.querySelector('meta[name="description"]');
     if (descriptionMeta) {
-        descriptionMeta.setAttribute('content', dictionary.description);
+        const descriptionKey = descriptionMeta.dataset.i18nDescription;
+        const translatedDescription = descriptionKey
+            ? getNestedValue(dictionary, descriptionKey)
+            : dictionary.description;
+
+        if (typeof translatedDescription === 'string') {
+            descriptionMeta.setAttribute('content', translatedDescription);
+        }
     }
 
     document.querySelectorAll('[data-i18n]').forEach((node) => {

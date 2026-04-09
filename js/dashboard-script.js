@@ -1,11 +1,35 @@
 // Dashboard Script - API Communication
 const API_BASE_URL = 'https://scotty-dashboard-api.onrender.com/api';
 
+const DASHBOARD_UI_TEXT = {
+    fr: {
+        loading: 'Chargement...',
+        error: 'Erreur',
+        weatherError: 'Erreur météo',
+        emptyTodos: 'Aucune tâche',
+        emptyGoals: 'Aucun objectif',
+        emptyReminders: 'Aucun rappel'
+    },
+    en: {
+        loading: 'Loading...',
+        error: 'Error',
+        weatherError: 'Weather error',
+        emptyTodos: 'No tasks',
+        emptyGoals: 'No goals',
+        emptyReminders: 'No reminders'
+    }
+};
+
+function getDashboardText(key) {
+    const lang = (document.documentElement.lang || 'fr').startsWith('en') ? 'en' : 'fr';
+    return DASHBOARD_UI_TEXT[lang]?.[key] || DASHBOARD_UI_TEXT.fr[key] || '';
+}
+
 
 // Helper pour rafraîchir les stats après une action
 function refreshStatsIfAvailable() {
-    if (typeof window.refreshStats === 'function') {
-        setTimeout(window.refreshStats, 300);
+    if (typeof globalThis.refreshStats === 'function') {
+        setTimeout(globalThis.refreshStats, 300);
     }
 }
 
@@ -13,7 +37,7 @@ function refreshStatsIfAvailable() {
 
 function showLoading(elementId) {
     const element = document.getElementById(elementId);
-    if (element) element.innerHTML = '<div class="loading">Chargement...</div>';
+    if (element) element.innerHTML = '<div class="loading">' + getDashboardText('loading') + '</div>';
 }
 
 function showError(elementId, message) {
@@ -30,7 +54,7 @@ async function loadTodos() {
         updateTodosCount(todos);
     } catch (error) {
         console.error('Erreur:', error);
-        showError('todos-list', 'Erreur');
+        showError('todos-list', getDashboardText('error'));
     }
 }
 
@@ -38,7 +62,7 @@ function displayTodos(todos) {
     const todosList = document.getElementById('todos-list');
     if (!todosList) return;
     if (todos.length === 0) {
-        todosList.innerHTML = '<div class="empty-state">Aucune tâche</div>';
+        todosList.innerHTML = '<div class="empty-state">' + getDashboardText('emptyTodos') + '</div>';
         return;
     }
     todosList.innerHTML = todos.map(todo => 
@@ -76,7 +100,7 @@ async function addTodo(event) {
         if (response.ok) {
             form.reset();
             loadTodos();
-        if (window.refreshStats) window.refreshStats(); }
+        if (globalThis.refreshStats) globalThis.refreshStats(); }
     } catch (error) {
         console.error('Erreur:', error);
     }
@@ -90,7 +114,7 @@ async function toggleTodo(id) {
             body: JSON.stringify({ completed: true })
         });
         if (response.ok) loadTodos();
-        if (window.refreshStats) window.refreshStats(); } catch (error) {
+        if (globalThis.refreshStats) globalThis.refreshStats(); } catch (error) {
         console.error('Erreur:', error);
     }
 }
@@ -98,9 +122,9 @@ async function toggleTodo(id) {
 async function deleteTodo(id) {
     try {
         const response = await fetch(API_BASE_URL + '/todos/' + id, { method: 'DELETE' });
-        if (window.refreshStats) window.refreshStats();
+        if (globalThis.refreshStats) globalThis.refreshStats();
         if (response.ok) loadTodos();
-        if (window.refreshStats) window.refreshStats(); } catch (error) {
+        if (globalThis.refreshStats) globalThis.refreshStats(); } catch (error) {
         console.error('Erreur:', error);
     }
 }
@@ -114,7 +138,7 @@ async function loadWeather() {
         displayWeather(data);
     } catch (error) {
         console.error('Erreur:', error);
-        showError('weather-widget', 'Erreur météo');
+        showError('weather-widget', getDashboardText('weatherError'));
     }
 }
 
@@ -126,8 +150,8 @@ function displayWeather(data) {
         return;
     }
     // prefer 'temperature' (backend) but accept 'temp' as fallback
-    const rawTemp = (typeof data.temperature !== 'undefined') ? data.temperature : data.temp;
-    const tempNum = (rawTemp === null || typeof rawTemp === 'undefined') ? NaN : Number(rawTemp);
+    const rawTemp = data.temperature === undefined ? data.temp : data.temperature;
+    const tempNum = (rawTemp === null || rawTemp === undefined) ? Number.NaN : Number(rawTemp);
     const tempDisplay = Number.isFinite(tempNum) ? Math.round(tempNum) + '°C' : '-';
 
     // City name: backend provides `city` (e.g., "Limoges"). Accept common fallbacks.
@@ -175,7 +199,7 @@ function displayGoals(goals) {
     const goalsList = document.getElementById('goals-list');
     if (!goalsList) return;
     if (goals.length === 0) {
-        goalsList.innerHTML = '<div class="empty-state">Aucun objectif</div>';
+        goalsList.innerHTML = '<div class="empty-state">' + getDashboardText('emptyGoals') + '</div>';
         return;
     }
     goalsList.innerHTML = goals.map(goal => '<div class="goal-item ' + (goal.completed ? 'completed' : '') + '"><input type="checkbox" ' + (goal.completed ? 'checked' : '') + ' onchange="toggleGoal(' + goal.id + ')"><span class="goal-text">' + goal.text + '</span></div>').join('');
@@ -222,7 +246,7 @@ async function toggleGoal(id) {
     try {
         const response = await fetch(API_BASE_URL + '/goals/' + id + '/toggle', { method: 'POST' });
         if (response.ok) loadGoals();
-        if (window.refreshStats) window.refreshStats(); } catch (error) {
+        if (globalThis.refreshStats) globalThis.refreshStats(); } catch (error) {
         console.error('Erreur:', error);
     }
 }
@@ -241,7 +265,7 @@ function displayReminders(reminders) {
     const remindersList = document.getElementById('reminders-list');
     if (!remindersList) return;
     if (reminders.length === 0) {
-        remindersList.innerHTML = '<div class="empty-state">Aucun rappel</div>';
+        remindersList.innerHTML = '<div class="empty-state">' + getDashboardText('emptyReminders') + '</div>';
         return;
     }
     remindersList.innerHTML = reminders.map(reminder => '<div class="reminder-item urgency-' + reminder.urgency + '"><div class="reminder-content"><div class="reminder-header"><span class="reminder-title">' + reminder.title + '</span><span class="reminder-type">' + reminder.type + '</span></div><div class="reminder-date">📅 ' + reminder.due_date + '</div><span class="urgency-badge urgency-' + reminder.urgency + '">' + reminder.urgency + '</span></div><button class="delete-btn" onclick="deleteReminder(\'' + reminder.id + '\')">×</button></div>').join('');
@@ -272,7 +296,7 @@ async function deleteReminder(id) {
     try {
         const response = await fetch(API_BASE_URL + '/reminders/' + id, { method: 'DELETE' });
         if (response.ok) loadReminders();
-        if (window.refreshStats) window.refreshStats(); } catch (error) {
+        if (globalThis.refreshStats) globalThis.refreshStats(); } catch (error) {
         console.error('Erreur:', error);
     }
 }

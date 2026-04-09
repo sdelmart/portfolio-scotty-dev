@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Merci ! | Scotty Dev</title>
+  <title data-i18n-title="pages.thanks.title">Merci ! | Scotty Dev</title>
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
   <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
@@ -39,11 +39,15 @@
   </style>
 </head>
 <body>
+  <div style="position: fixed; top: 16px; right: 16px; z-index: 2000;">
+    <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
+  </div>
+
   <main class="thanks-wrap">
     <section class="thanks-card" aria-labelledby="thanks-title">
-      <h1 id="thanks-title">Merci pour votre message ✉️</h1>
-      <p>Votre demande a bien été envoyée. Je vous répondrai rapidement.</p>
-      <a href="/" class="glow-genz-button" style="text-decoration: none; display: inline-block;">Retour à l'accueil</a>
+      <h1 id="thanks-title" data-i18n="pages.thanks.heading">Merci pour votre message ✉️</h1>
+      <p data-i18n="pages.thanks.message">Votre demande a bien été envoyée. Je vous répondrai rapidement.</p>
+      <a href="/" class="glow-genz-button" style="text-decoration: none; display: inline-block;" data-i18n="pages.thanks.backHome">Retour à l'accueil</a>
     </section>
   </main>
 
@@ -51,27 +55,27 @@
 
   <aside id="chatbot-panel" class="chatbot-panel" aria-label="Assistant du site" hidden>
     <div class="chatbot-header">
-      <h3>Assistant Scotty</h3>
+      <h3 data-i18n="chatbot.title">Assistant Scotty</h3>
       <button id="chatbot-close" class="chatbot-close" type="button" aria-label="Fermer le chatbot">✕</button>
     </div>
     <div id="chatbot-messages" class="chatbot-messages" aria-live="polite">
-      <p class="chatbot-bubble chatbot-bubble-bot">Salut 👋 Je peux répondre sur mon profil, mes projets et le contact.</p>
+      <p class="chatbot-bubble chatbot-bubble-bot" data-i18n="chatbot.welcome">Salut 👋 Je peux répondre sur mon profil, mes projets et le contact.</p>
     </div>
     <div class="chatbot-quick-actions" aria-label="Questions rapides">
-      <button class="chatbot-chip" type="button" data-question="Qui es-tu ?">Qui es-tu ?</button>
-      <button class="chatbot-chip" type="button" data-question="Tu étudies quoi ?">Tu étudies quoi ?</button>
-      <button class="chatbot-chip" type="button" data-question="Tes compétences ?">Tes compétences ?</button>
-      <button class="chatbot-chip" type="button" data-question="Quels projets ?">Quels projets ?</button>
-      <button class="chatbot-chip" type="button" data-question="Tu cherches une alternance ?">Tu cherches une alternance ?</button>
-      <button class="chatbot-chip" type="button" data-question="Comment te contacter ?">Comment te contacter ?</button>
+      <button class="chatbot-chip" type="button" data-question="Qui es-tu ?" data-i18n="chatbot.q1">Qui es-tu ?</button>
+      <button class="chatbot-chip" type="button" data-question="Tu étudies quoi ?" data-i18n="chatbot.q2">Tu étudies quoi ?</button>
+      <button class="chatbot-chip" type="button" data-question="Tes compétences ?" data-i18n="chatbot.q3">Tes compétences ?</button>
+      <button class="chatbot-chip" type="button" data-question="Quels projets ?" data-i18n="chatbot.q4">Quels projets ?</button>
+      <button class="chatbot-chip" type="button" data-question="Tu cherches une alternance ?" data-i18n="chatbot.q5">Tu cherches une alternance ?</button>
+      <button class="chatbot-chip" type="button" data-question="Comment te contacter ?" data-i18n="chatbot.q6">Comment te contacter ?</button>
     </div>
     <form id="chatbot-form" class="chatbot-form">
-      <label class="sr-only" for="chatbot-input">Pose ta question</label>
-      <input id="chatbot-input" type="text" placeholder="Pose une question..." autocomplete="off">
-      <button type="submit">Envoyer</button>
+      <label class="sr-only" for="chatbot-input" data-i18n="chatbot.label">Pose ta question</label>
+      <input id="chatbot-input" type="text" placeholder="Pose une question..." data-i18n-placeholder="chatbot.placeholder" autocomplete="off">
+      <button type="submit" data-i18n="chatbot.send">Envoyer</button>
     </form>
   </aside>
 
-  <script src="/js/script.js?v=20260227a"></script>
+  <script src="/js/script.js?v=20260409c"></script>
 </body>
 </html>
