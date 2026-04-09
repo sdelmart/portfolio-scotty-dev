@@ -401,6 +401,17 @@ const PORTFOLIO_REPLACEMENTS_EN = [
     ['Expertise et capacité à transmettre — résolution de problèmes complexes de manière innovante.', 'Expertise and ability to transfer knowledge, solving complex problems in innovative ways.']
 ];
 
+function escapeRegExp(value) {
+    return value.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
+}
+
+function replaceFlexible(source, fr, en) {
+    const pattern = escapeRegExp(fr)
+        .replaceAll(/\s+/g, String.raw`\s+`)
+        .replaceAll("'", "(?:'|&#39;|&apos;|’)");
+    return source.replaceAll(new RegExp(pattern, 'g'), en);
+}
+
 function applyPortfolioDeepTranslation(language) {
     const path = globalThis.location.pathname;
     const isPortfolioPage = path.endsWith('/pages/portfolio.html') || path.endsWith('portfolio.html');
@@ -432,7 +443,7 @@ function applyPortfolioDeepTranslation(language) {
     const currentScrollY = globalThis.scrollY;
     let translatedHtml = main.dataset.frContent;
     PORTFOLIO_REPLACEMENTS_EN.forEach(([fr, en]) => {
-        translatedHtml = translatedHtml.split(fr).join(en);
+        translatedHtml = replaceFlexible(translatedHtml, fr, en);
     });
     main.innerHTML = translatedHtml;
     main.dataset.renderedLang = 'en';
