@@ -13,7 +13,17 @@
   status = 301
 
 [[redirects]]
+  from = "/portfolio"
+  to = "/pages/portfolio.html"
+  status = 301
+
+[[redirects]]
   from = "/dashboard.html"
+  to = "/pages/dashboard.html"
+  status = 301
+
+[[redirects]]
+  from = "/dashboard"
   to = "/pages/dashboard.html"
   status = 301
 
@@ -23,8 +33,33 @@
   status = 301
 
 [[redirects]]
+  from = "/calculatrice"
+  to = "/pages/calculatrice.html"
+  status = 301
+
+[[redirects]]
   from = "/merci.html"
   to = "/pages/merci.html"
+  status = 301
+
+[[redirects]]
+  from = "/pages/portfolio"
+  to = "/pages/portfolio.html"
+  status = 301
+
+[[redirects]]
+  from = "/pages/dashboard"
+  to = "/pages/dashboard.html"
+  status = 301
+
+[[redirects]]
+  from = "/pages/calculatrice"
+  to = "/pages/calculatrice.html"
+  status = 301
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
   status = 301
 
 [[redirects]]
@@ -40,6 +75,16 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/pages/404.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/pages/merci.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
 # Headers pour les fichiers statiques (cache)
 [[headers]]
