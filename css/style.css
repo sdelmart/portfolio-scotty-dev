@@ -194,6 +194,10 @@ body::after {
   justify-content: flex-end;
 }
 
+.nav-actions-mobile {
+  display: none;
+}
+
 .social-icon {
   color: #888888; /* grey color for non-hover state */
   transition: all 0.3s ease;
@@ -648,6 +652,27 @@ select:focus-visible {
 
   .nav-social {
     display: none;
+  }
+
+  .nav-actions-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 56, 56, 0.18);
+  }
+
+  .nav-actions-mobile .social-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-lang-toggle-mobile {
+    width: 100%;
+    max-width: 220px;
   }
 
   .nav-menu.active {

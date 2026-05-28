@@ -665,6 +665,10 @@ function applyLanguage(language) {
         langToggle.textContent = dictionary.langToggle;
     }
 
+    document.querySelectorAll('[data-mobile-lang-toggle]').forEach((node) => {
+        node.textContent = dictionary.langToggle;
+    });
+
     setTypingPhrases(dictionary.hero.typing);
 
     applyPortfolioDeepTranslation(selectedLanguage, dictionary);
@@ -677,15 +681,21 @@ function initLanguageAndContent() {
 
     applyLanguage(initialLanguage);
 
+    const toggleLanguage = () => {
+        const nextLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+        globalThis.localStorage.setItem('site-language', nextLanguage);
+        applyLanguage(nextLanguage);
+    };
+
     const langToggle = document.getElementById('lang-toggle');
     if (!langToggle) {
         return;
     }
 
-    langToggle.addEventListener('click', () => {
-        const nextLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
-        globalThis.localStorage.setItem('site-language', nextLanguage);
-        applyLanguage(nextLanguage);
+    langToggle.addEventListener('click', toggleLanguage);
+
+    document.querySelectorAll('[data-mobile-lang-toggle]').forEach((node) => {
+        node.addEventListener('click', toggleLanguage);
     });
 }
 
@@ -697,6 +707,8 @@ function initNavbar() {
     if (!hamburger || !navMenu || navLinks.length === 0) {
         return;
     }
+
+    ensureMobileNavActions(navMenu);
 
     const currentPath = globalThis.location.pathname.split('/').pop() || 'index.html';
     const sectionNavLinks = Array.from(navLinks).filter(link => {
@@ -768,6 +780,30 @@ function initNavbar() {
 
         sections.forEach(section => observer.observe(section));
     }
+}
+
+function ensureMobileNavActions(navMenu) {
+    if (navMenu.querySelector('.nav-actions-mobile')) {
+        return;
+    }
+
+    const desktopNavSocial = document.querySelector('.nav-social');
+    if (!desktopNavSocial) {
+        return;
+    }
+
+    const mobileActions = desktopNavSocial.cloneNode(true);
+    mobileActions.classList.remove('nav-social');
+    mobileActions.classList.add('nav-actions-mobile');
+
+    const mobileLangToggle = mobileActions.querySelector('.lang-toggle');
+    if (mobileLangToggle) {
+        mobileLangToggle.removeAttribute('id');
+        mobileLangToggle.dataset.mobileLangToggle = 'true';
+        mobileLangToggle.classList.add('nav-lang-toggle-mobile');
+    }
+
+    navMenu.appendChild(mobileActions);
 }
 
 function initTypingEffect() {
