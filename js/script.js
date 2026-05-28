@@ -674,6 +674,12 @@ function applyLanguage(language) {
     applyPortfolioDeepTranslation(selectedLanguage, dictionary);
 }
 
+function toggleSiteLanguage() {
+    const nextLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+    globalThis.localStorage.setItem('site-language', nextLanguage);
+    applyLanguage(nextLanguage);
+}
+
 function initLanguageAndContent() {
     const storedLanguage = globalThis.localStorage.getItem('site-language');
     const browserLanguage = navigator.language?.toLowerCase().startsWith('fr') ? 'fr' : 'en';
@@ -681,21 +687,15 @@ function initLanguageAndContent() {
 
     applyLanguage(initialLanguage);
 
-    const toggleLanguage = () => {
-        const nextLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
-        globalThis.localStorage.setItem('site-language', nextLanguage);
-        applyLanguage(nextLanguage);
-    };
-
     const langToggle = document.getElementById('lang-toggle');
     if (!langToggle) {
         return;
     }
 
-    langToggle.addEventListener('click', toggleLanguage);
+    langToggle.addEventListener('click', toggleSiteLanguage);
 
     document.querySelectorAll('[data-mobile-lang-toggle]').forEach((node) => {
-        node.addEventListener('click', toggleLanguage);
+        node.addEventListener('click', toggleSiteLanguage);
     });
 }
 
@@ -801,6 +801,7 @@ function ensureMobileNavActions(navMenu) {
         mobileLangToggle.removeAttribute('id');
         mobileLangToggle.dataset.mobileLangToggle = 'true';
         mobileLangToggle.classList.add('nav-lang-toggle-mobile');
+        mobileLangToggle.addEventListener('click', toggleSiteLanguage);
     }
 
     navMenu.appendChild(mobileActions);
