@@ -40,6 +40,46 @@ const I18N = {
                 heroSubtitle: 'Compétences du Programme National — BUT Informatique',
                 intro: 'Retrouvez ici l\'ensemble de mes compétences et projets réalisés au cours de ma formation. Chaque compétence est illustrée par des projets concrets avec mes rôles et livrables associés.',
                 overview: 'Vue d\'ensemble',
+                table: {
+                    headers: {
+                        competence: 'Compétence',
+                        indicator: 'Indicateur',
+                        level: 'Niveau',
+                        evidence: 'Preuves (SAE)'
+                    },
+                    rows: {
+                        c1: 'C1 — Réaliser',
+                        c2: 'C2 — Optimiser',
+                        c3: 'C3 — Administrer',
+                        c4: 'C4 — Gérer',
+                        c5: 'C5 — Conduire',
+                        c6: 'C6 — Collaborer'
+                    },
+                    indicators: {
+                        c1: 'Concevoir / Coder / Tester / Intégrer',
+                        c2: 'Optimiser selon critères spécifiques',
+                        c3: 'Installer / Configurer / Maintenir',
+                        c4: 'Concevoir / Gérer / Exploiter les données',
+                        c5: 'Organiser / Piloter un projet',
+                        c6: 'Travailler en équipe informatique'
+                    },
+                    levels: {
+                        c1: 'Maîtrise avancée',
+                        c2: 'Autonomie',
+                        c3: 'Autonomie',
+                        c4: 'Maîtrise partielle',
+                        c5: 'Autonomie',
+                        c6: 'Autonomie'
+                    },
+                    evidence: {
+                        c1: 'SAE 1.01 • SAE 2.01',
+                        c2: 'SAE 1.02 • SAE 2.02',
+                        c3: 'SAE 1.03 • SAE 2.03',
+                        c4: 'SAE 1.04 • SAE 2.04',
+                        c5: 'SAE 1.05 • SAE 2.05',
+                        c6: 'SAE 1.06 • SAE 2.06'
+                    }
+                },
                 levelsScale: 'Échelle de niveaux',
                 ctaTitle: 'Intéressé par mon profil ?',
                 ctaText: 'N\'hésitez pas à me contacter pour discuter de projets passionnants ou d\'opportunités de collaboration.',
@@ -172,6 +212,46 @@ const I18N = {
                 heroSubtitle: 'National Program Skills — Computer Science B.U.T.',
                 intro: 'Here you can find all my skills and projects completed during my studies. Each skill is supported by concrete projects with my role and deliverables.',
                 overview: 'Overview',
+                table: {
+                    headers: {
+                        competence: 'Skill',
+                        indicator: 'Indicator',
+                        level: 'Level',
+                        evidence: 'Evidence (SAE)'
+                    },
+                    rows: {
+                        c1: 'C1 — Build',
+                        c2: 'C2 — Optimize',
+                        c3: 'C3 — Administer',
+                        c4: 'C4 — Manage',
+                        c5: 'C5 — Lead',
+                        c6: 'C6 — Collaborate'
+                    },
+                    indicators: {
+                        c1: 'Design / Code / Test / Integrate',
+                        c2: 'Optimize according to specific criteria',
+                        c3: 'Install / Configure / Maintain',
+                        c4: 'Design / Manage / Use data',
+                        c5: 'Organize / Lead a project',
+                        c6: 'Work in an IT team'
+                    },
+                    levels: {
+                        c1: 'Advanced mastery',
+                        c2: 'Autonomy',
+                        c3: 'Autonomy',
+                        c4: 'Partial mastery',
+                        c5: 'Autonomy',
+                        c6: 'Autonomy'
+                    },
+                    evidence: {
+                        c1: 'SAE 1.01 • SAE 2.01',
+                        c2: 'SAE 1.02 • SAE 2.02',
+                        c3: 'SAE 1.03 • SAE 2.03',
+                        c4: 'SAE 1.04 • SAE 2.04',
+                        c5: 'SAE 1.05 • SAE 2.05',
+                        c6: 'SAE 1.06 • SAE 2.06'
+                    }
+                },
                 levelsScale: 'Skill scale',
                 ctaTitle: 'Interested in my profile?',
                 ctaText: 'Feel free to contact me to discuss exciting projects or collaboration opportunities.',
@@ -412,7 +492,7 @@ function replaceFlexible(source, fr, en) {
     return source.replaceAll(new RegExp(pattern, 'g'), en);
 }
 
-function applyPortfolioDeepTranslation(language) {
+function applyPortfolioDeepTranslation(language, dictionary) {
     const path = globalThis.location.pathname;
     const isPortfolioPage = path.endsWith('/pages/portfolio.html') || path.endsWith('portfolio.html');
     if (!isPortfolioPage) {
@@ -435,6 +515,9 @@ function applyPortfolioDeepTranslation(language) {
     if (language === 'fr') {
         const currentScrollY = globalThis.scrollY;
         main.innerHTML = main.dataset.frContent;
+        translatePortfolioRoot(main, dictionary);
+        applyPortfolioTableTranslations(dictionary);
+        revealPortfolioSections();
         main.dataset.renderedLang = 'fr';
         globalThis.scrollTo({ top: currentScrollY, behavior: 'auto' });
         return;
@@ -446,8 +529,51 @@ function applyPortfolioDeepTranslation(language) {
         translatedHtml = replaceFlexible(translatedHtml, fr, en);
     });
     main.innerHTML = translatedHtml;
+    translatePortfolioRoot(main, dictionary);
+    applyPortfolioTableTranslations(dictionary);
+    revealPortfolioSections();
     main.dataset.renderedLang = 'en';
     globalThis.scrollTo({ top: currentScrollY, behavior: 'auto' });
+}
+
+function translatePortfolioRoot(root, dictionary) {
+    root.querySelectorAll('[data-i18n]').forEach((node) => {
+        const key = node.dataset.i18n;
+        const translated = getNestedValue(dictionary, key);
+        if (typeof translated === 'string') {
+            node.textContent = translated;
+        }
+    });
+
+    root.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
+        const key = node.dataset.i18nPlaceholder;
+        const translated = getNestedValue(dictionary, key);
+        if (typeof translated === 'string') {
+            node.setAttribute('placeholder', translated);
+        }
+    });
+}
+
+function applyPortfolioTableTranslations(dictionary) {
+    const tableNodes = document.querySelectorAll('[data-portfolio-i18n]');
+    tableNodes.forEach((node) => {
+        const key = node.dataset.portfolioI18n;
+        const translated = getNestedValue(dictionary, key);
+        if (typeof translated === 'string') {
+            node.textContent = translated;
+        }
+    });
+}
+
+function revealPortfolioSections() {
+    const portfolioNodes = document.querySelectorAll(
+        '.competences-table-wrapper, .slide-in-left, .slide-in-right, .slide-in-up'
+    );
+
+    portfolioNodes.forEach((node) => {
+        node.style.opacity = '1';
+        node.style.transform = 'none';
+    });
 }
 
 function getNestedValue(object, path) {
@@ -541,7 +667,7 @@ function applyLanguage(language) {
 
     setTypingPhrases(dictionary.hero.typing);
 
-    applyPortfolioDeepTranslation(selectedLanguage);
+    applyPortfolioDeepTranslation(selectedLanguage, dictionary);
 }
 
 function initLanguageAndContent() {
