@@ -32,8 +32,8 @@ const I18N = {
             portfolio: 'Portfolio'
         },
         pro: {
-            title: 'Besoin d\'un site web ?',
-            text: 'Je conçois des sites vitrines modernes et performants pour les pros, indépendants et associations via mon activité Delmart Digital.',
+            title: 'Besoin d\'un site web ou d\'une application ?',
+            text: 'Je conçois des sites web et des applications sur mesure — modernes, rapides et performants — pour les pros, indépendants et associations via mon activité Delmart Digital.',
             cta: 'Découvrir Delmart Digital'
         },
         pages: {
@@ -128,7 +128,7 @@ const I18N = {
             viewSite: 'Voir le site',
             delmart: {
                 title: 'Delmart Digital',
-                desc: 'Mon activité de création de sites web professionnels : sites vitrines modernes, rapides et optimisés pour le référencement.'
+                desc: 'Mon activité de création de sites web et d\'applications sur mesure : des solutions modernes, rapides et optimisées.'
             },
             calc: {
                 title: 'Calculatrice',
@@ -169,8 +169,8 @@ const I18N = {
             portfolio: 'Portfolio'
         },
         pro: {
-            title: 'Need a website?',
-            text: 'I design modern, high-performance showcase websites for professionals, freelancers and associations through my Delmart Digital business.',
+            title: 'Need a website or an app?',
+            text: 'I build custom websites and applications — modern, fast and high-performance — for professionals, freelancers and associations through my Delmart Digital business.',
             cta: 'Discover Delmart Digital'
         },
         pages: {
@@ -265,7 +265,7 @@ const I18N = {
             viewSite: 'Visit the site',
             delmart: {
                 title: 'Delmart Digital',
-                desc: 'My professional web design business: modern, fast and SEO-optimized showcase websites.'
+                desc: 'My business building custom websites and applications: modern, fast and optimized solutions.'
             },
             calc: {
                 title: 'Calculator',
