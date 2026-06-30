@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initSunPhotoModal,
         initSmoothScroll,
         initSectionAnimations,
-        initSimpleStats,
-        initChatbot
+        initSimpleStats
     ];
 
     initializers.forEach((initializer) => {
@@ -22,15 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const I18N = {
     fr: {
-        title: 'Scott - Web Developer Junior',
-        description: 'Portfolio de Scott Delmart, développeur web junior : projets, compétences, dashboard étudiant et contact.',
+        title: 'Scott Delmart — Développeur Web | Portfolio',
+        description: 'Portfolio de Scott Delmart, développeur web à Limoges. Découvrez mes projets, mes compétences techniques et mes coordonnées.',
         nav: {
             home: 'Accueil',
             about: 'À propos',
             projects: 'Projets',
             contact: 'Contact',
-            portfolio: 'Portfolio',
-            dashboard: 'Tableau de bord'
+            portfolio: 'Portfolio'
         },
         pages: {
             portfolio: {
@@ -86,43 +84,11 @@ const I18N = {
                 ctaContact: 'Me contacter',
                 ctaCv: 'Télécharger mon CV'
             },
-            dashboard: {
-                title: 'Tableau de bord - Scott Dev',
-                description: 'Dashboard étudiant de Scott Delmart : tâches, objectifs, rappels, météo et statistiques de productivité.',
-                heroTitle: 'Tableau de bord étudiant',
-                heroSubtitle: 'Gérez votre productivité étudiante',
-                statsTitle: '📈 Statistiques',
-                activeTodos: 'Tâches actives',
-                completedTodos: 'Tâches terminées',
-                reachedGoals: 'Objectifs atteints',
-                activeReminders: 'Rappels actifs',
-                weather: '🌤️ Météo',
-                myTodos: '✅ Mes Tâches',
-                newTodo: 'Nouvelle tâche...',
-                low: '🟢 Basse',
-                medium: '🟡 Moyenne',
-                high: '🔴 Haute',
-                quickLinks: '🔗 Liens Rapides',
-                dailyGoals: '🎯 Objectifs du Jour',
-                newGoal: 'Nouvel objectif...',
-                reminders: '⏰ Rappels',
-                reminderTitle: 'Titre du rappel...',
-                reminderGeneral: '📋 Général',
-                reminderExam: '📝 Examen',
-                reminderAssignment: '📚 Devoir',
-                loading: 'Chargement...'
-            },
             calculator: {
                 title: 'Calculatrice - Scott Dev',
                 description: 'Projet calculatrice de Scott Delmart : interface moderne, support clavier/souris et calculs instantanés.',
                 heading: 'Calculatrice',
                 rights: 'Tous droits réservés.'
-            },
-            thanks: {
-                title: 'Merci ! | Scotty Dev',
-                heading: 'Merci pour votre message ✉️',
-                message: 'Votre demande a bien été envoyée. Je vous répondrai rapidement.',
-                backHome: 'Retour à l\'accueil'
             },
             notFound: {
                 title: '404 - Page introuvable | Scotty Dev',
@@ -130,8 +96,7 @@ const I18N = {
                 heading: 'Page introuvable',
                 message: 'Le lien demandé n\'existe plus ou a été déplacé. Tu peux revenir à l\'accueil ou continuer vers les pages principales du site.',
                 backHome: 'Retour à l\'accueil',
-                viewPortfolio: 'Voir le portfolio',
-                openDashboard: 'Ouvrir le dashboard'
+                viewPortfolio: 'Voir le portfolio'
             }
         },
         hero: {
@@ -158,51 +123,37 @@ const I18N = {
                 desc: 'Une calculatrice moderne avec support du clavier et de la souris, offrant un design épuré et des calculs instantanés.',
                 cta: 'Ouvrir la calculatrice'
             },
-            coming: 'Projet à venir',
-            live: 'Live Demo',
-            github: 'GitHub'
+            games: {
+                title: 'Mini-jeux en Python',
+                desc: 'Suite de jeux en console (Allumettes, Devinette, Puissance 4, Morpion) avec une IA jouable à plusieurs niveaux de difficulté.'
+            },
+            latice: {
+                title: 'Latice — Jeu en Java',
+                desc: 'Développement complet d\'un jeu de société en Java : conception orientée objet, règles du jeu et interface graphique JavaFX.'
+            },
+            network: {
+                title: 'Simulation réseau — Kathara',
+                desc: 'Mise en place d\'un réseau complet (serveurs DHCP & DNS, routage, SSH) et analyse du trafic avec WireShark.'
+            },
+            details: 'Voir le détail',
+            viewAll: 'Voir tout mon portfolio'
         },
         contact: {
             title: 'Contactez-moi',
-            intro: 'Collaborons ensemble ! Je suis toujours ouvert à discuter de projets passionnants et de nouvelles opportunités.',
-            form: {
-                name: 'Votre nom',
-                email: 'Votre e-mail',
-                subject: 'Objet',
-                message: 'Votre message',
-                submit: 'Envoyer le message'
-            }
-        },
-        chatbot: {
-            title: 'Assistant Scotty',
-            welcome: 'Salut 👋 Je peux répondre sur mon profil, mes projets et le contact.',
-            q1: 'Qui es-tu ?',
-            q2: 'Tu étudies quoi ?',
-            q3: 'Tes compétences ?',
-            q4: 'Quels projets ?',
-            q5: 'Tu cherches une alternance ?',
-            q6: 'Comment te contacter ?',
-            label: 'Pose ta question',
-            placeholder: 'Pose une question...',
-            send: 'Envoyer',
-            openAria: 'Ouvrir le chatbot',
-            closeAria: 'Fermer le chatbot',
-            unknown: 'Je n\'ai pas encore cette réponse. Tu peux me demander: profil, BUT info, compétences, projets ou contact.',
-            ctaContact: 'Aller au contact',
-            ctaProjects: 'Voir les projets'
+            intro: 'Une question, un projet ou une opportunité ? N\'hésitez pas à me contacter.',
+            location: 'Limoges (87), France'
         },
         langToggle: 'FR / EN (FR)'
     },
     en: {
-        title: 'Scott - Junior Web Developer',
-        description: 'Portfolio of Scott Delmart, junior web developer: projects, skills, student dashboard and contact.',
+        title: 'Scott Delmart — Web Developer | Portfolio',
+        description: 'Portfolio of Scott Delmart, web developer based in Limoges. Explore my projects, technical skills and contact details.',
         nav: {
             home: 'Home',
             about: 'About',
             projects: 'Projects',
             contact: 'Contact',
-            portfolio: 'Portfolio',
-            dashboard: 'Dashboard'
+            portfolio: 'Portfolio'
         },
         pages: {
             portfolio: {
@@ -258,43 +209,11 @@ const I18N = {
                 ctaContact: 'Contact me',
                 ctaCv: 'Download my CV'
             },
-            dashboard: {
-                title: 'Dashboard - Scott Dev',
-                description: 'Student dashboard by Scott Delmart: tasks, goals, reminders, weather and productivity stats.',
-                heroTitle: 'Student dashboard',
-                heroSubtitle: 'Manage your student productivity',
-                statsTitle: '📈 Statistics',
-                activeTodos: 'Active tasks',
-                completedTodos: 'Completed tasks',
-                reachedGoals: 'Goals reached',
-                activeReminders: 'Active reminders',
-                weather: '🌤️ Weather',
-                myTodos: '✅ My Tasks',
-                newTodo: 'New task...',
-                low: '🟢 Low',
-                medium: '🟡 Medium',
-                high: '🔴 High',
-                quickLinks: '🔗 Quick Links',
-                dailyGoals: '🎯 Daily Goals',
-                newGoal: 'New goal...',
-                reminders: '⏰ Reminders',
-                reminderTitle: 'Reminder title...',
-                reminderGeneral: '📋 General',
-                reminderExam: '📝 Exam',
-                reminderAssignment: '📚 Assignment',
-                loading: 'Loading...'
-            },
             calculator: {
                 title: 'Calculator - Scott Dev',
                 description: 'Calculator project by Scott Delmart: modern interface, keyboard/mouse support and instant calculations.',
                 heading: 'Calculator',
                 rights: 'All rights reserved.'
-            },
-            thanks: {
-                title: 'Thank You! | Scotty Dev',
-                heading: 'Thanks for your message ✉️',
-                message: 'Your request has been sent successfully. I will reply soon.',
-                backHome: 'Back to home'
             },
             notFound: {
                 title: '404 - Page not found | Scotty Dev',
@@ -302,8 +221,7 @@ const I18N = {
                 heading: 'Page not found',
                 message: 'The requested link no longer exists or has been moved. You can go back home or continue to the main pages.',
                 backHome: 'Back to home',
-                viewPortfolio: 'View portfolio',
-                openDashboard: 'Open dashboard'
+                viewPortfolio: 'View portfolio'
             }
         },
         hero: {
@@ -330,38 +248,25 @@ const I18N = {
                 desc: 'A modern calculator with keyboard and mouse support, featuring a clean design and instant calculations.',
                 cta: 'Open calculator'
             },
-            coming: 'Coming soon project',
-            live: 'Live Demo',
-            github: 'GitHub'
+            games: {
+                title: 'Python mini-games',
+                desc: 'A set of console games (Nim, Guessing, Connect 4, Tic-tac-toe) with a playable AI offering several difficulty levels.'
+            },
+            latice: {
+                title: 'Latice — Java game',
+                desc: 'Full development of a board game in Java: object-oriented design, game rules and a JavaFX graphical interface.'
+            },
+            network: {
+                title: 'Network simulation — Kathara',
+                desc: 'Setup of a complete network (DHCP & DNS servers, routing, SSH) and traffic analysis with WireShark.'
+            },
+            details: 'View details',
+            viewAll: 'View my full portfolio'
         },
         contact: {
             title: 'Contact me',
-            intro: 'Let\'s collaborate! I\'m always open to discussing exciting projects and new opportunities.',
-            form: {
-                name: 'Your name',
-                email: 'Your email',
-                subject: 'Subject',
-                message: 'Your message',
-                submit: 'Send message'
-            }
-        },
-        chatbot: {
-            title: 'Scotty Assistant',
-            welcome: 'Hi 👋 I can answer questions about my profile, projects and contact details.',
-            q1: 'Who are you?',
-            q2: 'What are you studying?',
-            q3: 'Your skills?',
-            q4: 'Which projects?',
-            q5: 'Are you looking for an internship?',
-            q6: 'How can I contact you?',
-            label: 'Ask your question',
-            placeholder: 'Ask a question...',
-            send: 'Send',
-            openAria: 'Open chatbot',
-            closeAria: 'Close chatbot',
-            unknown: 'I do not have this answer yet. Ask me about: profile, studies, skills, projects or contact.',
-            ctaContact: 'Go to contact',
-            ctaProjects: 'View projects'
+            intro: 'A question, a project or an opportunity? Feel free to get in touch.',
+            location: 'Limoges (87), France'
         },
         langToggle: 'FR / EN (EN)'
     }
@@ -478,7 +383,18 @@ const PORTFOLIO_REPLACEMENTS_EN = [
     ['Découverte des concepts fondamentaux et premières mises en pratique.', 'Discovery of core concepts and first practical applications.'],
     ['Capacité à appliquer les concepts avec accompagnement dans des situations simples.', 'Ability to apply concepts with guidance in simple situations.'],
     ['Application autonome des compétences dans des contextes variés et complexes.', 'Autonomous application of skills in varied and complex contexts.'],
-    ['Expertise et capacité à transmettre — résolution de problèmes complexes de manière innovante.', 'Expertise and ability to transfer knowledge, solving complex problems in innovative ways.']
+    ['Expertise et capacité à transmettre — résolution de problèmes complexes de manière innovante.', 'Expertise and ability to transfer knowledge, solving complex problems in innovative ways.'],
+    // Tech tags (kept at the end so longer phrases above are translated first)
+    ['IA / Algorithmes', 'AI / Algorithms'],
+    ['JavaFX / IHM', 'JavaFX / GUI'],
+    ['Cahier des charges', 'Requirements specification'],
+    ['Développeur BDD', 'Database developer'],
+    ['Visualisation', 'Visualization'],
+    ['Immobilier', 'Real estate'],
+    ['Conférence', 'Conference'],
+    ['Synthèse', 'Synthesis'],
+    ['Recherche', 'Research'],
+    ['Rapport', 'Report']
 ];
 
 function escapeRegExp(value) {
@@ -649,16 +565,6 @@ function applyLanguage(language) {
             node.setAttribute('placeholder', translated);
         }
     });
-
-    const chatbotToggle = document.getElementById('chatbot-toggle');
-    if (chatbotToggle) {
-        chatbotToggle.setAttribute('aria-label', dictionary.chatbot.openAria);
-    }
-
-    const chatbotClose = document.getElementById('chatbot-close');
-    if (chatbotClose) {
-        chatbotClose.setAttribute('aria-label', dictionary.chatbot.closeAria);
-    }
 
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
@@ -1011,160 +917,6 @@ function initSectionAnimations() {
     });
 
     elements.forEach(element => elementObserver.observe(element));
-}
-
-function initChatbot() {
-    const toggleButton = document.getElementById('chatbot-toggle');
-    const panel = document.getElementById('chatbot-panel');
-    const closeButton = document.getElementById('chatbot-close');
-    const messages = document.getElementById('chatbot-messages');
-    const form = document.getElementById('chatbot-form');
-    const input = document.getElementById('chatbot-input');
-    const chips = document.querySelectorAll('.chatbot-chip');
-
-    if (!toggleButton || !panel || !closeButton || !messages || !form || !input) {
-        return;
-    }
-
-    const hasContactSection = Boolean(document.getElementById('contact'));
-    const contactHref = hasContactSection ? '#contact' : '/#contact';
-    const hasProjectsSection = Boolean(document.getElementById('projects'));
-    const projectsHref = hasProjectsSection ? '#projects' : '/#projects';
-
-    const faq = [
-        {
-            keys: ['qui es-tu', 'qui tu es', 'présente toi', 'présente-toi', 'who are you', 'introduce yourself'],
-            answer: {
-                fr: 'Je suis Scotty, étudiant en BUT Informatique, passionné de jeux vidéos et d\'informatique, et ceci est mon site personnel créé au cours de mes années universitaires.',
-                en: 'I am Scotty, a computer science student passionate about video games and software, and this is my personal website built during my studies.'
-            }
-        },
-        {
-            keys: ['but', 'étudies', 'etudes', 'informatique', 'study', 'studying', 'computer science'],
-            answer: {
-                fr: 'Je suis en BUT Informatique et je développe ce portfolio pour présenter mon profil et mes projets.',
-                en: 'I am studying computer science and building this portfolio to showcase my profile and projects.'
-            }
-        },
-        {
-            keys: ['compétences', 'competences', 'stack', 'technos', 'skills', 'technologies'],
-            answer: {
-                fr: 'Mes technos principales: HTML, CSS, JavaScript, Python, Java, C++, Rust, C, PhP, ainsi que des bases React/Node.js.',
-                en: 'My main technologies are HTML, CSS, JavaScript, Python, Java, C++, Rust, C, PHP, plus foundations in React/Node.js.'
-            }
-        },
-        {
-            keys: ['projets', 'projet', 'calculatrice', 'dashboard', 'project', 'projects'],
-            answer: {
-                fr: 'Tu peux voir mes projets dans la section Projets. Je peux aussi t’y emmener.',
-                en: 'You can see my work in the Projects section. I can take you there as well.'
-            },
-            projectsCta: true
-        },
-        {
-            keys: ['alternance', 'stage', 'dispo', 'disponible', 'internship', 'available'],
-            answer: {
-                fr: 'Oui, je suis ouvert aux opportunités (stage/alternance). Tu peux me contacter via le formulaire.',
-                en: 'Yes, I am open to opportunities (internship/work placement). You can contact me via the form.'
-            }
-        },
-        {
-            keys: ['contact', 'mail', 'email', 'contacter', 'reach you'],
-            answer: {
-                fr: 'Tu peux me contacter dans la section Contact de la page. Je peux aussi t’y emmener.',
-                en: 'You can contact me in the Contact section of the page. I can take you there too.'
-            },
-            contactCta: true
-        }
-    ];
-
-    const appendBubble = (text, role = 'bot', options = {}) => {
-        const bubble = document.createElement('p');
-        bubble.className = `chatbot-bubble chatbot-bubble-${role}`;
-        bubble.textContent = text;
-        messages.appendChild(bubble);
-
-        if (options.contactCta) {
-            const cta = document.createElement('a');
-            cta.className = 'chatbot-chip';
-            cta.href = contactHref;
-            cta.textContent = I18N[currentLanguage].chatbot.ctaContact;
-            cta.style.textDecoration = 'none';
-            cta.style.display = 'inline-block';
-            messages.appendChild(cta);
-        }
-
-        if (options.projectsCta) {
-            const cta = document.createElement('a');
-            cta.className = 'chatbot-chip';
-            cta.href = projectsHref;
-            cta.textContent = I18N[currentLanguage].chatbot.ctaProjects;
-            cta.style.textDecoration = 'none';
-            cta.style.display = 'inline-block';
-            messages.appendChild(cta);
-        }
-
-        messages.scrollTop = messages.scrollHeight;
-    };
-
-    const answerQuestion = (question) => {
-        const normalized = question.toLowerCase().trim();
-        const found = faq.find(item => item.keys.some(key => normalized.includes(key)));
-
-        setTimeout(() => {
-            if (found) {
-                const answer = typeof found.answer === 'string' ? found.answer : found.answer[currentLanguage];
-                appendBubble(answer, 'bot', {
-                    contactCta: Boolean(found.contactCta),
-                    projectsCta: Boolean(found.projectsCta)
-                });
-                return;
-            }
-
-            appendBubble(I18N[currentLanguage].chatbot.unknown, 'bot');
-        }, 500);
-    };
-
-    const openPanel = () => {
-        panel.hidden = false;
-        toggleButton.setAttribute('aria-expanded', 'true');
-        input.focus();
-    };
-
-    const closePanel = () => {
-        panel.hidden = true;
-        toggleButton.setAttribute('aria-expanded', 'false');
-    };
-
-    toggleButton.addEventListener('click', () => {
-        if (panel.hidden) {
-            openPanel();
-            return;
-        }
-        closePanel();
-    });
-
-    closeButton.addEventListener('click', closePanel);
-
-    chips.forEach((chip) => {
-        chip.addEventListener('click', () => {
-            const question = chip.dataset.question || '';
-            appendBubble(question, 'user');
-            answerQuestion(question);
-        });
-    });
-
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const question = input.value.trim();
-        if (!question) {
-            return;
-        }
-
-        appendBubble(question, 'user');
-        answerQuestion(question);
-        input.value = '';
-    });
 }
 
 function initSimpleStats() {
