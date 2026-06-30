@@ -118,27 +118,27 @@
 }
 
 .level-1 {
-    background: rgba(255, 255, 255, 0.1);
-    color: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(200, 210, 220, 0.16);
+    color: #e2e8f0;
+    border: 1px solid rgba(200, 210, 220, 0.4);
 }
 
 .level-2 {
-    background: rgba(255, 165, 0, 0.15);
-    color: #111111;
-    border: 1px solid rgba(255, 165, 0, 0.3);
+    background: rgba(255, 165, 0, 0.18);
+    color: #ffc35c;
+    border: 1px solid rgba(255, 165, 0, 0.5);
 }
 
 .level-3 {
-    background: rgba(56, 182, 255, 0.15);
-    color: #111111;
-    border: 1px solid rgba(56, 182, 255, 0.3);
+    background: rgba(56, 182, 255, 0.18);
+    color: #74cbff;
+    border: 1px solid rgba(56, 182, 255, 0.5);
 }
 
 .level-4 {
-    background: rgba(255, 56, 56, 0.15);
-    color: var(--accent);
-    border: 1px solid rgba(255, 56, 56, 0.3);
+    background: rgba(255, 56, 56, 0.18);
+    color: #ff8585;
+    border: 1px solid rgba(255, 56, 56, 0.55);
 }
 
 /* ========================
