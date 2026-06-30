@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const I18N = {
     fr: {
-        title: 'Scott Delmart — Développeur Web | Portfolio',
-        description: 'Portfolio de Scott Delmart, développeur web à Limoges. Découvrez mes projets, mes compétences techniques et mes coordonnées.',
+        title: 'Scotty Delmart — Développeur Web | Portfolio',
+        description: 'Portfolio de Scotty Delmart, développeur web à Limoges. Découvrez mes projets, mes compétences techniques et mes coordonnées.',
         nav: {
             home: 'Accueil',
             about: 'À propos',
@@ -39,7 +39,7 @@ const I18N = {
         pages: {
             portfolio: {
                 title: 'Portfolio - Scotty Dev',
-                description: 'Portfolio détaillé de Scott Delmart : compétences BUT Informatique, SAE, projets et niveaux de maîtrise.',
+                description: 'Portfolio détaillé de Scotty Delmart : compétences BUT Informatique, SAE, projets et niveaux de maîtrise.',
                 heroTitle: 'Mon Portfolio',
                 heroSubtitle: 'Compétences du Programme National — BUT Informatique',
                 intro: 'Retrouvez ici l\'ensemble de mes compétences et projets réalisés au cours de ma formation. Chaque compétence est illustrée par des projets concrets avec mes rôles et livrables associés.',
@@ -91,8 +91,8 @@ const I18N = {
                 ctaCv: 'Télécharger mon CV'
             },
             calculator: {
-                title: 'Calculatrice - Scott Dev',
-                description: 'Projet calculatrice de Scott Delmart : interface moderne, support clavier/souris et calculs instantanés.',
+                title: 'Calculatrice - Scotty Dev',
+                description: 'Projet calculatrice de Scotty Delmart : interface moderne, support clavier/souris et calculs instantanés.',
                 heading: 'Calculatrice',
                 rights: 'Tous droits réservés.'
             },
@@ -158,8 +158,8 @@ const I18N = {
         langToggle: 'FR / EN (FR)'
     },
     en: {
-        title: 'Scott Delmart — Web Developer | Portfolio',
-        description: 'Portfolio of Scott Delmart, web developer based in Limoges. Explore my projects, technical skills and contact details.',
+        title: 'Scotty Delmart — Web Developer | Portfolio',
+        description: 'Portfolio of Scotty Delmart, web developer based in Limoges. Explore my projects, technical skills and contact details.',
         nav: {
             home: 'Home',
             about: 'About',
@@ -176,7 +176,7 @@ const I18N = {
         pages: {
             portfolio: {
                 title: 'Portfolio - Scotty Dev',
-                description: 'Detailed portfolio of Scott Delmart: computer science skills, projects and proficiency levels.',
+                description: 'Detailed portfolio of Scotty Delmart: computer science skills, projects and proficiency levels.',
                 heroTitle: 'My Portfolio',
                 heroSubtitle: 'National Program Skills — Computer Science B.U.T.',
                 intro: 'Here you can find all my skills and projects completed during my studies. Each skill is supported by concrete projects with my role and deliverables.',
@@ -228,8 +228,8 @@ const I18N = {
                 ctaCv: 'Download my CV'
             },
             calculator: {
-                title: 'Calculator - Scott Dev',
-                description: 'Calculator project by Scott Delmart: modern interface, keyboard/mouse support and instant calculations.',
+                title: 'Calculator - Scotty Dev',
+                description: 'Calculator project by Scotty Delmart: modern interface, keyboard/mouse support and instant calculations.',
                 heading: 'Calculator',
                 rights: 'All rights reserved.'
             },
