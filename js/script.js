@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const I18N = {
     fr: {
-        title: 'Scotty Delmart — Développeur Web | Portfolio',
-        description: 'Portfolio de Scotty Delmart, développeur web à Limoges. Découvrez mes projets, mes compétences techniques et mes coordonnées.',
+        title: 'Scotty Delmart — Développeur Web & Applications | Portfolio',
+        description: 'Portfolio de Scotty Delmart, développeur web, applications et logiciels basé à Limoges. Découvrez mes projets, mes compétences et mes coordonnées.',
         nav: {
             home: 'Accueil',
             about: 'À propos',
@@ -107,9 +107,9 @@ const I18N = {
         },
         hero: {
             greeting: 'Bonjour, je suis Scotty 👋',
-            quote: 'Créer des expériences web magnifiques et fonctionnelles',
+            quote: 'Créer des sites web, des applications et des logiciels beaux et fonctionnels',
             cv: 'Télécharger mon CV',
-            typing: ['Développeur Web', 'Front-End', 'Résolveur de problèmes']
+            typing: ['Développeur Web', 'Développeur d\'applications', 'Développeur logiciel', 'Résolveur de problèmes']
         },
         stats: {
             projects: 'Projets construits',
@@ -118,8 +118,8 @@ const I18N = {
         },
         about: {
             title: 'À propos de moi',
-            p1: 'Développeur web en formation (BUT Informatique) basé à Limoges, je conçois des sites et interfaces rapides, modernes et soignés — du design jusqu\'à la mise en ligne.',
-            p2: 'Je suis ouvert aux opportunités d\'alternance comme aux projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un site web concret, accessible et agréable à utiliser.',
+            p1: 'Développeur en formation (BUT Informatique) basé à Limoges, je conçois des sites web, des applications et des logiciels rapides, modernes et soignés — de la conception à la livraison.',
+            p2: 'Je suis ouvert aux opportunités d\'alternance comme aux projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un produit numérique concret, accessible et agréable à utiliser.',
             skills: 'Compétences & Technologies'
         },
         projects: {
@@ -158,8 +158,8 @@ const I18N = {
         langToggle: 'FR / EN (FR)'
     },
     en: {
-        title: 'Scotty Delmart — Web Developer | Portfolio',
-        description: 'Portfolio of Scotty Delmart, web developer based in Limoges. Explore my projects, technical skills and contact details.',
+        title: 'Scotty Delmart — Web & Software Developer | Portfolio',
+        description: 'Portfolio of Scotty Delmart, web, application and software developer based in Limoges. Explore my projects, skills and contact details.',
         nav: {
             home: 'Home',
             about: 'About',
@@ -244,9 +244,9 @@ const I18N = {
         },
         hero: {
             greeting: 'Hi, I\'m Scotty 👋',
-            quote: 'Building beautiful and functional web experiences',
+            quote: 'Building beautiful, functional websites, applications and software',
             cv: 'Download my CV',
-            typing: ['Web Developer', 'Front-End', 'Problem Solver']
+            typing: ['Web Developer', 'App Developer', 'Software Developer', 'Problem Solver']
         },
         stats: {
             projects: 'Projects built',
@@ -255,8 +255,8 @@ const I18N = {
         },
         about: {
             title: 'About me',
-            p1: 'A web developer in training (BUT Computer Science) based in Limoges, I build fast, modern and polished websites and interfaces — from design all the way to going live.',
-            p2: 'I\'m open to work-study (alternance) opportunities as well as client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant website.',
+            p1: 'A developer in training (BUT Computer Science) based in Limoges, I build fast, modern and polished websites, applications and software — from concept to delivery.',
+            p2: 'I\'m open to work-study (alternance) opportunities as well as client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant digital product.',
             skills: 'Skills & Technologies'
         },
         projects: {
