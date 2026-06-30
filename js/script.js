@@ -27,8 +27,14 @@ const I18N = {
             home: 'Accueil',
             about: 'À propos',
             projects: 'Projets',
+            pro: 'Activité pro',
             contact: 'Contact',
             portfolio: 'Portfolio'
+        },
+        pro: {
+            title: 'Besoin d\'un site web ?',
+            text: 'Je conçois des sites vitrines modernes et performants pour les pros, indépendants et associations via mon activité Delmart Digital.',
+            cta: 'Découvrir Delmart Digital'
         },
         pages: {
             portfolio: {
@@ -112,12 +118,18 @@ const I18N = {
         },
         about: {
             title: 'À propos de moi',
-            p1: 'Je suis étudiant en BUT Informatique, et ceci est mon site web.',
-            p2: 'J\'aime créer des sites web et développer des interfaces à la fois simples, modernes et agréables à utiliser.',
+            p1: 'Développeur web en formation (BUT Informatique) basé à Limoges, je conçois des sites et interfaces rapides, modernes et soignés — du design jusqu\'à la mise en ligne.',
+            p2: 'Je suis ouvert aux opportunités d\'alternance comme aux projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un site web concret, accessible et agréable à utiliser.',
             skills: 'Compétences & Technologies'
         },
         projects: {
             title: 'Mes Projets',
+            featured: 'Projet phare',
+            viewSite: 'Voir le site',
+            delmart: {
+                title: 'Delmart Digital',
+                desc: 'Mon activité de création de sites web professionnels : sites vitrines modernes, rapides et optimisés pour le référencement.'
+            },
             calc: {
                 title: 'Calculatrice',
                 desc: 'Une calculatrice moderne avec support du clavier et de la souris, offrant un design épuré et des calculs instantanés.',
@@ -152,8 +164,14 @@ const I18N = {
             home: 'Home',
             about: 'About',
             projects: 'Projects',
+            pro: 'Freelance',
             contact: 'Contact',
             portfolio: 'Portfolio'
+        },
+        pro: {
+            title: 'Need a website?',
+            text: 'I design modern, high-performance showcase websites for professionals, freelancers and associations through my Delmart Digital business.',
+            cta: 'Discover Delmart Digital'
         },
         pages: {
             portfolio: {
@@ -237,12 +255,18 @@ const I18N = {
         },
         about: {
             title: 'About me',
-            p1: 'I am a computer science student, and this is my website.',
-            p2: 'I enjoy building websites and creating interfaces that are simple, modern, and pleasant to use.',
+            p1: 'A web developer in training (BUT Computer Science) based in Limoges, I build fast, modern and polished websites and interfaces — from design all the way to going live.',
+            p2: 'I\'m open to work-study (alternance) opportunities as well as client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant website.',
             skills: 'Skills & Technologies'
         },
         projects: {
             title: 'My Projects',
+            featured: 'Featured project',
+            viewSite: 'Visit the site',
+            delmart: {
+                title: 'Delmart Digital',
+                desc: 'My professional web design business: modern, fast and SEO-optimized showcase websites.'
+            },
             calc: {
                 title: 'Calculator',
                 desc: 'A modern calculator with keyboard and mouse support, featuring a clean design and instant calculations.',
