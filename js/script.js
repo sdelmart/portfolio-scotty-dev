@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initTypingEffect,
         initOrbitAnimations,
         initSunPhotoModal,
+        initProjectLightbox,
         initSmoothScroll,
         initSectionAnimations,
         initSimpleStats
@@ -126,9 +127,23 @@ const I18N = {
             title: 'Mes Projets',
             featured: 'Projet phare',
             viewSite: 'Voir le site',
+            code: 'Voir le code',
             delmart: {
                 title: 'Delmart Digital',
                 desc: 'Mon activité de création de sites web et d\'applications sur mesure : des solutions modernes, rapides et optimisées.'
+            },
+            sasonyx: {
+                badge: 'Stage en entreprise',
+                title: 'Sasonyx Planning',
+                desc: 'Application web réalisée pendant mon stage pour l\'entreprise Sasonyx. Deux volets : un site vitrine (présentation des services, formulaire de contact avec envoi d\'e-mails) et une application interne de gestion des interventions techniques — calendrier interactif vues semaine/mois (FullCalendar), base clients et équipements, affectation des techniciens et suivi des statuts en temps réel. Authentification et données sur Supabase (PostgreSQL), déploiement Vercel.'
+            },
+            netflix: {
+                title: 'Netflix — Plateforme de streaming',
+                desc: 'Projet SAE d\'architecture logicielle : un clone de Netflix full-stack en trois briques — interface utilisateur (React), back-office d\'administration et API REST (Express + MongoDB). Catalogue de films filtré par genres, système de location payante, espace « Mes locations » et authentification JWT avec mots de passe hachés (bcrypt). Architecture pensée autour des principes SOLID et de plusieurs design patterns (MVC, Factory, Strategy…).'
+            },
+            fiche: {
+                title: 'Projet réalisé pour Legrand',
+                desc: 'Projet SAE mené pour Legrand : digitaliser la création des modes opératoires industriels, aujourd\'hui réalisés sous Excel. Tableau de bord des documents avec statuts (actif, archivé, en création, en modification), gestion des versions et recherche par titre/référence. Éditeur par blocs en glisser-déposer, import automatique d\'un tableau Excel (copier-coller) et annotation d\'images sur canvas — formes, flèches, calques, rognage — grâce à Fabric.js. Rôles éditeur/lecteur. Front Vue 3 + PrimeVue, API Express + TypeORM (SQL Server).'
             },
             calc: {
                 title: 'Calculatrice',
@@ -141,7 +156,7 @@ const I18N = {
             },
             latice: {
                 title: 'Latice — Jeu en Java',
-                desc: 'Développement complet d\'un jeu de société en Java : conception orientée objet, règles du jeu et interface graphique JavaFX.'
+                desc: 'Adaptation du jeu de société Latice en Java avec interface JavaFX. Jeu au tour par tour à deux joueurs : plateau 9×9 avec cases spéciales (soleil/lune), pose de tuiles en glisser-déposer selon les règles de correspondance couleur/symbole, gestion des racks, de la pioche, des points et des tours par un arbitre. Architecture MVC (métier / contrôleurs / vues FXML), écrans multiples (accueil, chargement, partie, fin de partie, paramètres), musique et animations. Conception orientée objet testée avec JUnit 5.'
             },
             network: {
                 title: 'Simulation réseau — Kathara',
@@ -263,9 +278,23 @@ const I18N = {
             title: 'My Projects',
             featured: 'Featured project',
             viewSite: 'Visit the site',
+            code: 'View the code',
             delmart: {
                 title: 'Delmart Digital',
                 desc: 'My business building custom websites and applications: modern, fast and optimized solutions.'
+            },
+            sasonyx: {
+                badge: 'Internship project',
+                title: 'Sasonyx Planning',
+                desc: 'Web app built during my internship for the company Sasonyx. Two parts: a showcase site (services overview, contact form with email sending) and an internal technical-intervention management app — interactive week/month calendar (FullCalendar), client and equipment database, technician assignment and real-time status tracking. Authentication and data on Supabase (PostgreSQL), deployed on Vercel.'
+            },
+            netflix: {
+                title: 'Netflix — Streaming platform',
+                desc: 'Software-architecture project: a full-stack Netflix clone in three parts — a user interface (React), an admin back-office and a REST API (Express + MongoDB). Movie catalog filtered by genre, paid rental system, a “My rentals” area and JWT authentication with hashed passwords (bcrypt). Architecture built around SOLID principles and several design patterns (MVC, Factory, Strategy…).'
+            },
+            fiche: {
+                title: 'Project delivered for Legrand',
+                desc: 'University project for Legrand: digitizing the creation of industrial operating procedures currently made in Excel. Document dashboard with statuses (active, archived, in creation, in modification), version management and search by title/reference. Drag-and-drop block editor, automatic Excel-table import (copy-paste) and image annotation on canvas — shapes, arrows, layers, cropping — powered by Fabric.js. Editor/reader roles. Vue 3 + PrimeVue front end, Express + TypeORM (SQL Server) API.'
             },
             calc: {
                 title: 'Calculator',
@@ -278,7 +307,7 @@ const I18N = {
             },
             latice: {
                 title: 'Latice — Java game',
-                desc: 'Full development of a board game in Java: object-oriented design, game rules and a JavaFX graphical interface.'
+                desc: 'Java adaptation of the Latice board game with a JavaFX interface. Two-player turn-based game: a 9×9 board with special cells (sun/moon), drag-and-drop tile placement following colour/symbol matching rules, rack and draw-bag management, scoring and turns handled by a referee. MVC architecture (domain / controllers / FXML views), multiple screens (home, loading, game, game-over, settings), music and animations. Object-oriented design tested with JUnit 5.'
             },
             network: {
                 title: 'Network simulation — Kathara',
@@ -990,6 +1019,84 @@ function initSimpleStats() {
     stats.forEach((node) => {
         node.textContent = '0';
         observer.observe(node);
+    });
+}
+
+function initProjectLightbox() {
+    const images = document.querySelectorAll('.project-image img');
+    if (!images.length) {
+        return;
+    }
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = `
+        <button class="lightbox-close" type="button" aria-label="Fermer">&times;</button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" src="" alt="">
+            <figcaption class="lightbox-caption"></figcaption>
+        </figure>
+    `;
+    document.body.appendChild(overlay);
+
+    const overlayImg = overlay.querySelector('.lightbox-img');
+    const caption = overlay.querySelector('.lightbox-caption');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+    let lastFocused = null;
+
+    const open = (src, alt) => {
+        overlayImg.src = src;
+        overlayImg.alt = alt || '';
+        caption.textContent = alt || '';
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    };
+
+    const close = () => {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        overlayImg.src = '';
+        if (lastFocused) {
+            lastFocused.focus();
+        }
+    };
+
+    images.forEach((img) => {
+        img.classList.add('zoomable');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', `Agrandir : ${img.alt || 'image du projet'}`);
+
+        const trigger = () => {
+            lastFocused = img;
+            open(img.currentSrc || img.src, img.alt);
+        };
+
+        img.addEventListener('click', trigger);
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                trigger();
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay || event.target.classList.contains('lightbox-figure')) {
+            close();
+        }
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && overlay.classList.contains('open')) {
+            close();
+        }
     });
 }
 

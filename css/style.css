@@ -1318,3 +1318,114 @@ a.contact-item:hover span {
     justify-content: center;
   }
 }
+
+/* --- Project image zoom / lightbox --- */
+.project-image {
+  position: relative;
+}
+
+.project-image img.zoomable {
+  cursor: zoom-in;
+}
+
+.project-image::after {
+  content: "🔍";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.project-card:hover .project-image::after,
+.project-image img.zoomable:focus + .project-image::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(5, 0, 0, 0.92);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-figure {
+  margin: 0;
+  max-width: 95vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  cursor: zoom-out;
+}
+
+.lightbox-img {
+  max-width: 95vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 56, 56, 0.35);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  background: #000;
+  cursor: default;
+}
+
+.lightbox-caption {
+  color: #d8d2d2;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  max-width: 760px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 56, 56, 0.15);
+  border: 1px solid rgba(255, 56, 56, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--accent);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+  .lightbox-overlay { padding: 16px; }
+  .lightbox-close { top: 10px; right: 12px; }
+}

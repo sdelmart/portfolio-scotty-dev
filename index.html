@@ -190,11 +190,11 @@
             <div class="container">
                 <div class="stats-grid">
                     <article class="stat-card">
-                        <p class="stat-value" data-target="4">0</p>
+                        <p class="stat-value" data-target="8">0</p>
                         <p class="stat-label" data-i18n="stats.projects">Projets construits</p>
                     </article>
                     <article class="stat-card">
-                        <p class="stat-value" data-target="12">0</p>
+                        <p class="stat-value" data-target="16">0</p>
                         <p class="stat-label" data-i18n="stats.tech">Technologies utilisées</p>
                     </article>
                     <article class="stat-card">
@@ -267,6 +267,77 @@
                     </div>
                     <div class="project-card">
                         <div class="project-image">
+                            <img src="assets/images/projets/sasonyx.jpg" alt="Aperçu de l'application Sasonyx" class="project-image-full" loading="lazy" decoding="async" width="400" height="250">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-badge" data-i18n="projects.sasonyx.badge">Stage en entreprise</span>
+                            <h3 data-i18n="projects.sasonyx.title">Sasonyx Planning</h3>
+                            <p data-i18n="projects.sasonyx.desc">Application web réalisée pendant mon stage pour l'entreprise Sasonyx. Deux volets : un site vitrine (présentation des services, formulaire de contact avec envoi d'e-mails) et une application interne de gestion des interventions techniques — calendrier interactif vues semaine/mois (FullCalendar), base clients et équipements, affectation des techniciens et suivi des statuts en temps réel. Authentification et données sur Supabase (PostgreSQL), déploiement Vercel.</p>
+                            <div class="project-tech">
+                                <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"> Next.js</a>
+                                <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"> TypeScript</a>
+                                <a href="https://supabase.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase"> Supabase</a>
+                                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"> Tailwind</a>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sdelmart/sasonyx" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.code">Voir le code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projets/fiche-securite.jpg" alt="Aperçu de l'application Legrand de création de modes opératoires" class="project-image-full" loading="lazy" decoding="async" width="400" height="250">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-i18n="projects.fiche.title">Projet réalisé pour Legrand</h3>
+                            <p data-i18n="projects.fiche.desc">Projet SAE mené pour Legrand : digitaliser la création des modes opératoires industriels, aujourd'hui réalisés sous Excel. Tableau de bord des documents avec statuts (actif, archivé, en création, en modification), gestion des versions et recherche par titre/référence. Éditeur par blocs en glisser-déposer, import automatique d'un tableau Excel (copier-coller) et annotation d'images sur canvas — formes, flèches, calques, rognage — grâce à Fabric.js. Rôles éditeur/lecteur. Front Vue 3 + PrimeVue, API Express + TypeORM (SQL Server).</p>
+                            <div class="project-tech">
+                                <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js"> Vue.js</a>
+                                <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"> TypeScript</a>
+                                <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"> Express</a>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/krousseau19/sae_legrand" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.code">Voir le code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projets/netflix.jpg" alt="Aperçu du clone Netflix" class="project-image-full" loading="lazy" decoding="async" width="400" height="250">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-i18n="projects.netflix.title">Netflix — Plateforme de streaming</h3>
+                            <p data-i18n="projects.netflix.desc">Projet SAE d'architecture logicielle : un clone de Netflix full-stack en trois briques — interface utilisateur (React), back-office d'administration et API REST (Express + MongoDB). Catalogue de films filtré par genres, système de location payante, espace « Mes locations » et authentification JWT avec mots de passe hachés (bcrypt). Architecture pensée autour des principes SOLID et de plusieurs design patterns (MVC, Factory, Strategy…).</p>
+                            <div class="project-tech">
+                                <a href="https://react.dev/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React</a>
+                                <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"> Express</a>
+                                <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</a>
+                                <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"> JavaScript</a>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sdelmart/Netflix" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.code">Voir le code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projets/latice.jpg" alt="Aperçu du jeu Latice développé en JavaFX" class="project-image-full" loading="lazy" decoding="async" width="400" height="250">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-i18n="projects.latice.title">Latice — Jeu en Java</h3>
+                            <p data-i18n="projects.latice.desc">Adaptation du jeu de société Latice en Java avec interface JavaFX. Jeu au tour par tour à deux joueurs : plateau 9×9 avec cases spéciales (soleil/lune), pose de tuiles en glisser-déposer selon les règles de correspondance couleur/symbole, gestion des racks, de la pioche, des points et des tours par un arbitre. Architecture MVC (métier / contrôleurs / vues FXML), écrans multiples (accueil, chargement, partie, fin de partie, paramètres), musique et animations. Conception orientée objet testée avec JUnit 5.</p>
+                            <div class="project-tech">
+                                <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</a>
+                                <a href="https://openjfx.io/" target="_blank" rel="noopener noreferrer">JavaFX</a>
+                                <a href="https://junit.org/junit5/" target="_blank" rel="noopener noreferrer">JUnit 5</a>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/cfargeot8724/latice" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.code">Voir le code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
                             <img src="assets/images/Calculatrice-optimized.jpg" alt="Aperçu du projet calculatrice" class="project-image-full project-image-calculator" loading="lazy" decoding="async" width="400" height="250">
                         </div>
                         <div class="project-content">
@@ -289,19 +360,6 @@
                             <p data-i18n="projects.games.desc">Suite de jeux en console (Allumettes, Devinette, Puissance 4, Morpion) avec une IA jouable à plusieurs niveaux de difficulté.</p>
                             <div class="project-tech">
                                 <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</a>
-                            </div>
-                            <div class="project-links">
-                                <a href="pages/portfolio.html#c1" class="project-link" data-i18n="projects.details">Voir le détail</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image-placeholder" aria-hidden="true">♟️</div>
-                        <div class="project-content">
-                            <h3 data-i18n="projects.latice.title">Latice — Jeu en Java</h3>
-                            <p data-i18n="projects.latice.desc">Développement complet d'un jeu de société en Java : conception orientée objet, règles du jeu et interface graphique JavaFX.</p>
-                            <div class="project-tech">
-                                <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</a>
                             </div>
                             <div class="project-links">
                                 <a href="pages/portfolio.html#c1" class="project-link" data-i18n="projects.details">Voir le détail</a>
