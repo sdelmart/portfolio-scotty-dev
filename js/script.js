@@ -462,8 +462,10 @@ function replaceFlexible(source, fr, en) {
 }
 
 function applyPortfolioDeepTranslation(language, dictionary) {
-    const path = globalThis.location.pathname;
-    const isPortfolioPage = path.endsWith('/pages/portfolio.html') || path.endsWith('portfolio.html');
+    const path = globalThis.location.pathname.replace(/\/+$/, '');
+    const isPortfolioPage = path.endsWith('/pages/portfolio')
+        || path.endsWith('portfolio.html')
+        || path === '/portfolio';
     if (!isPortfolioPage) {
         return;
     }
