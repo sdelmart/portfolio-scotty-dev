@@ -1,162 +1,79 @@
 # Portfolio Scotty Dev
 
-Portfolio personnel avec dashboard étudiant interactif.
+Portfolio personnel statique (HTML/CSS/JS), bilingue FR/EN, présentant mes compétences, projets et activité freelance (Delmart Digital).
 
 ## Démo en ligne
 
-- **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app) 
-- **Dashboard** : [scotty-dev.netlify.app/pages/dashboard.html](https://scotty-dev.netlify.app/pages/dashboard.html)
+- **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app)
+- **Détail des compétences (BUT Informatique)** : [scotty-dev.netlify.app/pages/portfolio.html](https://scotty-dev.netlify.app/pages/portfolio.html)
+- **Calculatrice** : [scotty-dev.netlify.app/pages/calculatrice.html](https://scotty-dev.netlify.app/pages/calculatrice.html)
 
 ## Fonctionnalités
 
-### Portfolio
-- 🏠 Page d'accueil avec présentation
-- 👨‍💻 Section À propos
-- 💼 Projets et réalisations
-- 📧 Formulaire de contact
-- 💬 Chatbot FAQ gratuit (sans API externe)
-- 🎯 Design moderne et responsive
-
-### Dashboard Étudiant
-- ✅ Gestion de tâches avec priorités
-- 🎯 Objectifs quotidiens avec progression
-- ⏰ Rappels et échéances
-- 🌤️ Widget météo
-- 🔗 Liens rapides personnalisables
-- 📊 Statistiques de productivité
+- 🏠 Page d'accueil : présentation, statistiques rapides, à propos
+- 🎓 Page Portfolio : tableau des compétences BUT Informatique (C1 à C6) avec preuves (SAE) et projets détaillés
+- 💼 Section Projets et Activité pro (Delmart Digital)
+- 📧 Section Contact (email, localisation, réseaux LinkedIn/GitHub)
+- 🌐 Traduction FR/EN intégrale (y compris le tableau de compétences)
+- 🧮 Mini-projet Calculatrice
+- 🎯 Design responsive, thème sombre
 
 ## Technologies
 
-### Frontend
-- HTML5, CSS3, JavaScript
-- Design responsive
-- Animations CSS
-- Chatbot FAQ local (questions/réponses prédéfinies)
-
-### Backend (API)
-- Flask (Python)
-- SQLite / PostgreSQL
-- REST API
+- HTML5, CSS3, JavaScript (aucun framework, aucun backend)
+- Animations CSS et JS (scroll reveal, typing effect)
+- Système de traduction FR/EN maison (`js/script.js`)
+- Hébergement statique sur Netlify
 
 ## Structure du Projet
 
 ```
-portfolio rouge/
-├── css/                    # Fichiers CSS
+Portfolio/
+├── css/
 │   ├── style.css
-│   └── dashboard-style.css
-├── js/                     # Fichiers JavaScript
-│   ├── script.js
-│   ├── dashboard-script.js
-│   └── dashboard-stats.js
-├── assets/                 # Images et médias
-│   └── images/
-├── docs/                   # Documentation
+│   ├── portfolio-style.css
+│   └── calculatrice-style.css
+├── js/
+│   ├── script.js              # Logique commune : nav, animations, i18n
+│   └── calculatrice-script.js
+├── assets/
+│   ├── images/
+│   └── documents/              # CV téléchargeable
+├── docs/
 │   ├── GUIDE_DEPLOIEMENT.md
-│   └── DEPLOIEMENT_FLASK.md
-├── index.html             # Page d'accueil
-├── pages/                 # Pages secondaires
-│   ├── portfolio.html
-│   ├── dashboard.html
-│   └── calculatrice.html
-├── netlify.toml          # Config Netlify
-├── start.command         # Démarrer Flask localement
-├── stop.command          # Arrêter Flask
-└── configure-api.sh      # Configurer l'URL de l'API
+│   └── SEO_GOOGLE_SUBMISSION_CHECKLIST.md
+├── pages/
+│   ├── portfolio.html          # Détail des compétences BUT Informatique
+│   ├── calculatrice.html
+│   └── 404.html
+├── index.html                  # Page d'accueil
+├── netlify.toml                 # Config Netlify (redirections, cache, headers)
+├── sitemap.xml / sitemap_index.xml / sitemap_google.xml
+└── robots.txt
 ```
 
-## Chatbot FAQ (gratuit)
+## Traduction FR/EN
 
-Le chatbot est entièrement local et ne consomme aucune API externe (coût 0€).
-
-- Interface du bot : `index.html`
-- Styles du bot : `css/style.css`
-- Réponses et mots-clés : `js/script.js` (fonction `initChatbot`, tableau `faq`)
-
-Pour modifier les réponses, édite les entrées `keys` et `answer` dans `js/script.js`.
+La logique de traduction vit dans `js/script.js` :
+- `I18N` : dictionnaire FR/EN pour les textes courants (`data-i18n`)
+- Page Portfolio : traduction approfondie du contenu (tableau de compétences via `data-portfolio-i18n`, cartes de projets via `PORTFOLIO_REPLACEMENTS_EN`)
+- Le choix de langue est mémorisé dans `localStorage` (`site-language`)
 
 ## Démarrage Local
 
-### Prérequis
-- Python 3.8+
-- Flask API démarrée (voir projet `mon_dashboard`)
-- Navigateur moderne
+Aucune dépendance ni build requis. Pour prévisualiser le site en local :
 
-### Installation
-
-1. **Cloner le repository**
-   ```bash
-   git clone https://github.com/votre-username/portfolio-scotty-dev.git
-   cd portfolio-scotty-dev
-   ```
-
-2. **Démarrer Flask API**
-   ```bash
-   ./start.command
-   ```
-   *(Lance automatiquement Flask en arrière-plan)*
-
-3. **Ouvrir le portfolio**
-   - Ouvrir `index.html` avec Live Server dans VS Code
-   - Ou naviguer vers `http://localhost:5500`
-
-4. **Arrêter les services**
-   ```bash
-   ./stop.command
-   ```
-
-## Déploiement en Production
-
-### Guide Complet
-Consultez le [Guide de Déploiement Détaillé](docs/GUIDE_DEPLOIEMENT.md)
-
-### Résumé Rapide
-
-1. **Frontend sur Netlify**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/username/portfolio-scotty-dev.git
-   git push -u origin main
-   ```
-   Puis connecter à Netlify via GitHub.
-
-2. **Backend sur Render**
-   Suivre les instructions dans [DEPLOIEMENT_FLASK.md](docs/DEPLOIEMENT_FLASK.md)
-
-3. **Configurer l'URL de l'API**
-   ```bash
-   ./configure-api.sh
-   ```
-   Entrer l'URL fournie par Render.
-
-## API Endpoints
-
-### Base URL (local)
-```
-http://127.0.0.1:5001/api
+```bash
+python3 -m http.server 8080
 ```
 
-### Base URL (production)
-```
-https://scotty-dashboard-api.onrender.com/api
-```
+Puis ouvrir `http://localhost:8080`.
 
-### Endpoints disponibles
-- `GET /todos` - Liste des tâches
-- `POST /todos` - Créer une tâche
-- `PUT /todos/:id` - Mettre à jour une tâche
-- `DELETE /todos/:id` - Supprimer une tâche
-- `GET /goals` - Liste des objectifs
-- `GET /goals/stats` - Statistiques des objectifs
-- `POST /goals` - Créer un objectif
-- `POST /goals/:id/toggle` - Toggle un objectif
-- `GET /reminders` - Liste des rappels
-- `POST /reminders` - Créer un rappel
-- `DELETE /reminders/:id` - Supprimer un rappel
-- `GET /weather` - Données météo
-- `GET /links` - Liens rapides
+## Déploiement
+
+Le site est déployé sur Netlify (`netlify.toml` gère les redirections d'URLs propres et les en-têtes de cache). Un push sur `main` déclenche un redéploiement automatique.
+
+Consultez le [Guide de Déploiement](docs/GUIDE_DEPLOIEMENT.md) pour plus de détails.
 
 ## Personnalisation
 
@@ -171,12 +88,6 @@ Les couleurs principales sont définies dans `css/style.css` :
 }
 ```
 
-### Modifier l'API URL
-Utiliser le script fourni :
-```bash
-./configure-api.sh
-```
-
 ## Contribution
 
 Les contributions sont les bienvenues ! N'hésitez pas à :
@@ -186,11 +97,11 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 4. Push vers la branche (`git push origin feature/amelioration`)
 5. Ouvrir une Pull Request
 
-
 ## 👤 Auteur
 
-**Scotty Dev**
+**Scotty Delmart**
 - GitHub: [@sdelmart](https://github.com/sdelmart)
+- LinkedIn: [scotty-delmart](https://www.linkedin.com/in/scotty-delmart/)
 - Portfolio: [scotty-dev.netlify.app](https://scotty-dev.netlify.app)
 
 ---
