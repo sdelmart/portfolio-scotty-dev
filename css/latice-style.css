@@ -1,0 +1,51 @@
+/* ==========================
+   LATICE PROJECT PAGE STYLES
+   ========================== */
+
+.latice-status-badge {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 56, 56, 0.15);
+    color: var(--accent-2);
+    border: 1px solid rgba(255, 56, 56, 0.4);
+}
+
+.latice-lead {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 32px;
+}
+
+.latice-architecture {
+    overflow-x: auto;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 56, 56, 0.2);
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    white-space: pre;
+}
+
+.latice-roadmap ul li {
+    list-style: none;
+}
+
+.latice-roadmap ul li::before {
+    content: '☐';
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .latice-architecture {
+        font-size: 0.68rem;
+    }
+}

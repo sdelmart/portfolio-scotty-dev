@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latice — Scotty Dev</title>
+    <meta name="description" content="Latice : jeu de société en Java/JavaFX repris en solo après un projet de groupe (SAE 1ère année). Mode solo contre une IA, aide au placement, historique, thèmes visuels, 35 tests JUnit 5.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scotty Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/latice.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="Latice — Scotty Dev">
+    <meta property="og:description" content="Jeu de société en Java/JavaFX repris en solo : mode IA, aide au placement, historique, thèmes visuels, 35 tests JUnit 5.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/latice.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/projets/latice.jpg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
+    <link rel="stylesheet" href="../css/style.css?v=20260922">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/latice-style.css?v=20260922">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="nav-container" aria-label="Navigation principale">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span></a>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="../index.html#pro" class="nav-link" data-i18n="nav.pro">Activité pro</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/scotty-delmart/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/sdelmart" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
+            </div>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="portfolio-hero">
+            <div class="container">
+                <span class="latice-status-badge">🎲 Projet personnel</span>
+                <h1 class="portfolio-main-title">
+                    Latice
+                    <span class="portfolio-subtitle">Jeu de société en Java/JavaFX, repris en solo</span>
+                </h1>
+                <p class="portfolio-intro">Un jeu de plateau au tour par tour développé en équipe pendant une SAE de 1ère année de BUT Informatique, que j'ai repris seul pour le pousser bien au-delà du rendu de départ : mode solo contre une IA, aide au placement, personnalisation, historique de parties, et une interface entièrement repensée.</p>
+            </div>
+        </section>
+
+        <!-- Le projet -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🎯 Le projet</h2>
+                <p class="latice-lead">Latice est un jeu de tuiles au tour par tour (dans l'esprit de Qwirkle) : deux joueurs posent des tuiles couleur/symbole sur un plateau 9×9, en respectant des règles d'adjacence, pour marquer des points. Le projet de base venait d'une SAE de groupe — fonctionnel, mais sommaire : écran d'accueil minuscule, boutons mal alignés, aucune protection contre les chemins de fichiers sensibles à la casse (donc cassé sous Linux), et surtout un jeu limité à deux joueurs humains sur le même poste.</p>
+
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Pourquoi le reprendre ?</h4>
+                        <ul>
+                            <li>Retravailler seul un projet de groupe : reprendre en main une base de code existante plutôt que repartir de zéro</li>
+                            <li>Aller au bout d'une idée jusqu'au bout — un jeu qui ne se joue qu'à deux devant le même écran est un jeu qu'on ne rejoue pas</li>
+                            <li>Pratiquer JavaFX en profondeur : navigation entre écrans, animations, persistance, drag & drop</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Périmètre de la reprise</h4>
+                        <p>Build entièrement réparé (le projet ne compilait plus), refonte visuelle complète, ajout d'un moteur d'IA, d'une aide au placement, d'un système de profils/historique, et d'une suite de tests sur toute la logique ajoutée — sans casser la logique de jeu d'origine (les 26 tests historiques passent toujours).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack technique -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">⚙️ Stack technique</h2>
+                <div class="competences-table-wrapper">
+                    <table class="competences-table">
+                        <thead>
+                            <tr>
+                                <th>Composant</th>
+                                <th>Choix</th>
+                                <th>Pourquoi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Langage</td>
+                                <td>Java 17</td>
+                                <td>LTS récente, records utilisés pour les structures de données immuables (historique, coups de l'IA)</td>
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>JavaFX 21 + FXML</td>
+                                <td>Séparation vue/contrôleur native, CSS pour le thème, drag & drop intégré</td>
+                            </tr>
+                            <tr>
+                                <td>Build</td>
+                                <td>Maven + Maven Wrapper</td>
+                                <td>Aucune installation requise ; les dépendances JavaFX natives se résolvent automatiquement par OS/architecture</td>
+                            </tr>
+                            <tr>
+                                <td>Tests</td>
+                                <td>JUnit 5</td>
+                                <td>35 tests : logique de jeu d'origine + IA + format de l'historique</td>
+                            </tr>
+                            <tr>
+                                <td>Persistance</td>
+                                <td>java.util.prefs + fichier CSV local</td>
+                                <td>Préférences (musique, thème, couleurs) et historique de parties sans base de données, adapté à une appli desktop mono-utilisateur</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctionnalités -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🧩 Fonctionnalités</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Menu principal</h4>
+                        <ul>
+                            <li>Navigation façon jeu vidéo, écrans en fondu (Jouer, Profils, Règles, Paramètres, Crédits)</li>
+                            <li>Choix du fond d'écran (dégradés + photos), musique et effets sonores, tout persistant</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Partie</h4>
+                        <ul>
+                            <li>Mode 2 joueurs ou solo contre une IA</li>
+                            <li>Aide au placement : surbrillance des cases légales pendant le glisser-déposer</li>
+                            <li>Personnalisation : pseudo et couleur par joueur, mémorisés d'une partie à l'autre</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Intelligence artificielle</h4>
+                        <p>Stratégie gloutonne : à chaque tour, l'IA évalue toutes les positions légales pour chaque tuile de son rack et joue le coup qui rapporte le plus de points, selon les mêmes règles qu'un joueur humain. Aucune dépendance JavaFX dans le moteur de décision — testable unitairement, sans lancer l'interface graphique.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Fin de partie & historique</h4>
+                        <ul>
+                            <li>Scores détaillés par joueur, vainqueur mis en avant</li>
+                            <li>Rejouer ou retourner au menu directement depuis l'écran de fin</li>
+                            <li>Historique des parties consultable depuis le menu principal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🏗️ Architecture</h2>
+                <pre class="latice-architecture">latice.metier          (logique pure, sans JavaFX — testable seule)
+├── Plateau, Joueur, Rack, Pioche, Tuile, Arbitre   (règles d'origine)
+├── JoueurArtificiel                                 (IA : choix du meilleur coup)
+└── HistoriqueParties                                (persistance des scores en CSV)
+
+latice.controleur       (un contrôleur JavaFX par écran FXML)
+├── ControleurAccueil, ControleurDeJeu, ControleurParametres, ...
+├── Musique / EffetsSonores        (MediaPlayer vs AudioClip, séparés par usage)
+├── ThemeVisuel                    (fond d'écran choisi, partagé en direct entre fenêtres)
+└── Navigation                     (point d'entrée commun : ouvrir le menu / démarrer une partie,
+                                     réutilisé par le lancement de l'appli ET par "Rejouer"/"Menu principal")
+
+src/main/resources/ihm/*.fxml       (mise en page de chaque écran)
+src/main/resources/css/theme.css    (thème visuel partagé par tous les écrans)</pre>
+            </div>
+        </section>
+
+        <!-- Défis techniques -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔧 Défis techniques rencontrés</h2>
+                <p class="latice-lead">Le vrai cœur du projet — les problèmes concrets résolus, pas juste la liste de fonctionnalités.</p>
+
+                <div class="projects-list">
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">01</div>
+                        <div class="card-content">
+                            <h3>Réutiliser la logique de placement entre joueur humain et IA</h3>
+                            <p class="card-description">La pose d'une tuile (calcul du score, retrait du rack, repioche, mise à jour de l'UI) ne vivait qu'à l'intérieur du handler de glisser-déposer. Plutôt que dupliquer cette logique pour l'IA, extraction en une méthode unique <code>placerTuile(...)</code> appelée aussi bien par le drag & drop humain que par le moteur de décision de l'IA — même code, même règles, zéro divergence possible entre les deux.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">02</div>
+                        <div class="card-content">
+                            <h3>Un assombrissement de fond qui ne s'appliquait jamais</h3>
+                            <p class="card-description">Pour rendre le texte lisible sur les fonds d'écran, un dégradé sombre était censé se superposer à l'image via <code>-fx-background-color: linear-gradient(...), url(...)</code> — une syntaxe CSS invalide en JavaFX (on ne peut pas mélanger un dégradé et une image dans la même propriété), qui échouait silencieusement sans erreur visible. Diagnostic par lecture des logs de warning JavaFX, puis correction en séparant fond et voile en deux calques distincts (<code>StackPane</code> : image + rectangle semi-transparent + contenu).</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">03</div>
+                        <div class="card-content">
+                            <h3>Un bouton "Fermer" qui quittait toute l'application</h3>
+                            <p class="card-description">L'écran de fin de partie fermait la fenêtre de jeu puis affichait les résultats dans une popup ; fermer cette popup fermait donc la dernière fenêtre ouverte — et JavaFX termine l'application quand la dernière fenêtre se ferme. Un piège invisible en test rapide, mais qui aurait frustré n'importe quel joueur. Remplacé par une navigation explicite (Rejouer / Menu principal), avec la logique de démarrage de partie factorisée dans une classe <code>Navigation</code> réutilisée à trois endroits (lancement de l'app, nouvelle partie, rejouer).</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">04</div>
+                        <div class="card-content">
+                            <h3>Portabilité Windows / Linux / macOS</h3>
+                            <p class="card-description">Le <code>pom.xml</code> d'origine ne déclarait aucune dépendance JavaFX (le projet ne compilait que dans un IDE configuré manuellement) et plusieurs chemins de ressources utilisaient une casse différente du dossier réel — invisible sur macOS (insensible à la casse) mais qui aurait cassé sous Linux. Correction des chemins, et ajout des dépendances <code>org.openjfx</code> : leurs artefacts embarquent des profils Maven activés automatiquement selon la plateforme de build, donc le même <code>pom.xml</code> télécharge le bon binaire natif (Windows/Linux/macOS Intel ou Apple Silicon) sans configuration manuelle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🗺️ Pistes d'amélioration</h2>
+                <div class="detail-item latice-roadmap">
+                    <ul>
+                        <li>IA plus stratégique (anticiper plusieurs coups à l'avance, pas seulement le meilleur coup immédiat)</li>
+                        <li>Support de 3-4 joueurs (le moteur de règles est actuellement câblé pour 2)</li>
+                        <li>Sauvegarde et reprise d'une partie en cours</li>
+                        <li>Intégration continue (GitHub Actions) pour lancer les tests à chaque commit</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que ça m'a appris -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">💡 Ce que ce projet m'a appris</h2>
+                <div class="detail-item">
+                    <ul>
+                        <li>Reprendre en main une base de code existante (écrite par d'autres) plutôt que partir d'une page blanche</li>
+                        <li>Concevoir une logique métier totalement découplée de l'UI, pour qu'elle reste testable et réutilisable (le même code sert au joueur humain et à l'IA)</li>
+                        <li>Diagnostiquer un bug silencieux (CSS invalide, aucune exception levée) en isolant les changements un par un</li>
+                        <li>Penser la portabilité multiplateforme dès la configuration du build, pas comme une correction a posteriori</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section portfolio-cta">
+            <div class="container">
+                <div class="cta-content slide-in-up">
+                    <h2>Une question sur ce projet ?</h2>
+                    <p>N'hésite pas à me contacter, ou à retourner voir le reste de mon portfolio.</p>
+                    <div class="cta-buttons">
+                        <a href="../index.html#contact" class="glow-genz-button" style="text-decoration: none; display: inline-block;">Me contacter</a>
+                        <a href="../index.html#projects" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Retour aux projets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js?v=20260922e"></script>
+</body>
+</html>

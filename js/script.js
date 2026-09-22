@@ -183,7 +183,7 @@ const I18N = {
             },
             latice: {
                 title: 'Latice — Jeu en Java',
-                desc: 'Adaptation du jeu de société Latice en Java avec interface JavaFX. Jeu au tour par tour à deux joueurs : plateau 9×9 avec cases spéciales (soleil/lune), pose de tuiles en glisser-déposer selon les règles de correspondance couleur/symbole, gestion des racks, de la pioche, des points et des tours par un arbitre. Architecture MVC (métier / contrôleurs / vues FXML), écrans multiples (accueil, chargement, partie, fin de partie, paramètres), musique et animations. Conception orientée objet testée avec JUnit 5.'
+                desc: 'Jeu de société Latice en Java/JavaFX, repris et enrichi en solo après le projet de groupe initial (SAE 1ère année). Mode 2 joueurs ou solo contre une IA (choix du coup le plus rentable selon les règles), aide au placement en surbrillance pendant le glisser-déposer, personnalisation (pseudo, couleur) et historique des parties, musique/sons et thèmes visuels sélectionnables. Menu principal à navigation façon jeu vidéo, build Maven multiplateforme (Windows/Linux/macOS) via Maven Wrapper. Architecture MVC testée (35 tests JUnit 5).'
             },
             network: {
                 title: 'Simulation réseau — Kathara',
@@ -361,7 +361,7 @@ const I18N = {
             },
             latice: {
                 title: 'Latice — Java game',
-                desc: 'Java adaptation of the Latice board game with a JavaFX interface. Two-player turn-based game: a 9×9 board with special cells (sun/moon), drag-and-drop tile placement following colour/symbol matching rules, rack and draw-bag management, scoring and turns handled by a referee. MVC architecture (domain / controllers / FXML views), multiple screens (home, loading, game, game-over, settings), music and animations. Object-oriented design tested with JUnit 5.'
+                desc: 'Java/JavaFX board game, picked back up and extended solo after the original group project (1st-year SAE). 2-player or solo vs AI mode (AI picks the highest-scoring legal move), placement hints highlighting legal cells during drag-and-drop, player customisation (name, colour) and match history, selectable music/sound effects and visual themes. Video-game-style main menu navigation, cross-platform Maven build (Windows/Linux/macOS) via the Maven Wrapper. Tested MVC architecture (35 JUnit 5 tests).'
             },
             network: {
                 title: 'Network simulation — Kathara',
