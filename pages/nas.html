@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Personnel — Scotty Dev</title>
+    <meta name="description" content="NAS personnel auto-hébergé (~2 To) sur un vieux ThinkPad, avec dashboard d'administration sur mesure : monitoring, gestion MySQL, Minecraft Manager.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scotty Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/nas.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="NAS Personnel — Scotty Dev">
+    <meta property="og:description" content="NAS personnel auto-hébergé (~2 To) sur un vieux ThinkPad, avec dashboard d'administration sur mesure.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/nas.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/projets/nas.webp">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
+    <link rel="stylesheet" href="../css/style.css?v=20260922">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/nas-style.css?v=20260922">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="nav-container" aria-label="Navigation principale">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span></a>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="../index.html#pro" class="nav-link" data-i18n="nav.pro">Activité pro</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/scotty-delmart/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/sdelmart" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
+            </div>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="portfolio-hero">
+            <div class="container">
+                <span class="nas-status-badge">🟢 En développement</span>
+                <h1 class="portfolio-main-title">
+                    NAS Personnel
+                    <span class="portfolio-subtitle">Dashboard d'administration de fichiers, auto-hébergé</span>
+                </h1>
+                <p class="portfolio-intro">Un NAS personnel complet (~2 To) auto-hébergé sur un vieux ThinkPad, exposé sur internet gratuitement et administré via un dashboard web sur mesure.</p>
+            </div>
+        </section>
+
+        <!-- Le projet -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🎯 Le projet</h2>
+                <p class="nas-lead">Plutôt que de payer un abonnement cloud ou un VPS, j'ai transformé un ancien ThinkPad en serveur personnel pour stocker et administrer mes fichiers (cours du BUT Informatique, projets, documents d'alternance, photos, films...). Le but : avoir un espace de stockage important, accessible de partout, sans dépendre d'un service tiers — et au passage, construire un vrai projet complet d'infrastructure et de développement web.</p>
+
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Pourquoi ce projet ?</h4>
+                        <ul>
+                            <li>Reprendre le contrôle de mes données plutôt que de payer un stockage cloud limité</li>
+                            <li>Apprendre à administrer un serveur Linux en conditions réelles (réseau, sécurité, exposition internet)</li>
+                            <li>Avoir un outil utile au quotidien : centraliser mes fichiers de cours, mes projets d'alternance et mes notes</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Matériel</h4>
+                        <p>ThinkPad reconverti en serveur — i3, 8 Go de RAM, SSD 2 To — allumé en permanence, connecté en Ethernet à une fibre 2 Gbps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aperçu -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📸 Aperçu</h2>
+                <div class="nas-gallery">
+                    <figure class="nas-gallery-item">
+                        <img src="../assets/images/projets/nas.webp" alt="Page d'accueil du dashboard NAS" loading="lazy" decoding="async">
+                        <figcaption>Page d'accueil</figcaption>
+                    </figure>
+                    <figure class="nas-gallery-item">
+                        <img src="../assets/images/projets/nas-admin.webp" alt="Page d'administration du dashboard NAS avec monitoring temps réel" loading="lazy" decoding="async">
+                        <figcaption>Administration & monitoring</figcaption>
+                    </figure>
+                    <figure class="nas-gallery-item">
+                        <img src="../assets/images/projets/nas-minecraft.webp" alt="Minecraft Manager intégré au dashboard NAS" loading="lazy" decoding="async">
+                        <figcaption>Minecraft Manager</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack technique -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">⚙️ Stack technique</h2>
+                <div class="competences-table-wrapper">
+                    <table class="competences-table">
+                        <thead>
+                            <tr>
+                                <th>Composant</th>
+                                <th>Choix</th>
+                                <th>Pourquoi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>OS serveur</td>
+                                <td>Ubuntu Server</td>
+                                <td>Léger, stable, bien documenté</td>
+                            </tr>
+                            <tr>
+                                <td>Backend</td>
+                                <td>Node.js</td>
+                                <td>Rapide à développer, écosystème riche pour manipuler fichiers et bases de données</td>
+                            </tr>
+                            <tr>
+                                <td>Frontend</td>
+                                <td>HTML / JS vanilla</td>
+                                <td>Pas de framework : dépendances minimales, contrôle total, chargement instantané</td>
+                            </tr>
+                            <tr>
+                                <td>Reverse proxy</td>
+                                <td>Caddy</td>
+                                <td>HTTPS automatique (Let's Encrypt), configuration simple</td>
+                            </tr>
+                            <tr>
+                                <td>Nom de domaine</td>
+                                <td>DuckDNS</td>
+                                <td>Sous-domaine gratuit pour exposer le serveur sans IP fixe</td>
+                            </tr>
+                            <tr>
+                                <td>Accès distant (admin)</td>
+                                <td>Tailscale</td>
+                                <td>VPN mesh pour administrer le serveur en SSH sans ouvrir de ports</td>
+                            </tr>
+                            <tr>
+                                <td>Base de données</td>
+                                <td>MySQL</td>
+                                <td>Gestion des métadonnées, comptes, et données de l'app Minecraft Manager</td>
+                            </tr>
+                            <tr>
+                                <td>Conteneurisation</td>
+                                <td>Docker / Docker Compose</td>
+                                <td>Isolation des services (MySQL, Minecraft Manager, monitoring)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctionnalités -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🧩 Fonctionnalités</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Page d'accueil</h4>
+                        <ul>
+                            <li>Vue d'ensemble du stockage (espace utilisé / disponible)</li>
+                            <li>Transfert de fichiers Mac ↔ serveur</li>
+                            <li>Transfert de fichiers entre dossiers du serveur</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Page Admin</h4>
+                        <ul>
+                            <li>Monitoring temps réel du serveur (CPU, RAM, stockage)</li>
+                            <li>Interface de gestion MySQL complète : schémas, relations, consultation et édition des données directement depuis l'UI</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Page Alternance</h4>
+                        <p>Espace de prise de notes et diagrammes dédié à l'alternance et aux projets BUT.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Minecraft Manager</h4>
+                        <ul>
+                            <li>Application Node/Express en service systemd, intégrée au dashboard via Caddy (chemin <code>/minecraft</code>)</li>
+                            <li>Création, démarrage et arrêt de serveurs à la demande, chacun isolé dans son conteneur Docker</li>
+                            <li>Sauvegardes automatiques des mondes</li>
+                            <li>Liste des joueurs connectés en temps réel</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Sécurité & accès</h4>
+                        <ul>
+                            <li>HTTPS automatique via Caddy + Let's Encrypt</li>
+                            <li>Authentification sur le reverse proxy</li>
+                            <li>Accès administrateur exclusivement via Tailscale (aucun port SSH exposé publiquement)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🏗️ Architecture</h2>
+                <pre class="nas-architecture">                    ┌─────────────────────┐
+Internet ─────────► │  DuckDNS (DNS)       │
+                    │  scotty-nas.duckdns.org
+                    └──────────┬──────────┘
+                               │ HTTPS
+                    ┌──────────▼──────────┐
+                    │   Caddy (reverse     │
+                    │   proxy + TLS auto)  │
+                    └──────────┬──────────┘
+                               │
+        ┌──────────────────────┼──────────────────────┐
+        │                      │                       │
+┌───────▼───────┐   ┌──────────▼─────────┐   ┌─────────▼─────────┐
+│  Dashboard NAS │   │  Minecraft Manager │   │   MySQL (Docker)  │
+│  (Node.js +    │   │  (Node/Express,    │   │   mysql-shared    │
+│  HTML/JS)      │   │  Docker-based,      │   │                   │
+│                │   │  accessible via     │   │                   │
+│                │   │  /minecraft)        │   │                   │
+└───────┬───────┘   └──────────┬─────────┘   └───────────────────┘
+        │                      │
+        │            ┌─────────▼─────────┐
+        │            │  Conteneurs Docker  │
+        │            │  (1 par serveur     │
+        │            │  Minecraft, avec    │
+        │            │  backups auto)      │
+        │            └────────────────────┘
+        │
+┌───────▼────────────────────────────┐
+│  Stockage local (2 To SSD)         │
+│  /home/scott/stockage/             │
+│  ├── BUT/                          │
+│  ├── FILMS/                        │
+│  ├── Informatique/                 │
+│  ├── PHOTOS_VIDEOS/                │
+│  └── SERIES/                       │
+└─────────────────────────────────────┘
+
+Administration distante : Tailscale (SSH) — jamais de port SSH ouvert publiquement</pre>
+            </div>
+        </section>
+
+        <!-- Défis techniques -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔧 Défis techniques rencontrés</h2>
+                <p class="nas-lead">Le vrai cœur du projet — les problèmes concrets résolus, pas juste la liste de fonctionnalités.</p>
+
+                <div class="projects-list">
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">01</div>
+                        <div class="card-content">
+                            <h3>Exposer un serveur maison sur internet sans payer de VPS</h3>
+                            <p class="card-description">Plutôt qu'un VPS payant, exposition directe du ThinkPad via un sous-domaine DuckDNS + Caddy en reverse proxy (HTTPS automatique). Débit mesuré après mise en place : ~117 Mbit/s, largement suffisant pour l'usage prévu — solution validée sans coût récurrent.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">02</div>
+                        <div class="card-content">
+                            <h3>Un débit anormalement bas malgré une fibre 2 Gbps</h3>
+                            <p class="card-description">Le transfert via Tailscale plafonnait à ~9-10 Mbit/s malgré une fibre à 292 Mbit/s en upload. Diagnostic : la carte réseau (chipset Realtek RTL8111/8168) appliquait un offloading matériel (tx/rx/gso/gro/tso) qui dégradait les performances du tunnel VPN. Solution : désactivation de l'offloading via <code>ethtool</code>, rendue persistante par un service systemd dédié (<code>disable-offload.service</code>). Résultat : débit multiplié par ~5 (jusqu'à ~55-60 Mbit/s).</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">03</div>
+                        <div class="card-content">
+                            <h3>Choisir la bonne solution VPN</h3>
+                            <p class="card-description">Un tunnel WireGuard direct a été testé comme alternative à Tailscale pour gagner en performance, mais s'est révélé moins performant (~5 Mbit/s contre ~55-60 Mbit/s pour Tailscale) — configuration abandonnée et règles de pare-feu associées nettoyées. Un bon exemple de décision technique basée sur la mesure plutôt que sur l'intuition.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">04</div>
+                        <div class="card-content">
+                            <h3>Continuité de l'accès distant</h3>
+                            <p class="card-description">Une expiration de clé Tailscale a provoqué une perte totale d'accès distant, nécessitant une intervention physique sur la machine. Résolu en désactivant l'expiration de clé pour cette machine dans la console d'administration Tailscale — et retenu comme point de vigilance pour la suite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🗺️ Roadmap</h2>
+                <div class="detail-item nas-roadmap">
+                    <ul>
+                        <li>Historique des tentatives de connexion au serveur (sécurité)</li>
+                        <li>Authentification renforcée</li>
+                        <li>Refonte visuelle avec animations (GSAP)</li>
+                        <li>Import de photos dans les notes de la page Alternance</li>
+                        <li>Création de bases de données hébergées, utilisables directement depuis VS Code / Antigravity</li>
+                        <li>Gestion de stacks Docker Compose complètes depuis le dashboard</li>
+                        <li>Visualisation et déblocage des IP bannies par fail2ban</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que ça m'a appris -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">💡 Ce que ce projet m'a appris</h2>
+                <div class="detail-item">
+                    <ul>
+                        <li>Administration système Linux en conditions réelles (réseau, sécurité, monitoring)</li>
+                        <li>Diagnostic de performance réseau (offloading NIC, comparaison de solutions VPN)</li>
+                        <li>Conception d'une interface d'administration de base de données depuis zéro</li>
+                        <li>Prise de décision technique basée sur des mesures concrètes plutôt que des suppositions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section portfolio-cta">
+            <div class="container">
+                <div class="cta-content slide-in-up">
+                    <h2>Une question sur ce projet ?</h2>
+                    <p>N'hésite pas à me contacter, ou à retourner voir le reste de mon portfolio.</p>
+                    <div class="cta-buttons">
+                        <a href="../index.html#contact" class="glow-genz-button" style="text-decoration: none; display: inline-block;">Me contacter</a>
+                        <a href="../index.html#projects" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Retour aux projets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js?v=20260922e"></script>
+</body>
+</html>

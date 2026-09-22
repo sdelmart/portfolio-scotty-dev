@@ -156,7 +156,8 @@ const I18N = {
             nas: {
                 badge: 'Projet personnel',
                 title: 'NAS Personnel — Dashboard d\'administration',
-                desc: 'Un NAS personnel complet (~2 To) auto-hébergé sur un vieux ThinkPad, exposé sur internet gratuitement et administré via un dashboard web sur mesure. Page d\'accueil (stockage, transferts de fichiers), page Admin (monitoring temps réel CPU/RAM/disque, interface de gestion MySQL complète), page Alternance (notes et diagrammes) et un « Minecraft Manager » intégré pour créer et gérer des serveurs Minecraft à la demande, chacun isolé dans son conteneur Docker. Exposition HTTPS via Caddy + DuckDNS, administration exclusivement par Tailscale (aucun port SSH ouvert publiquement).'
+                desc: 'Un NAS personnel complet (~2 To) auto-hébergé sur un vieux ThinkPad, exposé sur internet gratuitement et administré via un dashboard web sur mesure. Page d\'accueil (stockage, transferts de fichiers), page Admin (monitoring temps réel CPU/RAM/disque, interface de gestion MySQL complète), page Alternance (notes et diagrammes) et un « Minecraft Manager » intégré pour créer et gérer des serveurs Minecraft à la demande, chacun isolé dans son conteneur Docker. Exposition HTTPS via Caddy + DuckDNS, administration exclusivement par Tailscale (aucun port SSH ouvert publiquement).',
+                viewMore: 'Voir plus'
             },
             sasonyx: {
                 badge: 'Stage en entreprise',
@@ -333,7 +334,8 @@ const I18N = {
             nas: {
                 badge: 'Personal project',
                 title: 'Personal NAS — Admin Dashboard',
-                desc: 'A full personal NAS (~2 TB) self-hosted on an old ThinkPad, exposed on the internet for free and managed through a custom web dashboard. Home page (storage, file transfers), Admin page (real-time CPU/RAM/disk monitoring, full MySQL management UI), Alternance page (notes and diagrams), and a built-in "Minecraft Manager" to create and manage on-demand Minecraft servers, each isolated in its own Docker container. HTTPS exposure via Caddy + DuckDNS, administration exclusively through Tailscale (no SSH port ever exposed publicly).'
+                desc: 'A full personal NAS (~2 TB) self-hosted on an old ThinkPad, exposed on the internet for free and managed through a custom web dashboard. Home page (storage, file transfers), Admin page (real-time CPU/RAM/disk monitoring, full MySQL management UI), Alternance page (notes and diagrams), and a built-in "Minecraft Manager" to create and manage on-demand Minecraft servers, each isolated in its own Docker container. HTTPS exposure via Caddy + DuckDNS, administration exclusively through Tailscale (no SSH port ever exposed publicly).',
+                viewMore: 'Learn more'
             },
             sasonyx: {
                 badge: 'Internship project',
