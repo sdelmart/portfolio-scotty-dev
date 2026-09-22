@@ -35,7 +35,28 @@ const I18N = {
         pro: {
             title: 'Besoin d\'un site web ou d\'une application ?',
             text: 'Je conçois des sites web et des applications sur mesure — modernes, rapides et performants — pour les pros, indépendants et associations via mon activité Delmart Digital.',
-            cta: 'Découvrir Delmart Digital'
+            cta: 'Découvrir Delmart Digital',
+            services: {
+                web: {
+                    title: 'Développement web',
+                    text: 'Sites vitrines, e-commerce et applications web modernes, rapides et optimisées pour le référencement.'
+                },
+                software: {
+                    title: 'Logiciels sur mesure',
+                    text: 'Des outils métier conçus pour automatiser vos tâches et coller exactement à votre façon de travailler.'
+                },
+                hardware: {
+                    title: 'Dépannage & hardware',
+                    text: 'Diagnostic, réparation et optimisation de votre matériel, sur site ou à distance.'
+                }
+            },
+            highlights: {
+                response: 'Délai de réponse',
+                unique: 'Interlocuteur',
+                uniqueValue: 'Unique',
+                free: 'Devis sans engagement',
+                freeValue: 'Gratuit'
+            }
         },
         pages: {
             portfolio: {
@@ -186,7 +207,28 @@ const I18N = {
         pro: {
             title: 'Need a website or an app?',
             text: 'I build custom websites and applications — modern, fast and high-performance — for professionals, freelancers and associations through my Delmart Digital business.',
-            cta: 'Discover Delmart Digital'
+            cta: 'Discover Delmart Digital',
+            services: {
+                web: {
+                    title: 'Web development',
+                    text: 'Showcase sites, e-commerce and modern web applications, fast and optimized for search engines.'
+                },
+                software: {
+                    title: 'Custom software',
+                    text: 'Business tools designed to automate your tasks and fit exactly the way you work.'
+                },
+                hardware: {
+                    title: 'Repairs & hardware',
+                    text: 'Diagnostics, repair and optimization of your equipment, on-site or remotely.'
+                }
+            },
+            highlights: {
+                response: 'Response time',
+                unique: 'Point of contact',
+                uniqueValue: 'Single',
+                free: 'No-obligation quote',
+                freeValue: 'Free'
+            }
         },
         pages: {
             portfolio: {
