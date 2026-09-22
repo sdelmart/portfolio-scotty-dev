@@ -708,15 +708,6 @@ select:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .pro-services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pro-highlights {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .avatar-container {
     width: 350px;
     height: 350px;
@@ -1267,6 +1258,17 @@ select:focus-visible {
 .pro-highlight-label {
   color: var(--muted);
   font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .pro-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pro-highlights {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .pro-eyebrow {

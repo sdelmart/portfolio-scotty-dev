@@ -685,8 +685,7 @@ function toggleSiteLanguage() {
 
 function initLanguageAndContent() {
     const storedLanguage = globalThis.localStorage.getItem('site-language');
-    const browserLanguage = navigator.language?.toLowerCase().startsWith('fr') ? 'fr' : 'en';
-    const initialLanguage = storedLanguage || browserLanguage;
+    const initialLanguage = storedLanguage || 'fr';
 
     applyLanguage(initialLanguage);
 
