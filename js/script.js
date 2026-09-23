@@ -159,6 +159,11 @@ const I18N = {
                 desc: 'Un NAS personnel complet (~2 To) auto-hébergé sur un vieux ThinkPad, exposé sur internet gratuitement et administré via un dashboard web sur mesure. Page d\'accueil (stockage, transferts de fichiers), page Admin (monitoring temps réel CPU/RAM/disque, interface de gestion MySQL complète), page Alternance (notes et diagrammes) et un « Minecraft Manager » intégré pour créer et gérer des serveurs Minecraft à la demande, chacun isolé dans son conteneur Docker. Exposition HTTPS via Caddy + DuckDNS, administration exclusivement par Tailscale (aucun port SSH ouvert publiquement).',
                 viewMore: 'Voir plus'
             },
+            meteo: {
+                badge: 'Projet personnel',
+                title: 'Scott\'Météo — App météo auto-hébergée',
+                desc: 'Application météo complète auto-hébergée sur mon serveur personnel : web, PWA installable et widget natif iOS, le tout branché sur la même API. Géolocalisation automatique, prévisions horaires et sur 7 jours, thèmes visuels selon la météo, villes favorites et recherche mondiale avec cascade de géocodage (repli automatique si une source échoue). Rendu côté serveur avec revalidation (ISR 60s) pour un chargement quasi instantané, déployé en conteneur Docker optimisé (moins de 150 Mo, compatible Raspberry Pi/ARM) derrière un reverse proxy HTTPS. 20 tests unitaires sur la logique critique.'
+            },
             sasonyx: {
                 badge: 'Stage en entreprise',
                 title: 'Sasonyx Planning',
@@ -336,6 +341,11 @@ const I18N = {
                 title: 'Personal NAS — Admin Dashboard',
                 desc: 'A full personal NAS (~2 TB) self-hosted on an old ThinkPad, exposed on the internet for free and managed through a custom web dashboard. Home page (storage, file transfers), Admin page (real-time CPU/RAM/disk monitoring, full MySQL management UI), Alternance page (notes and diagrams), and a built-in "Minecraft Manager" to create and manage on-demand Minecraft servers, each isolated in its own Docker container. HTTPS exposure via Caddy + DuckDNS, administration exclusively through Tailscale (no SSH port ever exposed publicly).',
                 viewMore: 'Learn more'
+            },
+            meteo: {
+                badge: 'Personal project',
+                title: 'Scott\'Météo — Self-hosted weather app',
+                desc: 'A complete weather app self-hosted on my personal server: web, installable PWA, and a native iOS widget, all backed by the same API. Automatic geolocation, hourly and 7-day forecasts, weather-based visual themes, favorite cities, and worldwide search with a geocoding fallback cascade (automatic retry if a source fails). Server-side rendering with ISR revalidation (60s) for near-instant loads, deployed in an optimized Docker container (under 150 MB, ARM/Raspberry Pi compatible) behind an HTTPS reverse proxy. 20 unit tests covering the critical logic.'
             },
             sasonyx: {
                 badge: 'Internship project',

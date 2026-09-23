@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scott'Météo — Scotty Dev</title>
+    <meta name="description" content="Scott'Météo : application météo auto-hébergée (Next.js, TypeScript, Docker) — web, PWA et widget iOS natif, cascade de géocodage, SSR + ISR, 20 tests unitaires.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scotty Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/meteo.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="Scott'Météo — Scotty Dev">
+    <meta property="og:description" content="Application météo auto-hébergée : web, PWA et widget iOS natif, cascade de géocodage, SSR + ISR, 20 tests unitaires.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/meteo.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/projets/meteo-desktop.webp">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
+    <link rel="stylesheet" href="../css/style.css?v=20260922">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/meteo-style.css?v=20260922">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="nav-container" aria-label="Navigation principale">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span></a>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="../index.html#pro" class="nav-link" data-i18n="nav.pro">Activité pro</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/scotty-delmart/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/sdelmart" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
+            </div>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="portfolio-hero">
+            <div class="container">
+                <span class="meteo-status-badge">🟢 En production</span>
+                <h1 class="portfolio-main-title">
+                    Scott'Météo
+                    <span class="portfolio-subtitle">Application météo auto-hébergée — web, PWA & widget iOS</span>
+                </h1>
+                <p class="portfolio-intro">Une application météo complète — web, PWA installable et widget natif iOS — conçue, développée et déployée de bout en bout sur mon serveur personnel.</p>
+            </div>
+        </section>
+
+        <!-- Le projet -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🎯 Le projet</h2>
+                <p class="meteo-lead">Scott'Météo affiche la météo en temps réel avec géolocalisation automatique, prévisions horaires et sur 7 jours, et des thèmes visuels dynamiques selon le temps. Plutôt qu'une simple appli web, le projet couvre toutes les surfaces où on consulte la météo au quotidien : navigateur, écran d'accueil iPhone (PWA) et widget natif — le tout backé par la même API, auto-hébergée gratuitement.</p>
+
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Pourquoi ce projet ?</h4>
+                        <ul>
+                            <li>Aller au-delà d'un simple site météo : couvrir web, mobile et widget natif avec une seule API</li>
+                            <li>Pratiquer Next.js 16 (App Router, SSR/ISR) et une vraie stratégie de tests sur la logique critique</li>
+                            <li>Gérer la fiabilité des données externes (géocodage) avec de vrais scénarios d'échec, pas seulement le cas nominal</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Surfaces couvertes</h4>
+                        <p>Dashboard web (Next.js), PWA installable sur l'écran d'accueil iPhone, widget natif iOS via Scriptable, API REST publique (<code>/api/*</code>) et un CLI Python (<code>meteo.py</code>) pour interroger la météo directement dans le terminal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aperçu -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📸 Aperçu</h2>
+                <div class="meteo-gallery">
+                    <figure class="meteo-gallery-item">
+                        <img src="../assets/images/projets/meteo-desktop.webp" alt="Scott'Météo sur desktop : météo du jour, prévisions horaires et sur 7 jours" loading="lazy" decoding="async">
+                        <figcaption>Dashboard web (desktop)</figcaption>
+                    </figure>
+                    <figure class="meteo-gallery-item meteo-gallery-mobile">
+                        <img src="../assets/images/projets/meteo-mobile.png" alt="Scott'Météo sur mobile, en PWA plein écran" loading="lazy" decoding="async">
+                        <figcaption>PWA sur mobile</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack technique -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">⚙️ Stack technique</h2>
+                <div class="competences-table-wrapper">
+                    <table class="competences-table">
+                        <thead>
+                            <tr>
+                                <th>Composant</th>
+                                <th>Choix</th>
+                                <th>Pourquoi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Frontend</td>
+                                <td>Next.js 16 (App Router), React 19, TypeScript</td>
+                                <td>Server Components + SSR pour un premier rendu instantané, typage strict de bout en bout</td>
+                            </tr>
+                            <tr>
+                                <td>Rendu</td>
+                                <td>SSR + revalidation ISR (60s)</td>
+                                <td>Données météo fraîches sans re-générer la page à chaque requête</td>
+                            </tr>
+                            <tr>
+                                <td>Données météo</td>
+                                <td>Open-Meteo, avec repli sur l'API Adresse (data.gouv.fr)</td>
+                                <td>Source gratuite et fiable, avec un filet de sécurité français en cas d'indisponibilité</td>
+                            </tr>
+                            <tr>
+                                <td>Tests</td>
+                                <td>Vitest</td>
+                                <td>20 tests unitaires sur la logique de géocodage/repli, la plus sensible aux régressions</td>
+                            </tr>
+                            <tr>
+                                <td>Déploiement</td>
+                                <td>Docker (build multi-stage, image standalone)</td>
+                                <td>Image de moins de 150 Mo, compatible amd64 et arm64 (Raspberry Pi, NAS)</td>
+                            </tr>
+                            <tr>
+                                <td>Réseau</td>
+                                <td>Caddy + DuckDNS</td>
+                                <td>Reverse proxy avec HTTPS automatique (Let's Encrypt), nom de domaine dynamique gratuit</td>
+                            </tr>
+                            <tr>
+                                <td>Infra</td>
+                                <td>Auto-hébergé (Ubuntu)</td>
+                                <td>Aucun coût récurrent d'hébergement</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>PWA + widget iOS (Scriptable)</td>
+                                <td>Expérience quasi native sans passer par l'App Store</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctionnalités -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🧩 Fonctionnalités</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Météo & prévisions</h4>
+                        <ul>
+                            <li>Géolocalisation automatique au chargement (web et widget)</li>
+                            <li>Météo actuelle, prévisions horaires (24h) et sur 7 jours, min/max</li>
+                            <li>Thèmes visuels dynamiques selon la météo (ensoleillé, pluvieux, nuageux...)</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Recherche & villes</h4>
+                        <ul>
+                            <li>Villes favorites en accès rapide (aucun appel réseau de géocodage)</li>
+                            <li>Recherche universelle : n'importe quelle ville en France ou dans le monde, avec repli automatique multi-source</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Multi-surface</h4>
+                        <ul>
+                            <li>PWA installable sur l'écran d'accueil, chargement quasi instantané</li>
+                            <li>Widget natif iOS (Scriptable) : température, risque de pluie, heure de dernière mise à jour</li>
+                            <li>API REST publique avec support CORS pour intégration externe</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Fiabilité</h4>
+                        <p>Aucune dépendance unique de point de défaillance sur le géocodage : à chaque étape de la cascade (favoris → géocodage mondial → API adresse française), un échec silencieux passe au niveau suivant plutôt que de planter l'application.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🏗️ Architecture</h2>
+                <pre class="meteo-architecture">Client (navigateur / PWA / widget iOS)
+        │
+        ▼
+Caddy (HTTPS automatique, reverse proxy)
+        │
+        ▼
+Container Docker — Next.js (SSR)
+        │
+        ▼
+Open-Meteo API ──(repli)──▶ API Adresse (data.gouv.fr)
+
+Cascade de géocodage (recherche par nom de ville) :
+1. Ville favorite ────────────► résolution instantanée, aucun appel réseau
+2. Open-Meteo (mondial) ──────► géocodage par nom, échelle planétaire
+3. API Adresse (data.gouv.fr) ► repli français, 35 000 communes & codes postaux
+4. Erreur explicite ──────────► seulement si les 3 niveaux précédents échouent
+
+Géolocalisation inverse (bouton "Ma position") :
+1. API Adresse (reverse) ─────► précision maximale en France
+2. BigDataCloud (reverse) ────► repli mondial si la France échoue
+3. "Ma position" générique ───► dernier repli, jamais d'erreur bloquante</pre>
+            </div>
+        </section>
+
+        <!-- Défis techniques -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔧 Défis techniques rencontrés</h2>
+                <p class="meteo-lead">Le vrai cœur du projet — les problèmes concrets résolus, pas juste la liste de fonctionnalités.</p>
+
+                <div class="projects-list">
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">01</div>
+                        <div class="card-content">
+                            <h3>Une cascade de géocodage fiable à 100%</h3>
+                            <p class="card-description">Chercher une ville par son nom peut échouer pour de nombreuses raisons : faute de frappe, ville homonyme, code postal au lieu du nom, ou simplement une API externe indisponible. Plutôt qu'un seul appel qui peut planter, la résolution passe par 4 niveaux successifs : correspondance directe avec les villes favorites (aucun réseau), nettoyage de la requête (retrait des parenthèses et suffixes de pays, ex. <code>"Favars (19)"</code> → <code>"Favars"</code>), géocodage mondial Open-Meteo, puis repli sur l'API Adresse française (35 000 communes). Chaque échec silencieux passe au niveau suivant au lieu de remonter une erreur prématurée.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">02</div>
+                        <div class="card-content">
+                            <h3>Une géolocalisation qui ne plante jamais</h3>
+                            <p class="card-description">Le bouton "Ma position" convertit des coordonnées GPS en nom de ville lisible. Si l'API française d'adresse ne répond pas (hors de France, ou simplement indisponible), repli automatique vers un service mondial (BigDataCloud). Et si les deux échouent, l'application affiche quand même la météo au point GPS exact sous le nom générique "Ma position" plutôt que de bloquer l'utilisateur avec un message d'erreur — la donnée la plus importante (la météo) reste toujours accessible, même sans nom de ville.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">03</div>
+                        <div class="card-content">
+                            <h3>Une image Docker de moins de 150 Mo, compatible Raspberry Pi</h3>
+                            <p class="card-description">Une image Next.js par défaut embarque tout <code>node_modules</code>, ce qui donne facilement plus d'1 Go. Build multi-stage (dépendances → compilation → exécution) exploitant la sortie <code>standalone</code> de Next.js : seuls le serveur compilé et les assets statiques nécessaires sont copiés dans l'image finale, basée sur Alpine Linux, exécutée avec un utilisateur non-root dédié. Résultat : une image légère qui tourne aussi bien sur un serveur x86 que sur un Raspberry Pi ou un NAS ARM.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">04</div>
+                        <div class="card-content">
+                            <h3>Un chargement instantané malgré un hébergement perso modeste</h3>
+                            <p class="card-description">Sur un serveur personnel (pas de CDN ni d'infrastructure de cache dédiée), chaque requête météo appelle une API externe. Solution : rendu côté serveur (Server Component) pour le premier affichage, combiné à une revalidation ISR de 60 secondes — les données restent fraîches à la minute près, sans re-générer la page ni ré-interroger l'API externe à chaque visite. Le conteneur tourne avec <code>TZ=Europe/Paris</code> pour garantir des horodatages corrects (lever/coucher du soleil, heures des prévisions) quel que soit le fuseau du serveur hôte.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que ça m'a appris -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">💡 Ce que ce projet m'a appris</h2>
+                <div class="detail-item">
+                    <ul>
+                        <li>Concevoir une logique de repli robuste face à des sources de données externes peu fiables</li>
+                        <li>Optimiser une image Docker pour du matériel modeste (Raspberry Pi, NAS ARM)</li>
+                        <li>Combiner rendu serveur et revalidation périodique (ISR) pour équilibrer fraîcheur des données et performance</li>
+                        <li>Étendre une même API à plusieurs surfaces (web, PWA, widget natif, CLI) sans dupliquer la logique métier côté serveur</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section portfolio-cta">
+            <div class="container">
+                <div class="cta-content slide-in-up">
+                    <h2>Une question sur ce projet ?</h2>
+                    <p>Le code complet et la documentation (déploiement Docker, configuration du widget iOS) sont disponibles sur GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/sdelmart/meteo-app" target="_blank" rel="noopener noreferrer" class="glow-genz-button" style="text-decoration: none; display: inline-block;">Voir le code sur GitHub</a>
+                        <a href="../index.html#projects" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Retour aux projets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js?v=20260923"></script>
+</body>
+</html>

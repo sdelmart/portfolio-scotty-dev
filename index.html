@@ -289,6 +289,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="project-card project-card-featured">
+                        <div class="project-image">
+                            <img src="assets/images/projets/meteo-desktop.webp" alt="Aperçu de l'application météo Scott'Météo" class="project-image-full" loading="lazy" decoding="async" width="400" height="250">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-badge" data-i18n="projects.meteo.badge">Projet personnel</span>
+                            <h3 data-i18n="projects.meteo.title">Scott'Météo — App météo auto-hébergée</h3>
+                            <p data-i18n="projects.meteo.desc">Application météo complète auto-hébergée sur mon serveur personnel : web, PWA installable et widget natif iOS, le tout branché sur la même API. Géolocalisation automatique, prévisions horaires et sur 7 jours, thèmes visuels selon la météo, villes favorites et recherche mondiale avec cascade de géocodage (repli automatique si une source échoue). Rendu côté serveur avec revalidation (ISR 60s) pour un chargement quasi instantané, déployé en conteneur Docker optimisé (moins de 150 Mo, compatible Raspberry Pi/ARM) derrière un reverse proxy HTTPS. 20 tests unitaires sur la logique critique.</p>
+                            <div class="project-tech">
+                                <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"> Next.js</a>
+                                <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"> TypeScript</a>
+                                <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"> Docker</a>
+                            </div>
+                            <div class="project-links">
+                                <a href="pages/meteo.html" class="project-link project-link-primary" data-i18n="projects.details">Voir le détail</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-card">
                         <div class="project-image">
                             <img src="assets/images/projets/sasonyx.jpg" alt="Aperçu de l'application Sasonyx" class="project-image-full" loading="lazy" decoding="async" width="400" height="250">
@@ -492,6 +510,6 @@
 
     </main>
 
-    <script src="js/script.js?v=20260922e"></script>
+    <script src="js/script.js?v=20260923"></script>
 </body>
 </html>
