@@ -1037,11 +1037,37 @@ function initSectionAnimations() {
     elements.forEach(element => elementObserver.observe(element));
 }
 
+function computeProjectStats() {
+    const projectCards = document.querySelectorAll('#projects .project-card');
+    const projectsCount = projectCards.length;
+
+    const techNames = new Set();
+    document.querySelectorAll('#projects .project-tech a').forEach((link) => {
+        const img = link.querySelector('img');
+        const label = (img ? img.getAttribute('alt') : link.textContent) || '';
+        const normalized = label.trim().toLowerCase();
+        if (normalized) {
+            techNames.add(normalized);
+        }
+    });
+
+    return { projectsCount, techCount: techNames.size };
+}
+
 function initSimpleStats() {
     const stats = document.querySelectorAll('.stat-value[data-target]');
     if (stats.length === 0) {
         return;
     }
+
+    const { projectsCount, techCount } = computeProjectStats();
+    stats.forEach((node) => {
+        if (node.dataset.stat === 'projects' && projectsCount > 0) {
+            node.dataset.target = String(projectsCount);
+        } else if (node.dataset.stat === 'tech' && techCount > 0) {
+            node.dataset.target = String(techCount);
+        }
+    });
 
     const animateStat = (node) => {
         const target = Number(node.dataset.target);
