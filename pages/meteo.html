@@ -185,6 +185,7 @@
                         <ul>
                             <li>Géolocalisation automatique au chargement (web et widget)</li>
                             <li>Météo actuelle, prévisions horaires (24h) et sur 7 jours, min/max</li>
+                            <li>Vue 7 jours inspirée de Météo sur iPhone : une ligne par jour avec jauge de température colorée et % de pluie sous l'icône ; au toucher, le détail (ressenti, vent, UV, soleil) et le risque de précipitations heure par heure</li>
                             <li>Thèmes visuels dynamiques selon la météo (ensoleillé, pluvieux, nuageux...)</li>
                         </ul>
                     </div>
@@ -277,6 +278,13 @@ Géolocalisation inverse (bouton "Ma position") :
                             <p class="card-description">Sur un serveur personnel (pas de CDN ni d'infrastructure de cache dédiée), chaque requête météo appelle une API externe. Solution : rendu côté serveur (Server Component) pour le premier affichage, combiné à une revalidation ISR de 60 secondes — les données restent fraîches à la minute près, sans re-générer la page ni ré-interroger l'API externe à chaque visite. Le conteneur tourne avec <code>TZ=Europe/Paris</code> pour garantir des horodatages corrects (lever/coucher du soleil, heures des prévisions) quel que soit le fuseau du serveur hôte.</p>
                         </div>
                     </div>
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">05</div>
+                        <div class="card-content">
+                            <h3>Rendre la semaine lisible d'un coup d'œil</h3>
+                            <p class="card-description">La première vue 7 jours affichait tout en même temps (humidité, UV, lever et coucher du soleil…) et devenait illisible sur téléphone. Refonte sur le modèle de Météo sur iPhone : une ligne épurée par jour, jauge de température dont la couleur suit la valeur, point indiquant la température actuelle, et détails à la demande. Le risque de pluie heure par heure vient de la même requête Open-Meteo, sans appel réseau supplémentaire, et l'emoji brouillard, trop flou, a été remplacé par une icône SVG dédiée.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -290,6 +298,7 @@ Géolocalisation inverse (bouton "Ma position") :
                         <li>Concevoir une logique de repli robuste face à des sources de données externes peu fiables</li>
                         <li>Optimiser une image Docker pour du matériel modeste (Raspberry Pi, NAS ARM)</li>
                         <li>Combiner rendu serveur et revalidation périodique (ISR) pour équilibrer fraîcheur des données et performance</li>
+                        <li>Concevoir une interface de données dense mais lisible, avec le détail à la demande plutôt qu'en permanence</li>
                         <li>Étendre une même API à plusieurs surfaces (web, PWA, widget natif, CLI) sans dupliquer la logique métier côté serveur</li>
                     </ul>
                 </div>
@@ -311,6 +320,6 @@ Géolocalisation inverse (bouton "Ma position") :
         </section>
     </main>
 
-    <script src="../js/script.js?v=20260928"></script>
+    <script src="../js/script.js?v=20261009"></script>
 </body>
 </html>

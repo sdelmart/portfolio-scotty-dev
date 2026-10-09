@@ -169,6 +169,16 @@
                                 <td>Gestion des métadonnées, comptes, et données de l'app Minecraft Manager</td>
                             </tr>
                             <tr>
+                                <td>Synchronisation</td>
+                                <td>Syncthing (Docker)</td>
+                                <td>Copie automatique de mes dossiers de cours et de mes photos depuis le Mac, sans jamais propager une suppression, avec corbeille versionnée de 30 jours</td>
+                            </tr>
+                            <tr>
+                                <td>Filtrage DNS</td>
+                                <td>AdGuard Home</td>
+                                <td>Blocage des pubs et traqueurs au niveau DNS, requêtes chiffrées (DNS-over-HTTPS) vers l'amont</td>
+                            </tr>
+                            <tr>
                                 <td>Conteneurisation</td>
                                 <td>Docker / Docker Compose</td>
                                 <td>Isolation des services (MySQL, Minecraft Manager, monitoring)</td>
@@ -193,9 +203,20 @@
                         </ul>
                     </div>
                     <div class="detail-item">
+                        <h4>Page Stockage (explorateur de fichiers)</h4>
+                        <ul>
+                            <li>Navigation par espaces (stockage, sites web), fil d'Ariane, vue liste ou grille avec miniatures</li>
+                            <li>Sélection multiple, déplacement par sélecteur de dossier ou glisser-déposer, renommage, suppression, téléchargement de plusieurs éléments en un ZIP</li>
+                            <li>Aperçu intégré des images (y compris HEIC/AVIF convertis à la volée), vidéos, audio et PDF</li>
+                            <li>Envoi de fichiers volumineux et conversion MKV → MP4 depuis l'interface</li>
+                            <li>Entièrement utilisable au doigt : barre d'actions en bas et menu en feuille sur téléphone</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
                         <h4>Page Admin</h4>
                         <ul>
                             <li>Monitoring temps réel du serveur (CPU, RAM, stockage)</li>
+                            <li>Sections en onglets sur téléphone : toutes les pages du dashboard sont responsives</li>
                             <li>Interface de gestion MySQL complète : schémas, relations, consultation et édition des données directement depuis l'UI</li>
                         </ul>
                     </div>
@@ -213,8 +234,19 @@
                         </ul>
                     </div>
                     <div class="detail-item">
+                        <h4>Synchronisation & supervision</h4>
+                        <ul>
+                            <li>Syncthing : mes projets BUT et mes photos se copient automatiquement du Mac vers le serveur, tous types de fichiers confondus</li>
+                            <li>Une suppression sur le Mac n'est jamais répercutée sur le serveur ; les anciennes versions sont conservées 30 jours</li>
+                            <li>Uptime Kuma pour la disponibilité des services, AdGuard Home pour le filtrage DNS</li>
+                            <li>Module d'alertes : notification push (ntfy) quand un disque se remplit ou qu'un service ou conteneur s'arrête, et signal de vie externe pour détecter un serveur éteint</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
                         <h4>Sécurité & accès</h4>
                         <ul>
+                            <li>Sessions de connexion persistantes (jetons hachés sur disque) : un redémarrage de l'application ne déconnecte plus personne</li>
+                            <li>Endpoints de fichiers durcis : noms validés (aucun <code>..</code> ni séparateur), programmes lancés sans shell, refus d'écraser un élément existant</li>
                             <li>HTTPS automatique via Caddy + Let's Encrypt</li>
                             <li>Authentification sur le reverse proxy</li>
                             <li>Accès administrateur exclusivement via Tailscale (aucun port SSH exposé publiquement)</li>
@@ -307,6 +339,20 @@ Administration distante : Tailscale (SSH) — jamais de port SSH ouvert publique
                             <p class="card-description">Une expiration de clé Tailscale a provoqué une perte totale d'accès distant, nécessitant une intervention physique sur la machine. Résolu en désactivant l'expiration de clé pour cette machine dans la console d'administration Tailscale — et retenu comme point de vigilance pour la suite.</p>
                         </div>
                     </div>
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">05</div>
+                        <div class="card-content">
+                            <h3>Sécuriser un explorateur de fichiers exposé sur internet</h3>
+                            <p class="card-description">Un gestionnaire de fichiers web est une cible classique : traversée de dossiers (<code>../</code>), noms de fichiers piégés (<code>$(…)</code>, guillemets) passés à un shell, écrasement involontaire. Chaque nom reçu est validé (vide, <code>.</code>, <code>..</code> et séparateurs refusés), les commandes externes (ffmpeg, zip, conversion) sont lancées avec <code>execFile</code> sans passer par un shell, et renommer, créer ou déplacer refuse d'écraser ou de déplacer un dossier dans lui-même. Le tout est vérifié par des tests automatisés sur une copie locale de l'application.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">06</div>
+                        <div class="card-content">
+                            <h3>Un conteneur qui ne démarrait plus après un redémarrage</h3>
+                            <p class="card-description">Après un redémarrage, le conteneur Syncthing, dont les ports sont liés à l'adresse Tailscale, échouait car Docker démarrait avant que l'interface Tailscale n'existe. Diagnostic via <code>docker inspect</code>, <code>ss</code> et les journaux, puis correction durable avec un drop-in systemd qui fait attendre Docker jusqu'à ce que Tailscale ait son adresse.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -317,6 +363,8 @@ Administration distante : Tailscale (SSH) — jamais de port SSH ouvert publique
                 <h2 class="section-title">🗺️ Roadmap</h2>
                 <div class="detail-item nas-roadmap">
                     <ul>
+                        <li>Vraie corbeille pour l'explorateur de fichiers (restauration après suppression)</li>
+                        <li>Sauvegardes externes chiffrées et versionnées</li>
                         <li>Historique des tentatives de connexion au serveur (sécurité)</li>
                         <li>Authentification renforcée</li>
                         <li>Refonte visuelle avec animations (GSAP)</li>
@@ -338,6 +386,7 @@ Administration distante : Tailscale (SSH) — jamais de port SSH ouvert publique
                         <li>Administration système Linux en conditions réelles (réseau, sécurité, monitoring)</li>
                         <li>Diagnostic de performance réseau (offloading NIC, comparaison de solutions VPN)</li>
                         <li>Conception d'une interface d'administration de base de données depuis zéro</li>
+                        <li>Concevoir une interface responsive utilisable au doigt et durcir des endpoints de fichiers exposés</li>
                         <li>Prise de décision technique basée sur des mesures concrètes plutôt que des suppositions</li>
                     </ul>
                 </div>
@@ -359,6 +408,6 @@ Administration distante : Tailscale (SSH) — jamais de port SSH ouvert publique
         </section>
     </main>
 
-    <script src="../js/script.js?v=20260928"></script>
+    <script src="../js/script.js?v=20261009"></script>
 </body>
 </html>
