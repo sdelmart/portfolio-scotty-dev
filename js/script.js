@@ -166,7 +166,7 @@ const I18N = {
             },
             kinetik: {
                 badge: 'Projet personnel',
-                title: 'KINETIK — Puzzle multiplateforme',
+                title: 'KINETIK — Sokoban & Labyrinthe',
                 short: 'Puzzle multiplateforme : Sokoban futuriste de 80 niveaux et labyrinthe à énigmes, avec éditeur de niveaux et classements en ligne.'
             },
             meteo: {
@@ -360,7 +360,7 @@ const I18N = {
             },
             kinetik: {
                 badge: 'Personal project',
-                title: 'KINETIK — Cross-platform puzzle game',
+                title: 'KINETIK — Sokoban & Maze',
                 short: 'Cross-platform puzzle game: an 80-level futuristic Sokoban and a riddle maze, with a level editor and online leaderboards.'
             },
             meteo: {
