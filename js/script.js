@@ -656,6 +656,62 @@ function setTypingPhrases(phrases) {
     }
 }
 
+const DETAIL_BLOCK_SELECTOR = 'div,section,ul,ol,li,p,h1,h2,h3,h4,table,thead,tbody,tr,td,th,figure,pre,figcaption,article,main,header,nav,button,a.glow-genz-button';
+const detailPageState = { units: null, images: null, title: '', description: '' };
+
+function normalizeDetailText(text) {
+    return text.replaceAll(/\s+/g, ' ').trim();
+}
+
+function collectDetailPageUnits(main) {
+    const units = [];
+    const visit = (element) => {
+        for (const child of element.children) {
+            if (['SCRIPT', 'STYLE', 'SVG', 'IMG'].includes(child.tagName.toUpperCase())) {
+                continue;
+            }
+            const key = normalizeDetailText(child.textContent);
+            if (/[A-Za-zÀ-ÿ]{2}/.test(key) && !child.querySelector(DETAIL_BLOCK_SELECTOR)) {
+                units.push({ element: child, key, fr: child.innerHTML });
+            } else {
+                visit(child);
+            }
+        }
+    };
+    visit(main);
+    return units;
+}
+
+function applyDetailPageTranslation(language) {
+    const translations = globalThis.PAGE_TRANSLATIONS_EN;
+    const main = document.querySelector('main');
+    if (!translations || !main) {
+        return;
+    }
+
+    if (!detailPageState.units) {
+        detailPageState.units = collectDetailPageUnits(main);
+        detailPageState.images = [...main.querySelectorAll('img[alt]')].map((img) => ({ img, fr: img.alt }));
+        detailPageState.title = document.title;
+        detailPageState.description = document.querySelector('meta[name="description"]')?.content ?? '';
+    }
+
+    const english = language === 'en';
+    detailPageState.units.forEach(({ element, key, fr }) => {
+        const translated = translations[key];
+        element.innerHTML = english && translated ? translated : fr;
+    });
+    detailPageState.images.forEach(({ img, fr }) => {
+        img.alt = (english && translations['alt:' + fr]) || fr;
+    });
+
+    document.title = (english && translations['@title']) || detailPageState.title;
+    document.querySelector('meta[name="description"]')?.setAttribute(
+        'content',
+        (english && translations['@description']) || detailPageState.description
+    );
+}
+
 function applyLanguage(language) {
     const selectedLanguage = I18N[language] ? language : 'fr';
     if (hasLanguageApplied && selectedLanguage === currentLanguage) {
@@ -667,9 +723,13 @@ function applyLanguage(language) {
 
     document.documentElement.lang = selectedLanguage;
 
+    const hasDetailTranslations = Boolean(globalThis.PAGE_TRANSLATIONS_EN);
+
     const titleElement = document.querySelector('title');
     const titleKey = titleElement?.dataset?.i18nTitle;
-    if (titleKey) {
+    if (hasDetailTranslations) {
+        // Detail pages keep their own title and description (see applyDetailPageTranslation).
+    } else if (titleKey) {
         const translatedTitle = getNestedValue(dictionary, titleKey);
         if (typeof translatedTitle === 'string') {
             document.title = translatedTitle;
@@ -679,7 +739,7 @@ function applyLanguage(language) {
     }
 
     const descriptionMeta = document.querySelector('meta[name="description"]');
-    if (descriptionMeta) {
+    if (descriptionMeta && !hasDetailTranslations) {
         const descriptionKey = descriptionMeta.dataset.i18nDescription;
         const translatedDescription = descriptionKey
             ? getNestedValue(dictionary, descriptionKey)
@@ -718,6 +778,7 @@ function applyLanguage(language) {
     setTypingPhrases(dictionary.hero.typing);
 
     applyPortfolioDeepTranslation(selectedLanguage, dictionary);
+    applyDetailPageTranslation(selectedLanguage);
 }
 
 function toggleSiteLanguage() {
