@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initTypingEffect,
         initOrbitAnimations,
         initSunPhotoModal,
-        initProjectLightbox,
         initSmoothScroll,
         initSectionAnimations,
         initSimpleStats
@@ -151,56 +150,55 @@ const I18N = {
             code: 'Voir le code',
             delmart: {
                 title: 'Delmart Digital',
-                desc: 'Mon activité de création de sites web et d\'applications sur mesure : des solutions modernes, rapides et optimisées.'
+                short: 'Mon activité de création de sites web et d\'applications sur mesure : des solutions modernes, rapides et optimisées.'
             },
             nas: {
                 badge: 'Projet personnel',
                 title: 'NAS Personnel — Dashboard d\'administration',
-                desc: 'Un NAS personnel complet (~2 To) auto-hébergé sur un vieux ThinkPad, exposé sur internet gratuitement et administré via un dashboard web sur mesure. Page d\'accueil (stockage, transferts de fichiers), explorateur de fichiers complet (aperçus, sélection multiple, ZIP, utilisable au doigt), synchronisation automatique Mac → serveur (Syncthing), filtrage DNS (AdGuard) et alertes push, page Admin (monitoring temps réel CPU/RAM/disque, interface de gestion MySQL complète), page Alternance (notes et diagrammes) et un « Minecraft Manager » intégré pour créer et gérer des serveurs Minecraft à la demande, chacun isolé dans son conteneur Docker. Exposition HTTPS via Caddy + DuckDNS, administration exclusivement par Tailscale (aucun port SSH ouvert publiquement).',
+                short: 'NAS personnel de ~2 To auto-hébergé sur un vieux ThinkPad, avec un dashboard d\'administration sur mesure : monitoring, MySQL, serveurs Minecraft.',
                 viewMore: 'Voir plus'
             },
             doucebrise: {
                 badge: 'Projet personnel',
                 title: 'Doucebrise — Jeu 3D cosy dans le navigateur',
-                desc: 'Jeu vidéo 3D « cosy » jouable dans le navigateur et en application de bureau (Windows, macOS, Linux), né comme cadeau puis enrichi jusqu\'à devenir un jeu complet : un archipel de 3 îles à explorer, 16 animaux à apprivoiser, une maison à décorer (150+ meubles) et une histoire en 11 chapitres. Environ 41 000 lignes de JavaScript sans moteur de jeu : rendu Three.js (ombres, eau à reflets, herbe dense, post-traitement), génération procédurale, IA de déplacement A* pour les animaux, sons synthétisés en direct (Web Audio API) et qualité auto-ajustée à la machine, mobile compris. Tests automatisés Playwright (une partie complète jouée de bout en bout) et CI/CD GitHub Actions qui construit les apps des 3 systèmes et publie la démo jouable.'
+                short: 'Jeu 3D cosy jouable dans le navigateur : un archipel à explorer, des animaux à apprivoiser, une maison à décorer. Three.js, sans moteur.'
             },
             meteo: {
                 badge: 'Projet personnel',
                 title: 'Scott\'Météo — App météo auto-hébergée',
-                desc: 'Application météo complète auto-hébergée sur mon serveur personnel : web, PWA installable et widget natif iOS, le tout branché sur la même API. Géolocalisation automatique, prévisions horaires et sur 7 jours façon Météo iPhone (risque de pluie heure par heure), thèmes visuels selon la météo, villes favorites et recherche mondiale avec cascade de géocodage (repli automatique si une source échoue). Rendu côté serveur avec revalidation (ISR 60s) pour un chargement quasi instantané, déployé en conteneur Docker optimisé (moins de 150 Mo, compatible Raspberry Pi/ARM) derrière un reverse proxy HTTPS. 20 tests unitaires sur la logique critique.'
+                short: 'App météo auto-hébergée : web, PWA et widget iOS sur une même API. Next.js, rendu serveur et conteneur Docker léger.'
             },
             sasonyx: {
                 badge: 'Stage en entreprise',
                 title: 'Sasonyx Planning',
-                desc: 'Application web réalisée pendant mon stage pour l\'entreprise Sasonyx. Deux volets : un site vitrine (présentation des services, formulaire de contact avec envoi d\'e-mails) et une application interne de gestion des interventions techniques — calendrier interactif vues semaine/mois (FullCalendar), base clients et équipements, affectation des techniciens et suivi des statuts en temps réel. Authentification et données sur Supabase (PostgreSQL), déploiement Vercel.'
+                short: 'Application web de gestion des interventions techniques réalisée pendant mon stage : calendrier interactif, clients et techniciens.'
             },
             netflix: {
                 title: 'Netflix — Plateforme de streaming',
-                desc: 'Projet SAE d\'architecture logicielle : un clone de Netflix full-stack en trois briques — interface utilisateur (React), back-office d\'administration et API REST (Express + MongoDB). Catalogue de films filtré par genres, système de location payante, espace « Mes locations » et authentification JWT avec mots de passe hachés (bcrypt). Architecture pensée autour des principes SOLID et de plusieurs design patterns (MVC, Factory, Strategy…).'
+                short: 'Clone full-stack de Netflix : interface React, back-office et API REST (Express + MongoDB) avec authentification JWT.'
             },
             fiche: {
                 title: 'Projet réalisé pour Legrand',
-                desc: 'Projet SAE mené pour Legrand : digitaliser la création des modes opératoires industriels, aujourd\'hui réalisés sous Excel. Tableau de bord des documents avec statuts (actif, archivé, en création, en modification), gestion des versions et recherche par titre/référence. Éditeur par blocs en glisser-déposer, import automatique d\'un tableau Excel (copier-coller) et annotation d\'images sur canvas — formes, flèches, calques, rognage — grâce à Fabric.js. Rôles éditeur/lecteur. Front Vue 3 + PrimeVue, API Express + TypeORM (SQL Server).'
+                short: 'Projet SAE pour Legrand : digitaliser la création des modes opératoires industriels, jusque-là réalisés sous Excel.'
             },
             calc: {
                 title: 'Calculatrice',
-                desc: 'Une calculatrice moderne avec support du clavier et de la souris, offrant un design épuré et des calculs instantanés.',
+                short: 'Une calculatrice moderne avec support du clavier et de la souris, offrant un design épuré et des calculs instantanés.',
                 cta: 'Ouvrir la calculatrice'
             },
             games: {
                 title: 'Mini-jeux en Python',
-                desc: 'Suite de jeux en console (Allumettes, Devinette, Puissance 4, Morpion) avec une IA jouable à plusieurs niveaux de difficulté.'
+                short: 'Suite de jeux en console (Allumettes, Devinette, Puissance 4, Morpion) avec une IA jouable à plusieurs niveaux de difficulté.'
             },
             latice: {
                 title: 'Latice — Jeu en Java',
-                desc: 'Jeu de société Latice en Java/JavaFX, repris et enrichi en solo après le projet de groupe initial (SAE 1ère année). Mode 2 joueurs ou solo contre une IA (choix du coup le plus rentable selon les règles), aide au placement en surbrillance pendant le glisser-déposer, personnalisation (pseudo, couleur) et historique des parties, musique/sons et thèmes visuels sélectionnables. Menu principal à navigation façon jeu vidéo, build Maven multiplateforme (Windows/Linux/macOS) via Maven Wrapper. Architecture MVC testée (35 tests JUnit 5).'
+                short: 'Jeu de société Latice en Java/JavaFX, repris en solo : mode IA, aide au placement, historique et 35 tests JUnit 5.'
             },
             network: {
                 title: 'Simulation réseau — Kathara',
-                desc: 'Mise en place d\'un réseau complet (serveurs DHCP & DNS, routage, SSH) et analyse du trafic avec WireShark.'
+                short: 'Mise en place d\'un réseau complet (serveurs DHCP & DNS, routage, SSH) et analyse du trafic avec WireShark.'
             },
             details: 'Voir le détail',
-            play: 'Jouer en ligne',
             viewAll: 'Voir tout mon portfolio'
         },
         contact: {
@@ -340,56 +338,55 @@ const I18N = {
             code: 'View the code',
             delmart: {
                 title: 'Delmart Digital',
-                desc: 'My business building custom websites and applications: modern, fast and optimized solutions.'
+                short: 'My business building custom websites and applications: modern, fast and optimized solutions.'
             },
             nas: {
                 badge: 'Personal project',
                 title: 'Personal NAS — Admin Dashboard',
-                desc: 'A full personal NAS (~2 TB) self-hosted on an old ThinkPad, exposed on the internet for free and managed through a custom web dashboard. Home page (storage, file transfers), a full file explorer (previews, multi-select, ZIP downloads, touch-friendly), automatic Mac-to-server sync (Syncthing), DNS filtering (AdGuard) and push alerts, Admin page (real-time CPU/RAM/disk monitoring, full MySQL management UI), Alternance page (notes and diagrams), and a built-in "Minecraft Manager" to create and manage on-demand Minecraft servers, each isolated in its own Docker container. HTTPS exposure via Caddy + DuckDNS, administration exclusively through Tailscale (no SSH port ever exposed publicly).',
+                short: 'A ~2 TB personal NAS self-hosted on an old ThinkPad, with a custom admin dashboard: monitoring, MySQL, Minecraft servers.',
                 viewMore: 'Learn more'
             },
             doucebrise: {
                 badge: 'Personal project',
                 title: 'Doucebrise — Cozy 3D browser game',
-                desc: 'A cozy 3D video game playable in the browser and as a desktop app (Windows, macOS, Linux), born as a gift and grown into a complete game: a 3-island archipelago to explore, 16 animal species to tame, a house to decorate (150+ furniture items) and an 11-chapter story. About 41,000 lines of JavaScript with no game engine: Three.js rendering (shadows, reflective water, dense grass, post-processing), procedural generation, A* pathfinding AI for the animals, live-synthesized sound (Web Audio API) and quality that auto-adjusts to the machine, mobile included. Automated Playwright tests (a full playthrough from start to finish) and a GitHub Actions CI/CD pipeline that builds the apps for all 3 systems and publishes the playable demo.'
+                short: 'A cozy 3D game playable in the browser: an archipelago to explore, animals to tame, a house to decorate. Three.js, no engine.'
             },
             meteo: {
                 badge: 'Personal project',
                 title: 'Scott\'Météo — Self-hosted weather app',
-                desc: 'A complete weather app self-hosted on my personal server: web, installable PWA, and a native iOS widget, all backed by the same API. Automatic geolocation, hourly and 7-day forecasts in an iPhone-Weather style (hour-by-hour rain risk), weather-based visual themes, favorite cities, and worldwide search with a geocoding fallback cascade (automatic retry if a source fails). Server-side rendering with ISR revalidation (60s) for near-instant loads, deployed in an optimized Docker container (under 150 MB, ARM/Raspberry Pi compatible) behind an HTTPS reverse proxy. 20 unit tests covering the critical logic.'
+                short: 'Self-hosted weather app: web, PWA and iOS widget on a single API. Next.js, server-side rendering and a light Docker container.'
             },
             sasonyx: {
                 badge: 'Internship project',
                 title: 'Sasonyx Planning',
-                desc: 'Web app built during my internship for the company Sasonyx. Two parts: a showcase site (services overview, contact form with email sending) and an internal technical-intervention management app — interactive week/month calendar (FullCalendar), client and equipment database, technician assignment and real-time status tracking. Authentication and data on Supabase (PostgreSQL), deployed on Vercel.'
+                short: 'Web app to manage technical interventions, built during my internship: interactive calendar, clients and technicians.'
             },
             netflix: {
                 title: 'Netflix — Streaming platform',
-                desc: 'Software-architecture project: a full-stack Netflix clone in three parts — a user interface (React), an admin back-office and a REST API (Express + MongoDB). Movie catalog filtered by genre, paid rental system, a “My rentals” area and JWT authentication with hashed passwords (bcrypt). Architecture built around SOLID principles and several design patterns (MVC, Factory, Strategy…).'
+                short: 'Full-stack Netflix clone: React UI, back office and REST API (Express + MongoDB) with JWT authentication.'
             },
             fiche: {
                 title: 'Project delivered for Legrand',
-                desc: 'University project for Legrand: digitizing the creation of industrial operating procedures currently made in Excel. Document dashboard with statuses (active, archived, in creation, in modification), version management and search by title/reference. Drag-and-drop block editor, automatic Excel-table import (copy-paste) and image annotation on canvas — shapes, arrows, layers, cropping — powered by Fabric.js. Editor/reader roles. Vue 3 + PrimeVue front end, Express + TypeORM (SQL Server) API.'
+                short: 'SAE project for Legrand: digitizing the creation of industrial operating procedures previously made in Excel.'
             },
             calc: {
                 title: 'Calculator',
-                desc: 'A modern calculator with keyboard and mouse support, featuring a clean design and instant calculations.',
+                short: 'A modern calculator with keyboard and mouse support, featuring a clean design and instant calculations.',
                 cta: 'Open calculator'
             },
             games: {
                 title: 'Python mini-games',
-                desc: 'A set of console games (Nim, Guessing, Connect 4, Tic-tac-toe) with a playable AI offering several difficulty levels.'
+                short: 'A set of console games (Nim, Guessing, Connect 4, Tic-tac-toe) with a playable AI offering several difficulty levels.'
             },
             latice: {
                 title: 'Latice — Java game',
-                desc: 'Java/JavaFX board game, picked back up and extended solo after the original group project (1st-year SAE). 2-player or solo vs AI mode (AI picks the highest-scoring legal move), placement hints highlighting legal cells during drag-and-drop, player customisation (name, colour) and match history, selectable music/sound effects and visual themes. Video-game-style main menu navigation, cross-platform Maven build (Windows/Linux/macOS) via the Maven Wrapper. Tested MVC architecture (35 JUnit 5 tests).'
+                short: 'Latice board game in Java/JavaFX, reworked solo: AI mode, placement hints, game history and 35 JUnit 5 tests.'
             },
             network: {
                 title: 'Network simulation — Kathara',
-                desc: 'Setup of a complete network (DHCP & DNS servers, routing, SSH) and traffic analysis with WireShark.'
+                short: 'Setup of a complete network (DHCP & DNS servers, routing, SSH) and traffic analysis with WireShark.'
             },
             details: 'View details',
-            play: 'Play online',
             viewAll: 'View my full portfolio'
         },
         contact: {
@@ -1122,84 +1119,6 @@ function initSimpleStats() {
     stats.forEach((node) => {
         node.textContent = '0';
         observer.observe(node);
-    });
-}
-
-function initProjectLightbox() {
-    const images = document.querySelectorAll('.project-image img');
-    if (!images.length) {
-        return;
-    }
-
-    const overlay = document.createElement('div');
-    overlay.className = 'lightbox-overlay';
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-hidden', 'true');
-    overlay.innerHTML = `
-        <button class="lightbox-close" type="button" aria-label="Fermer">&times;</button>
-        <figure class="lightbox-figure">
-            <img class="lightbox-img" src="" alt="">
-            <figcaption class="lightbox-caption"></figcaption>
-        </figure>
-    `;
-    document.body.appendChild(overlay);
-
-    const overlayImg = overlay.querySelector('.lightbox-img');
-    const caption = overlay.querySelector('.lightbox-caption');
-    const closeBtn = overlay.querySelector('.lightbox-close');
-    let lastFocused = null;
-
-    const open = (src, alt) => {
-        overlayImg.src = src;
-        overlayImg.alt = alt || '';
-        caption.textContent = alt || '';
-        overlay.classList.add('open');
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        closeBtn.focus();
-    };
-
-    const close = () => {
-        overlay.classList.remove('open');
-        overlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        overlayImg.src = '';
-        if (lastFocused) {
-            lastFocused.focus();
-        }
-    };
-
-    images.forEach((img) => {
-        img.classList.add('zoomable');
-        img.setAttribute('tabindex', '0');
-        img.setAttribute('role', 'button');
-        img.setAttribute('aria-label', `Agrandir : ${img.alt || 'image du projet'}`);
-
-        const trigger = () => {
-            lastFocused = img;
-            open(img.currentSrc || img.src, img.alt);
-        };
-
-        img.addEventListener('click', trigger);
-        img.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                trigger();
-            }
-        });
-    });
-
-    closeBtn.addEventListener('click', close);
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay || event.target.classList.contains('lightbox-figure')) {
-            close();
-        }
-    });
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && overlay.classList.contains('open')) {
-            close();
-        }
     });
 }
 
