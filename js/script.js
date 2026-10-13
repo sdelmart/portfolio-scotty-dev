@@ -159,6 +159,11 @@ const I18N = {
                 desc: 'Un NAS personnel complet (~2 To) auto-hébergé sur un vieux ThinkPad, exposé sur internet gratuitement et administré via un dashboard web sur mesure. Page d\'accueil (stockage, transferts de fichiers), explorateur de fichiers complet (aperçus, sélection multiple, ZIP, utilisable au doigt), synchronisation automatique Mac → serveur (Syncthing), filtrage DNS (AdGuard) et alertes push, page Admin (monitoring temps réel CPU/RAM/disque, interface de gestion MySQL complète), page Alternance (notes et diagrammes) et un « Minecraft Manager » intégré pour créer et gérer des serveurs Minecraft à la demande, chacun isolé dans son conteneur Docker. Exposition HTTPS via Caddy + DuckDNS, administration exclusivement par Tailscale (aucun port SSH ouvert publiquement).',
                 viewMore: 'Voir plus'
             },
+            doucebrise: {
+                badge: 'Projet personnel',
+                title: 'Doucebrise — Jeu 3D cosy dans le navigateur',
+                desc: 'Jeu vidéo 3D « cosy » jouable dans le navigateur et en application de bureau (Windows, macOS, Linux), né comme cadeau puis enrichi jusqu\'à devenir un jeu complet : un archipel de 3 îles à explorer, 16 animaux à apprivoiser, une maison à décorer (150+ meubles) et une histoire en 11 chapitres. Environ 41 000 lignes de JavaScript sans moteur de jeu : rendu Three.js (ombres, eau à reflets, herbe dense, post-traitement), génération procédurale, IA de déplacement A* pour les animaux, sons synthétisés en direct (Web Audio API) et qualité auto-ajustée à la machine, mobile compris. Tests automatisés Playwright (une partie complète jouée de bout en bout) et CI/CD GitHub Actions qui construit les apps des 3 systèmes et publie la démo jouable.'
+            },
             meteo: {
                 badge: 'Projet personnel',
                 title: 'Scott\'Météo — App météo auto-hébergée',
@@ -195,6 +200,7 @@ const I18N = {
                 desc: 'Mise en place d\'un réseau complet (serveurs DHCP & DNS, routage, SSH) et analyse du trafic avec WireShark.'
             },
             details: 'Voir le détail',
+            play: 'Jouer en ligne',
             viewAll: 'Voir tout mon portfolio'
         },
         contact: {
@@ -342,6 +348,11 @@ const I18N = {
                 desc: 'A full personal NAS (~2 TB) self-hosted on an old ThinkPad, exposed on the internet for free and managed through a custom web dashboard. Home page (storage, file transfers), a full file explorer (previews, multi-select, ZIP downloads, touch-friendly), automatic Mac-to-server sync (Syncthing), DNS filtering (AdGuard) and push alerts, Admin page (real-time CPU/RAM/disk monitoring, full MySQL management UI), Alternance page (notes and diagrams), and a built-in "Minecraft Manager" to create and manage on-demand Minecraft servers, each isolated in its own Docker container. HTTPS exposure via Caddy + DuckDNS, administration exclusively through Tailscale (no SSH port ever exposed publicly).',
                 viewMore: 'Learn more'
             },
+            doucebrise: {
+                badge: 'Personal project',
+                title: 'Doucebrise — Cozy 3D browser game',
+                desc: 'A cozy 3D video game playable in the browser and as a desktop app (Windows, macOS, Linux), born as a gift and grown into a complete game: a 3-island archipelago to explore, 16 animal species to tame, a house to decorate (150+ furniture items) and an 11-chapter story. About 41,000 lines of JavaScript with no game engine: Three.js rendering (shadows, reflective water, dense grass, post-processing), procedural generation, A* pathfinding AI for the animals, live-synthesized sound (Web Audio API) and quality that auto-adjusts to the machine, mobile included. Automated Playwright tests (a full playthrough from start to finish) and a GitHub Actions CI/CD pipeline that builds the apps for all 3 systems and publishes the playable demo.'
+            },
             meteo: {
                 badge: 'Personal project',
                 title: 'Scott\'Météo — Self-hosted weather app',
@@ -378,6 +389,7 @@ const I18N = {
                 desc: 'Setup of a complete network (DHCP & DNS servers, routing, SSH) and traffic analysis with WireShark.'
             },
             details: 'View details',
+            play: 'Play online',
             viewAll: 'View my full portfolio'
         },
         contact: {

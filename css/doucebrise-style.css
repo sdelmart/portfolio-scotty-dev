@@ -1,0 +1,105 @@
+/* ============================
+   DOUCEBRISE PROJECT PAGE STYLES
+   ============================ */
+
+.dbr-status-badge {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 130, 170, 0.15);
+    color: #ff9ec0;
+    border: 1px solid rgba(255, 130, 170, 0.4);
+}
+
+.dbr-lead {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 32px;
+}
+
+.dbr-hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.dbr-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.dbr-stats .stat-value {
+    font-size: 1.7rem;
+}
+
+.dbr-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.dbr-gallery-item {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 56, 56, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.dbr-gallery-item:first-child {
+    grid-column: 1 / -1;
+}
+
+.dbr-gallery-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.dbr-gallery-item figcaption {
+    padding: 12px 16px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.dbr-pipeline {
+    overflow-x: auto;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 56, 56, 0.2);
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    white-space: pre;
+}
+
+.dbr-credits {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .dbr-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dbr-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .dbr-pipeline {
+        font-size: 0.68rem;
+    }
+}

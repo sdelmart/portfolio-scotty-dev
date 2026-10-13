@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doucebrise — Scotty Dev</title>
+    <meta name="description" content="Doucebrise : jeu vidéo 3D cosy jouable dans le navigateur et en application de bureau. Three.js, JavaScript (≈41 000 lignes, sans moteur), génération procédurale, IA A*, Web Audio, Electron, tests Playwright, CI/CD GitHub Actions.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scotty Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/doucebrise.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="Doucebrise — Scotty Dev">
+    <meta property="og:description" content="Jeu 3D cosy dans le navigateur : un archipel à explorer, des animaux à apprivoiser, une maison à décorer et une histoire à vivre.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/doucebrise.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/projets/doucebrise-titre.jpg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
+    <link rel="stylesheet" href="../css/style.css?v=20260922">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/doucebrise-style.css?v=20261013">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="nav-container" aria-label="Navigation principale">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span></a>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="../index.html#pro" class="nav-link" data-i18n="nav.pro">Activité pro</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/scotty-delmart/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/sdelmart" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
+            </div>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="portfolio-hero">
+            <div class="container">
+                <span class="dbr-status-badge">🎮 Projet personnel — v0.24.2</span>
+                <h1 class="portfolio-main-title">
+                    Doucebrise
+                    <span class="portfolio-subtitle">Jeu 3D « cosy » — dans le navigateur et en application de bureau</span>
+                </h1>
+                <p class="portfolio-intro">Un archipel à explorer, des animaux à apprivoiser, une maison à décorer et une histoire à vivre — entièrement développé en JavaScript, sans moteur de jeu.</p>
+                <div class="dbr-hero-links">
+                    <a href="https://sdelmart.github.io/Doucebrise/" target="_blank" rel="noopener noreferrer" class="glow-genz-button" style="text-decoration: none; display: inline-block;">▶ Jouer en ligne</a>
+                    <a href="https://github.com/sdelmart/Doucebrise" target="_blank" rel="noopener noreferrer" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Voir le code</a>
+                    <a href="https://github.com/sdelmart/Doucebrise/releases/latest" target="_blank" rel="noopener noreferrer" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Télécharger</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Le projet -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🎯 Le projet</h2>
+                <p class="dbr-lead">On arrive à Doucebrise avec une lettre de Mamie Rose : le phare de l'île s'est éteint et le village s'est un peu perdu de vue. Au fil de 11 chapitres, on rallume le phare, on se lie d'amitié avec les habitants, on relie les trois îles de l'archipel et on découvre l'histoire de l'ancien gardien. Entre deux quêtes, on cultive son potager, on pêche, on cuisine, on adopte des animaux et on décore sa maison, au rythme des journées, des saisons et des fêtes du village.</p>
+
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Pourquoi ce projet ?</h4>
+                        <ul>
+                            <li>Créé à l'origine comme cadeau pour ma copine, puis enrichi version après version jusqu'à devenir un jeu complet</li>
+                            <li>Relever un défi technique de bout en bout : moteur maison, contenu, outillage, tests, distribution</li>
+                            <li>Aller au bout d'un projet long : le jeu en est à sa version 0.24</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Où y jouer ?</h4>
+                        <p>Directement dans le navigateur (démo hébergée sur GitHub Pages) ou en application de bureau pour Windows, macOS et Linux, jouable hors ligne. Le jeu est en français.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chiffres -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📊 Le projet en chiffres</h2>
+                <div class="dbr-stats">
+                    <article class="stat-card">
+                        <p class="stat-value">41 000</p>
+                        <p class="stat-label">lignes de JavaScript</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">~100</p>
+                        <p class="stat-label">fichiers, sans moteur de jeu</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">11</p>
+                        <p class="stat-label">chapitres + épilogue (49 quêtes)</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">16</p>
+                        <p class="stat-label">habitants et 16 espèces d'animaux</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">150+</p>
+                        <p class="stat-label">meubles pour décorer la maison</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">3</p>
+                        <p class="stat-label">îles reliées par des ponts, 3 villages</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">116</p>
+                        <p class="stat-label">vérifications dans le test de l'histoire</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">3</p>
+                        <p class="stat-label">systèmes : Windows, macOS, Linux</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aperçu -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📸 Aperçu</h2>
+                <div class="dbr-gallery">
+                    <figure class="dbr-gallery-item">
+                        <img src="../assets/images/projets/doucebrise-titre.jpg" alt="Écran titre du jeu Doucebrise avec un gros chat roux sur le toit du Café des Chats" loading="lazy" decoding="async">
+                        <figcaption>Écran titre : « L'archipel des cœurs doux »</figcaption>
+                    </figure>
+                    <figure class="dbr-gallery-item">
+                        <img src="../assets/images/projets/doucebrise-village.jpg" alt="Place du village de Doucebrise" loading="lazy" decoding="async">
+                        <figcaption>La place du village</figcaption>
+                    </figure>
+                    <figure class="dbr-gallery-item">
+                        <img src="../assets/images/projets/doucebrise-maison.jpg" alt="Intérieur de maison décoré dans Doucebrise" loading="lazy" decoding="async">
+                        <figcaption>L'intérieur de la maison, décoré</figcaption>
+                    </figure>
+                    <figure class="dbr-gallery-item">
+                        <img src="../assets/images/projets/doucebrise-phare.jpg" alt="Chemin du phare de Doucebrise en fin de journée" loading="lazy" decoding="async">
+                        <figcaption>Le chemin du phare en fin de journée</figcaption>
+                    </figure>
+                    <figure class="dbr-gallery-item">
+                        <img src="../assets/images/projets/doucebrise-createur.jpg" alt="Créateur de personnage de Doucebrise" loading="lazy" decoding="async">
+                        <figcaption>Le créateur de personnage</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenu du jeu -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🧩 Contenu du jeu</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Monde</h4>
+                        <p>Un archipel de 3 îles et 3 villages, reliés par des ponts. On s'y déplace à pied, à trottinette, à vélo, en scooter, en voiturette, en bateau ou en montgolfière.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Histoire</h4>
+                        <p>11 chapitres et un épilogue (49 quêtes), avec des scènes mises en scène : plans cinéma, cérémonies de nuit, demande en mariage au pied du phare… On retrouve aussi, page par page, le carnet de l'ancien gardien grâce à des énigmes.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Habitants</h4>
+                        <p>16 personnages avec métier, emploi du temps, goûts, dialogues, amitié et 58 quêtes personnelles.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Animaux</h4>
+                        <p>16 espèces (chats, chiens, renards, pandas roux, loutres…) à apprivoiser, adopter, habiller et emmener avec soi.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Maison</h4>
+                        <p>Plus de 150 meubles, objets à poser sur les meubles, papiers peints, sols, façade et jardin, et une maison qu'on peut agrandir.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Activités</h4>
+                        <p>Potager, cueillette, pêche, cuisine, insectes, petits boulots, défis quotidiens, succès et titres.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Monde vivant</h4>
+                        <p>Cycle jour et nuit, 4 saisons, météo, fêtes de saison et mini-jeux (course de luge, feux d'artifice, fête des neiges).</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Personnalisation & contrôles</h4>
+                        <ul>
+                            <li>Créateur de personnage : styles, couleurs, accessoires, tenues enregistrables</li>
+                            <li>Clavier (touches réassignables, AZERTY et QWERTY détectés), manette, écran tactile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack technique -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">⚙️ Stack technique</h2>
+                <div class="competences-table-wrapper">
+                    <table class="competences-table">
+                        <thead>
+                            <tr>
+                                <th>Domaine</th>
+                                <th>Choix</th>
+                                <th>Pourquoi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rendu 3D</td>
+                                <td>Three.js (WebGL)</td>
+                                <td>Ombres, occlusion ambiante, eau à reflets, herbe dense, sol à textures mélangées selon le terrain, post-traitement (bloom, étalonnage), deux styles au choix : réaliste ou cartoon</td>
+                            </tr>
+                            <tr>
+                                <td>Langage</td>
+                                <td>JavaScript (modules ES)</td>
+                                <td>≈ 41 000 lignes dans ≈ 100 fichiers, sans moteur de jeu ni framework d'interface : contrôle total et démarrage léger</td>
+                            </tr>
+                            <tr>
+                                <td>Build</td>
+                                <td>Vite</td>
+                                <td>Rechargement instantané en développement, bundle optimisé pour le web</td>
+                            </tr>
+                            <tr>
+                                <td>Application de bureau</td>
+                                <td>Electron + electron-builder</td>
+                                <td>Protocole interne <code>app://</code> pour jouer hors ligne ; Windows (installateur + portable), macOS (universel Intel/Apple Silicon), Linux (.deb, AppImage, archive)</td>
+                            </tr>
+                            <tr>
+                                <td>Génération procédurale</td>
+                                <td>Code maison</td>
+                                <td>Terrain de l'archipel, villages, maisons, animaux, meubles et arbres construits par le code (personnages et une partie de la végétation : packs 3D libres)</td>
+                            </tr>
+                            <tr>
+                                <td>IA des animaux</td>
+                                <td>Pathfinding A*</td>
+                                <td>Grille de navigation recalculée seulement autour de ce qui change</td>
+                            </tr>
+                            <tr>
+                                <td>Son</td>
+                                <td>Web Audio API</td>
+                                <td>Bruitages et ambiances synthétisés en direct (pas, vent, vagues, oiseaux…), adaptés au lieu, à l'heure et à la météo</td>
+                            </tr>
+                            <tr>
+                                <td>Tests</td>
+                                <td>Playwright (Chromium sans écran)</td>
+                                <td>Test de fumée de 24 étapes + test qui joue toute l'histoire et toutes les quêtes (116 vérifications)</td>
+                            </tr>
+                            <tr>
+                                <td>CI/CD</td>
+                                <td>GitHub Actions + GitHub Pages</td>
+                                <td>Tests à chaque envoi, build des apps des 3 systèmes jointes aux releases, publication de la démo jouable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture technique -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🏗️ Côté technique</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Performance</h4>
+                        <ul>
+                            <li>Le monde est découpé en morceaux : seul ce qui est visible est affiché</li>
+                            <li>Les objets cachés ne sont plus animés</li>
+                            <li>La qualité s'ajuste automatiquement à la machine, du petit portable au PC de jeu</li>
+                            <li>Optimisé mobile : résolution, limite d'images, commandes tactiles, pincer pour zoomer</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Sauvegarde & mises à jour</h4>
+                        <ul>
+                            <li>Plusieurs profils, export et import, sauvegarde automatique</li>
+                            <li>Compatibilité gardée entre les versions</li>
+                            <li>L'application de bureau vérifie au démarrage si une nouvelle version est publiée sur GitHub et l'annonce sur l'écran titre</li>
+                        </ul>
+                    </div>
+                </div>
+                <pre class="dbr-pipeline">git push
+   │
+   ▼
+GitHub Actions
+   ├── Tests Playwright (fumée 24 étapes + histoire complète)
+   ├── Build Electron ──► Windows · macOS (universel) · Linux
+   │                      └── jointes à la release GitHub
+   └── Build Vite ──────► GitHub Pages (démo jouable en ligne)
+
+Application de bureau ──► vérifie les nouvelles versions au démarrage</pre>
+            </div>
+        </section>
+
+        <!-- Défis techniques -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔧 Défis techniques rencontrés</h2>
+                <p class="dbr-lead">Le vrai cœur du projet — les problèmes concrets résolus, pas juste la liste de fonctionnalités.</p>
+
+                <div class="projects-list">
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">01</div>
+                        <div class="card-content">
+                            <h3>Des véhicules qui traversaient les rambardes</h3>
+                            <p class="card-description">Quand une image prenait du retard, un véhicule rapide « sautait » par-dessus les fines rambardes des ponts : le déplacement entre deux images était plus grand que l'obstacle. Le déplacement se fait désormais par petits pas, ce qui rend les collisions fiables quelle que soit la vitesse ou la fluidité de la machine.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">02</div>
+                        <div class="card-content">
+                            <h3>Des animaux qui glissent contre les murs</h3>
+                            <p class="card-description">Les animaux longeaient les murs sans trouver leur chemin. Ils suivent maintenant un vrai chemin A* sur une grille de navigation, recalculée seulement là où le décor change (meuble posé, fête installée) plutôt qu'en entier à chaque modification.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">03</div>
+                        <div class="card-content">
+                            <h3>Des scènes enfin lisibles</h3>
+                            <p class="card-description">Les répliques des scènes se chevauchaient à l'écran. Elles s'enchaînent maintenant une à une, avec un temps de lecture proportionnel à la longueur du texte et un clic pour avancer.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">04</div>
+                        <div class="card-content">
+                            <h3>Un jeu 3D qui tient sur téléphone</h3>
+                            <p class="card-description">Interface repensée pour le tactile, pincer pour zoomer, décoration au doigt, sauvegarde quand l'application passe en arrière-plan, et reprise si le téléphone libère la mémoire de la 3D : on retrouve sa partie, pas un écran noir.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">05</div>
+                        <div class="card-content">
+                            <h3>La nuit sans noyer les intérieurs</h3>
+                            <p class="card-description">L'effet de halo (bloom) noyait les intérieurs éclairés dans un blanc éblouissant. Le halo et l'éclairage sont réglés différemment à l'intérieur et à l'extérieur, pour garder des maisons lisibles et chaleureuses de nuit.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que ça m'a appris -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">💡 Ce que ce projet m'a appris</h2>
+                <div class="detail-item">
+                    <ul>
+                        <li>Structurer une grosse base de code (≈ 41 000 lignes) sans framework, en modules cohérents</li>
+                        <li>Optimiser un rendu 3D temps réel pour des machines très différentes, du téléphone au PC de jeu</li>
+                        <li>Mettre en place une vraie chaîne d'intégration et de distribution : tests automatisés, builds multi-systèmes, déploiement</li>
+                        <li>Tester un jeu de bout en bout (une partie complète jouée automatiquement) pour pouvoir le faire évoluer sans régression</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crédits -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🙏 Crédits</h2>
+                <p class="dbr-credits">Modèles 3D : KayKit et Kenney (CC0) · Textures : Poly Haven (CC0) · Rameaux d'arbres : projet EZ-Tree (MIT) · Police : Nunito (OFL). Le reste — terrain, villages, maisons, animaux, meubles, sons — est construit par le code.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section portfolio-cta">
+            <div class="container">
+                <div class="cta-content slide-in-up">
+                    <h2>Envie d'y jouer ?</h2>
+                    <p>La démo est jouable directement dans le navigateur, et le code complet est sur GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://sdelmart.github.io/Doucebrise/" target="_blank" rel="noopener noreferrer" class="glow-genz-button" style="text-decoration: none; display: inline-block;">▶ Jouer en ligne</a>
+                        <a href="https://github.com/sdelmart/Doucebrise" target="_blank" rel="noopener noreferrer" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Voir le code</a>
+                        <a href="../index.html#projects" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Retour aux projets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js?v=20261013"></script>
+</body>
+</html>
