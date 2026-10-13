@@ -159,6 +159,7 @@ const I18N = {
                 viewMore: 'Voir plus'
             },
             doucebrise: {
+                playable: '▶ Jouable en ligne',
                 badge: 'Projet personnel',
                 title: 'Doucebrise — Jeu 3D cosy dans le navigateur',
                 short: 'Jeu 3D cosy jouable dans le navigateur : un archipel à explorer, des animaux à apprivoiser, une maison à décorer. Three.js, sans moteur.'
@@ -347,6 +348,7 @@ const I18N = {
                 viewMore: 'Learn more'
             },
             doucebrise: {
+                playable: '▶ Playable online',
                 badge: 'Personal project',
                 title: 'Doucebrise — Cozy 3D browser game',
                 short: 'A cozy 3D game playable in the browser: an archipelago to explore, animals to tame, a house to decorate. Three.js, no engine.'

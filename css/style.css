@@ -1220,6 +1220,13 @@ select:focus-visible {
   background: linear-gradient(135deg, var(--accent), var(--accent-2, #8a0000));
 }
 
+/* Second badge, top-right of the card image */
+.project-badge-play {
+  left: auto;
+  right: 14px;
+  background: linear-gradient(135deg, #1f9d55, #2ecc71);
+}
+
 /* Primary (filled) project link */
 .project-link-primary {
   background: var(--accent);
