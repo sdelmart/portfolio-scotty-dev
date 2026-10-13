@@ -164,6 +164,11 @@ const I18N = {
                 title: 'Doucebrise — Jeu 3D cosy dans le navigateur',
                 short: 'Jeu 3D cosy jouable dans le navigateur : un archipel à explorer, des animaux à apprivoiser, une maison à décorer. Three.js, sans moteur.'
             },
+            kinetik: {
+                badge: 'Projet personnel',
+                title: 'KINETIK — Puzzle multiplateforme',
+                short: 'Puzzle multiplateforme : Sokoban futuriste de 80 niveaux et labyrinthe à énigmes, avec éditeur de niveaux et classements en ligne.'
+            },
             meteo: {
                 badge: 'Projet personnel',
                 title: 'Scott\'Météo — App météo auto-hébergée',
@@ -352,6 +357,11 @@ const I18N = {
                 badge: 'Personal project',
                 title: 'Doucebrise — Cozy 3D browser game',
                 short: 'A cozy 3D game playable in the browser: an archipelago to explore, animals to tame, a house to decorate. Three.js, no engine.'
+            },
+            kinetik: {
+                badge: 'Personal project',
+                title: 'KINETIK — Cross-platform puzzle game',
+                short: 'Cross-platform puzzle game: an 80-level futuristic Sokoban and a riddle maze, with a level editor and online leaderboards.'
             },
             meteo: {
                 badge: 'Personal project',

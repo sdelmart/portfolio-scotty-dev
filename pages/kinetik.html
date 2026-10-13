@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINETIK — Scotty Dev</title>
+    <meta name="description" content="KINETIK : jeu de puzzle multiplateforme (macOS, Windows, Linux) — Sokoban futuriste de 80 niveaux, labyrinthe à énigmes, éditeur de niveaux, classements en ligne auto-hébergés. JavaScript, Canvas, Web Audio, Tauri, Node.js, 571 tests.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Scotty Delmart">
+    <meta name="theme-color" content="#570000">
+    <link rel="canonical" href="https://scotty-dev.netlify.app/pages/kinetik.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Scotty Dev">
+    <meta property="og:title" content="KINETIK — Scotty Dev">
+    <meta property="og:description" content="Sokoban futuriste de 80 niveaux et labyrinthe à énigmes, avec éditeur de niveaux et classements en ligne. Tout est généré ou synthétisé dans le code.">
+    <meta property="og:url" content="https://scotty-dev.netlify.app/pages/kinetik.html">
+    <meta property="og:image" content="https://scotty-dev.netlify.app/assets/images/projets/kinetik-niveau.jpg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
+    <link rel="stylesheet" href="../css/style.css?v=20261017">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/kinetik-style.css?v=20261018">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="nav-container" aria-label="Navigation principale">
+            <div class="logo">
+                <a href="../index.html#home" style="text-decoration: none; color: inherit;">scotty<span class="logo-accent">-dev</span></a>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="../index.html#pro" class="nav-link" data-i18n="nav.pro">Activité pro</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/scotty-delmart/" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/sdelmart" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <button id="lang-toggle" class="lang-toggle" type="button">FR / EN</button>
+            </div>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="portfolio-hero">
+            <div class="container">
+                <span class="kin-status-badge">🧩 Projet personnel — v1.6.1</span>
+                <h1 class="portfolio-main-title">
+                    KINETIK
+                    <span class="portfolio-subtitle">Puzzle multiplateforme — Sokoban futuriste & labyrinthe à énigmes</span>
+                </h1>
+                <p class="portfolio-intro">Un jeu de puzzle pour macOS, Windows et Linux : 80 niveaux de Sokoban, un labyrinthe médiéval à énigmes, un éditeur de niveaux et des classements en ligne sur un serveur que j'héberge moi-même.</p>
+                <div class="kin-hero-links">
+                    <a href="https://github.com/sdelmart/kinetik/releases/latest" target="_blank" rel="noopener noreferrer" class="glow-genz-button" style="text-decoration: none; display: inline-block;">Télécharger</a>
+                    <a href="https://github.com/sdelmart/kinetik" target="_blank" rel="noopener noreferrer" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Voir le code</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Le projet -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🎯 Le projet</h2>
+                <p class="kin-lead">Un drone de manutention pousse des conteneurs dans une usine automatisée : 8 secteurs, chacun avec sa mécanique (glace, tapis roulants, téléporteurs, trappes, sens uniques, serrures, caisses jumelles…). Un second mode, le Labyrinthe, mélange exploration dans le brouillard et énigmes de culture générale. Tout est généré ou synthétisé dans le code : aucune image ni fichier audio.</p>
+
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Pourquoi ce projet ?</h4>
+                        <ul>
+                            <li>Réécrire de zéro, en beaucoup plus ambitieux, un Sokoban réalisé en équipe en terminale NSI</li>
+                            <li>Concevoir un vrai jeu complet : contenu, outillage, éditeur, serveur en ligne, distribution</li>
+                            <li>Pousser l'algorithmique : génération de niveaux, résolution optimale, indices fiables</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Où l'essayer ?</h4>
+                        <p>Le jeu se télécharge pour macOS (Apple Silicon et Intel), Windows et Linux depuis les releases GitHub. Le code source est public. Pas encore de démo dans le navigateur. <em>macOS : l'application n'est pas signée, la commande à lancer au premier démarrage est indiquée sur la page de téléchargement.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chiffres -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📊 Le projet en chiffres</h2>
+                <div class="kin-stats">
+                    <article class="stat-card">
+                        <p class="stat-value">~10 700</p>
+                        <p class="stat-label">lignes de JavaScript côté jeu (65 fichiers)</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">571</p>
+                        <p class="stat-label">tests automatisés, dans 29 fichiers</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">80</p>
+                        <p class="stat-label">niveaux Sokoban + 30 défis du jour</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">7</p>
+                        <p class="stat-label">chapitres de labyrinthe + mode sans fin</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">~220</p>
+                        <p class="stat-label">questions écrites + énigmes générées sans limite</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">4</p>
+                        <p class="stat-label">langues : FR, EN, DE, ES</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">4</p>
+                        <p class="stat-label">plateformes, 6 installeurs par version</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-value">42</p>
+                        <p class="stat-label">commits en 3 semaines (v1.6.1)</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aperçu -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">📸 Aperçu</h2>
+                <div class="kin-gallery">
+                    <figure class="kin-gallery-item">
+                        <img src="../assets/images/projets/kinetik-titre.jpg" alt="Écran titre de KINETIK avec une faille lumineuse" loading="lazy" decoding="async">
+                        <figcaption>Écran titre : la faille lumineuse</figcaption>
+                    </figure>
+                    <figure class="kin-gallery-item">
+                        <img src="../assets/images/projets/kinetik-accueil.jpg" alt="Accueil de KINETIK avec les modes Sokoban et Labyrinthe" loading="lazy" decoding="async">
+                        <figcaption>L'accueil : les deux portails, Sokoban et Labyrinthe</figcaption>
+                    </figure>
+                    <figure class="kin-gallery-item">
+                        <img src="../assets/images/projets/kinetik-secteurs.jpg" alt="Écran de sélection des 8 secteurs du Sokoban" loading="lazy" decoding="async">
+                        <figcaption>Les 8 secteurs du Sokoban</figcaption>
+                    </figure>
+                    <figure class="kin-gallery-item">
+                        <img src="../assets/images/projets/kinetik-niveau.jpg" alt="Niveau Sokoban du secteur Coffre avec plusieurs mécaniques" loading="lazy" decoding="async">
+                        <figcaption>Un niveau du secteur Coffre : trappes, tapis, serrures, plaques fragiles</figcaption>
+                    </figure>
+                    <figure class="kin-gallery-item">
+                        <img src="../assets/images/projets/kinetik-labyrinthe.jpg" alt="Labyrinthe La Crypte avec des portes verrouillées" loading="lazy" decoding="async">
+                        <figcaption>Le Labyrinthe : « La Crypte » et ses sas verrouillés</figcaption>
+                    </figure>
+                    <figure class="kin-gallery-item">
+                        <img src="../assets/images/projets/kinetik-enigme.jpg" alt="Question de culture générale pour ouvrir un sas du labyrinthe" loading="lazy" decoding="async">
+                        <figcaption>Un sas verrouillé : il faut répondre à l'énigme pour passer</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctionnalités -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🧩 Fonctionnalités</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>Mode Sokoban</h4>
+                        <ul>
+                            <li>80 niveaux en 8 secteurs : Assemblage, Fonderie, Cryogénie, Réacteur, Noyau, Aiguillage, Coffre, Symétrie</li>
+                            <li>Chaque secteur ajoute une mécanique et garde les précédentes : trappes, plaques fragiles, glace, tapis roulants, téléporteurs, interrupteurs et portes, sens uniques, serrures à clé, caisses jumelles en miroir</li>
+                            <li>Score (coups, poussées, temps), étoiles, référence par niveau, annuler/rétablir</li>
+                            <li>Indices à jetons qui guident toujours vers une solution optimale, même quand on s'est écarté de la bonne route</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Défi du jour</h4>
+                        <p>Un niveau différent chaque jour, le même pour tout le monde, avec série de jours consécutifs.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Mode Labyrinthe</h4>
+                        <ul>
+                            <li>7 chapitres + un mode sans fin, labyrinthes générés procéduralement, de plus en plus grands</li>
+                            <li>Brouillard de guerre (lumière de torche) dans les derniers chapitres</li>
+                            <li>Portes verrouillées par des énigmes : ~220 questions écrites (histoire, sciences, géographie, arts, logique) + énigmes calculées à l'infini (suites, calcul mental, heures, chiffres romains…)</li>
+                            <li>Une mauvaise réponse change l'énigme et coûte des pas ; passages secrets cachés, difficulté réglable</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Atelier</h4>
+                        <p>Éditeur de niveaux et de secteurs complets : test sur place, export/import par code, publication en ligne.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>En ligne (serveur auto-hébergé)</h4>
+                        <ul>
+                            <li>Secteurs partagés par la communauté et signalement de niveaux</li>
+                            <li>Classements par niveau, par secteur et général</li>
+                            <li>Synchronisation de la progression entre appareils</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Ambiance & confort</h4>
+                        <ul>
+                            <li>Musique procédurale : 5 morceaux composés en code, un mode aléatoire, effets sonores synthétisés</li>
+                            <li>Écran-titre avec transition 3D (la surface se brise en éclats, plongée dans un tunnel), 5 fonds animés</li>
+                            <li>Profils multiples, statistiques, succès, thème de couleur, mode daltonien, manette, touches réassignables, 4 langues</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack technique -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">⚙️ Stack technique</h2>
+                <div class="competences-table-wrapper">
+                    <table class="competences-table">
+                        <thead>
+                            <tr>
+                                <th>Partie</th>
+                                <th>Technologies</th>
+                                <th>Pourquoi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jeu</td>
+                                <td>JavaScript (modules ES), HTML5 Canvas 2D, Web Audio API, CSS</td>
+                                <td>Sans framework : graphismes dessinés en code, musique et sons synthétisés en temps réel</td>
+                            </tr>
+                            <tr>
+                                <td>Build</td>
+                                <td>Vite</td>
+                                <td>Développement rapide, bundle optimisé, build en un seul fichier HTML possible</td>
+                            </tr>
+                            <tr>
+                                <td>App de bureau</td>
+                                <td>Tauri v2 (Rust)</td>
+                                <td>Installeurs natifs d'environ 1 Mo (contre des dizaines de Mo avec Electron)</td>
+                            </tr>
+                            <tr>
+                                <td>Serveur en ligne</td>
+                                <td>Node.js, Express, stockage JSON</td>
+                                <td>Classements, secteurs partagés, synchronisation ; limitation de débit</td>
+                            </tr>
+                            <tr>
+                                <td>Hébergement</td>
+                                <td>Serveur Ubuntu à la maison, Caddy, DuckDNS, systemd</td>
+                                <td>HTTPS automatique (Let's Encrypt), service géré par systemd</td>
+                            </tr>
+                            <tr>
+                                <td>Tests</td>
+                                <td>Vitest</td>
+                                <td>571 tests automatisés : règles, solutions des niveaux, indices…</td>
+                            </tr>
+                            <tr>
+                                <td>CI/CD</td>
+                                <td>GitHub Actions</td>
+                                <td>À chaque version : compilation et publication pour 4 plateformes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Points techniques -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔧 Points techniques</h2>
+                <p class="kin-lead">Ce qui rend le projet intéressant à lire côté code.</p>
+
+                <div class="projects-list">
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">01</div>
+                        <div class="card-content">
+                            <h3>Un générateur de niveaux par recuit simulé</h3>
+                            <p class="card-description">Les 80 niveaux de la campagne et les 30 défis du jour sont produits par un script : il part d'une salle aléatoire, la modifie pas à pas et ne garde que les versions plus difficiles. Chaque version est mesurée en la <strong>résolvant de façon optimale</strong> (recherche en largeur) avec le vrai moteur de règles du jeu, et un niveau n'est gardé que si sa solution utilise réellement la mécanique de son secteur. Par rapport à l'ancienne version faite à la main : en moyenne ×4 coups, ×3 poussées et ×5,5 changements de caisse par niveau.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">02</div>
+                        <div class="card-content">
+                            <h3>Un moteur de règles unique</h3>
+                            <p class="card-description">Toutes les mécaniques passent par une seule fonction de déplacement « vectorielle » : le même code gère les 4 directions, ce qui évite les bugs de duplication quand on ajoute une mécanique.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">03</div>
+                        <div class="card-content">
+                            <h3>Des solutions embarquées et des indices qui retrouvent la route</h3>
+                            <p class="card-description">Chaque niveau contient sa solution optimale : les tests la rejouent (vérifier 110 niveaux prend quelques millisecondes) et les indices sont instantanés sur la bonne route. Quand le joueur s'en écarte, une recherche trouve le chemin le plus court pour rejoindre n'importe quel point de la route optimale — vérifié automatiquement sur les 80 niveaux.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">04</div>
+                        <div class="card-content">
+                            <h3>Zéro fichier média</h3>
+                            <p class="card-description">Graphismes dessinés sur canvas, musique et sons synthétisés en temps réel : progressions d'accords, mélodies recalées sur l'accord en cours, structure de morceau (intro, couplet, pont, climax) et limiteur anti-saturation. La transition 3D de l'écran-titre est une projection en perspective faite à la main sur un canvas 2D, sans bibliothèque. Aucun problème de droits d'auteur, et un jeu qui pèse très peu.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-right">
+                        <div class="card-badge">05</div>
+                        <div class="card-content">
+                            <h3>Un serveur en ligne sécurisé simplement</h3>
+                            <p class="card-description">Chaque joueur a une clé qui porte son nom (impossible de jouer sous le nom d'un autre), un système de saisons remet les classements à zéro, la progression se synchronise par fusion champ par champ (on garde toujours le meilleur des deux appareils) et les scores joués hors connexion sont rattrapés au retour du réseau.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card slide-in-left">
+                        <div class="card-badge">06</div>
+                        <div class="card-content">
+                            <h3>Une distribution multiplateforme automatisée</h3>
+                            <p class="card-description">Un tag Git déclenche la compilation sur 4 machines (macOS ARM, macOS Intel, Windows, Linux) et publie 6 installeurs sur la release GitHub : plus aucune étape manuelle pour sortir une version.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Origine et méthode -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🤝 Origine et méthode de travail</h2>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <h4>D'où ça vient</h4>
+                        <p>KINETIK est une réécriture complète, beaucoup plus ambitieuse, d'un projet Sokoban réalisé en équipe en terminale NSI (Trophées NSI 2024) en Python/Tkinter, avec trois camarades.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Développé avec une IA comme binôme</h4>
+                        <p>J'ai développé KINETIK en programmation en binôme avec une IA (Claude). Mon rôle : direction du projet et game design, choix des fonctionnalités, tests de jeu et retours (difficulté, ergonomie, bugs), hébergement et administration du serveur (Ubuntu, Caddy, HTTPS, DuckDNS), gestion des versions et des publications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que ça m'a appris -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">💡 Ce que ce projet m'a appris</h2>
+                <div class="detail-item">
+                    <ul>
+                        <li>Utiliser des algorithmes de recherche (BFS) et d'optimisation (recuit simulé) sur un vrai problème</li>
+                        <li>Tester massivement un jeu : 571 tests, dont chaque solution de chaque niveau rejouée automatiquement</li>
+                        <li>Héberger et sécuriser un service en ligne (HTTPS, clés joueur, limitation de débit)</li>
+                        <li>Automatiser la distribution multiplateforme avec GitHub Actions</li>
+                        <li>Diriger un projet avec une IA : cadrer le besoin, tester, corriger, et assumer le résultat</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section portfolio-cta">
+            <div class="container">
+                <div class="cta-content slide-in-up">
+                    <h2>Envie d'essayer ?</h2>
+                    <p>Le jeu se télécharge pour macOS, Windows et Linux, et le code complet est sur GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/sdelmart/kinetik/releases/latest" target="_blank" rel="noopener noreferrer" class="glow-genz-button" style="text-decoration: none; display: inline-block;">Télécharger</a>
+                        <a href="https://github.com/sdelmart/kinetik" target="_blank" rel="noopener noreferrer" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Voir le code</a>
+                        <a href="../index.html#projects" class="glow-genz-button secondary" style="text-decoration: none; display: inline-block;">Retour aux projets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js?v=20261018"></script>
+</body>
+</html>
