@@ -1054,7 +1054,7 @@ function initOrbitAnimations() {
         const ratio = planets.length > 1 ? order[index] / (planets.length - 1) : 0;
         planet.style.setProperty('--start', `${Math.round(Math.random() * 360)}deg`);
         planet.style.setProperty('--radius', `calc(var(--r1) + (var(--r2) - var(--r1)) * ${ratio.toFixed(3)})`);
-        planet.style.setProperty('--orbit-duration', `${Math.round(60 + Math.random() * 70)}s`);
+        planet.style.setProperty('--orbit-duration', `${Math.round(35 + Math.random() * 40)}s`);
         planet.style.setProperty('--orbit-direction', Math.random() > 0.5 ? 'normal' : 'reverse');
     });
 }
