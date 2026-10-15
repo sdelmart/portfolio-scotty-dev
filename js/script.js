@@ -33,7 +33,7 @@ const I18N = {
             about: 'À propos',
             parcours: 'Parcours',
             projects: 'Projets',
-            pro: 'Activité pro',
+            pro: 'Freelance',
             contact: 'Contact',
             portfolio: 'Portfolio'
         },
