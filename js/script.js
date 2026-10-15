@@ -1036,43 +1036,27 @@ function initTypingEffect() {
 
 
 function initOrbitAnimations() {
-    const planets = document.querySelectorAll('.random-orbit');
+    const planets = [...document.querySelectorAll('.random-orbit')];
+    if (planets.length === 0) {
+        return;
+    }
 
-    planets.forEach((planet, index) => {
-        const startAngle = Math.random() * 360;
-        const radius = 120 + (index * 25);
+    // Two concentric rings outside the photo (radii come from the CSS variables --r1 / --r2),
+    // evenly spaced so icons never overlap each other or the photo, at any screen size.
+    const innerCount = Math.ceil(planets.length / 2);
+    const rings = [
+        { planets: planets.slice(0, innerCount), radius: 'var(--r1)', duration: 80, direction: 'normal', offset: 0 },
+        { planets: planets.slice(innerCount), radius: 'var(--r2)', duration: 120, direction: 'reverse', offset: 0.5 }
+    ];
 
-        const duration = 15 + Math.random() * 15;
-        const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
-        const delay = 0;
-
-        planet.style.transform = `rotate(${startAngle}deg) translateX(${radius}px) rotate(-${startAngle}deg)`;
-
-        const animationName = `orbit${index}`;
-        const keyframes = `
-            @keyframes ${animationName} {
-                from {
-                    transform: rotate(${startAngle}deg) translateX(${radius}px) rotate(-${startAngle}deg);
-                }
-                to {
-                    transform: rotate(${startAngle + 360}deg) translateX(${radius}px) rotate(-${startAngle + 360}deg);
-                }
-            }
-        `;
-
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = keyframes;
-        document.head.appendChild(styleSheet);
-
-        planet.style.animation = `${animationName} ${duration}s linear infinite ${direction}`;
-        planet.style.animationDelay = `${delay}s`;
-
-        planet.addEventListener('mouseenter', () => {
-            planet.style.animationPlayState = 'paused';
-        });
-
-        planet.addEventListener('mouseleave', () => {
-            planet.style.animationPlayState = 'running';
+    rings.forEach((ring) => {
+        const step = 360 / ring.planets.length;
+        ring.planets.forEach((planet, position) => {
+            const startAngle = Math.round((position + ring.offset) * step);
+            planet.style.setProperty('--start', `${startAngle}deg`);
+            planet.style.setProperty('--radius', ring.radius);
+            planet.style.setProperty('--orbit-duration', `${ring.duration}s`);
+            planet.style.setProperty('--orbit-direction', ring.direction);
         });
     });
 }
