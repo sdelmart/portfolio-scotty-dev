@@ -1518,3 +1518,77 @@ a.contact-item:hover span {
     --orbit-gap: 8px;
   }
 }
+
+/* --- Project filters --- */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 36px 0 0;
+}
+
+.project-filter {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 56, 56, 0.35);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.project-filter:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project-filter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-filter.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.project-filter-count {
+  opacity: 0.75;
+  font-size: 0.8rem;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+.project-card-enter {
+  animation: projectCardEnter 0.45s ease backwards;
+}
+
+@keyframes projectCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .project-filters {
+    gap: 8px;
+  }
+
+  .project-filter {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+  }
+}

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initOrbitAnimations,
         initSunPhotoModal,
         initSmoothScroll,
+        initProjectFilters,
         initSectionAnimations,
         initSimpleStats
     ];
@@ -186,6 +187,15 @@ const I18N = {
             title: 'Mes Projets',
             featured: 'Projet phare',
             viewSite: 'Voir le site',
+            filters: {
+                label: 'Filtrer les projets',
+                all: 'Tous',
+                web: 'Web',
+                games: 'Jeux',
+                infra: 'Infra & réseau',
+                work: 'Entreprise',
+                course: 'Cours'
+            },
             code: 'Voir le code',
             delmart: {
                 title: 'Delmart Digital',
@@ -419,6 +429,15 @@ const I18N = {
             title: 'My Projects',
             featured: 'Featured project',
             viewSite: 'Visit the site',
+            filters: {
+                label: 'Filter projects',
+                all: 'All',
+                web: 'Web',
+                games: 'Games',
+                infra: 'Infra & networking',
+                work: 'Professional',
+                course: 'Coursework'
+            },
             code: 'View the code',
             delmart: {
                 title: 'Delmart Digital',
@@ -844,6 +863,13 @@ function applyLanguage(language) {
         }
     });
 
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((node) => {
+        const translated = getNestedValue(dictionary, node.dataset.i18nAriaLabel);
+        if (typeof translated === 'string') {
+            node.setAttribute('aria-label', translated);
+        }
+    });
+
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
         langToggle.textContent = dictionary.langToggle;
@@ -1194,6 +1220,58 @@ function computeProjectStats() {
     });
 
     return { projectsCount, techCount: techNames.size };
+}
+
+function initProjectFilters() {
+    const buttons = [...document.querySelectorAll('.project-filter')];
+    const cards = [...document.querySelectorAll('#projects .project-card')];
+    if (buttons.length === 0 || cards.length === 0) {
+        return;
+    }
+
+    const matches = (card, filter) => filter === 'all' || (card.dataset.category || '').split(' ').includes(filter);
+    const validFilters = new Set(buttons.map((button) => button.dataset.filter));
+
+    buttons.forEach((button) => {
+        const count = cards.filter((card) => matches(card, button.dataset.filter)).length;
+        button.querySelector('.project-filter-count').textContent = `(${count})`;
+    });
+
+    const apply = (filter) => {
+        cards.forEach((card) => {
+            const visible = matches(card, filter);
+            card.hidden = !visible;
+            card.classList.remove('project-card-enter');
+            if (visible) {
+                void card.offsetWidth;
+                card.classList.add('project-card-enter');
+            }
+        });
+        buttons.forEach((button) => {
+            const active = button.dataset.filter === filter;
+            button.classList.toggle('is-active', active);
+            button.setAttribute('aria-pressed', String(active));
+        });
+    };
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            apply(filter);
+            const url = new URL(globalThis.location.href);
+            if (filter === 'all') {
+                url.searchParams.delete('filtre');
+            } else {
+                url.searchParams.set('filtre', filter);
+            }
+            globalThis.history.replaceState(null, '', url);
+        });
+    });
+
+    const requested = new URLSearchParams(globalThis.location.search).get('filtre');
+    if (requested && validFilters.has(requested)) {
+        apply(requested);
+    }
 }
 
 function initSimpleStats() {
