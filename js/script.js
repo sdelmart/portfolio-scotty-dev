@@ -1041,23 +1041,21 @@ function initOrbitAnimations() {
         return;
     }
 
-    // Two concentric rings outside the photo (radii come from the CSS variables --r1 / --r2),
-    // evenly spaced so icons never overlap each other or the photo, at any screen size.
-    const innerCount = Math.ceil(planets.length / 2);
-    const rings = [
-        { planets: planets.slice(0, innerCount), radius: 'var(--r1)', duration: 80, direction: 'normal', offset: 0 },
-        { planets: planets.slice(innerCount), radius: 'var(--r2)', duration: 120, direction: 'reverse', offset: 0.5 }
-    ];
+    // Each icon keeps its own radius, speed, direction and starting angle, so the orbits drift
+    // out of sync. Radii stay between --r1 and --r2 (CSS variables derived from the photo size),
+    // so an icon can cross another one but never touches the photo, at any screen size.
+    const order = planets.map((_, index) => index);
+    for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+    }
 
-    rings.forEach((ring) => {
-        const step = 360 / ring.planets.length;
-        ring.planets.forEach((planet, position) => {
-            const startAngle = Math.round((position + ring.offset) * step);
-            planet.style.setProperty('--start', `${startAngle}deg`);
-            planet.style.setProperty('--radius', ring.radius);
-            planet.style.setProperty('--orbit-duration', `${ring.duration}s`);
-            planet.style.setProperty('--orbit-direction', ring.direction);
-        });
+    planets.forEach((planet, index) => {
+        const ratio = planets.length > 1 ? order[index] / (planets.length - 1) : 0;
+        planet.style.setProperty('--start', `${Math.round(Math.random() * 360)}deg`);
+        planet.style.setProperty('--radius', `calc(var(--r1) + (var(--r2) - var(--r1)) * ${ratio.toFixed(3)})`);
+        planet.style.setProperty('--orbit-duration', `${Math.round(60 + Math.random() * 70)}s`);
+        planet.style.setProperty('--orbit-direction', Math.random() > 0.5 ? 'normal' : 'reverse');
     });
 }
 
