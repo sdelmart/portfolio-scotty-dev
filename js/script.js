@@ -31,6 +31,7 @@ const I18N = {
         nav: {
             home: 'Accueil',
             about: 'À propos',
+            parcours: 'Parcours',
             projects: 'Projets',
             pro: 'Activité pro',
             contact: 'Contact',
@@ -223,6 +224,7 @@ const I18N = {
         nav: {
             home: 'Home',
             about: 'About',
+            parcours: 'Career',
             projects: 'Projects',
             pro: 'Freelance',
             contact: 'Contact',
