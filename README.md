@@ -12,7 +12,8 @@ Portfolio personnel statique (HTML/CSS/JS), bilingue FR/EN, présentant mes comp
 
 - 🏠 Page d'accueil : présentation, statistiques rapides, à propos
 - 🎓 Page Portfolio : tableau des compétences BUT Informatique (C1 à C6) avec preuves (SAE) et projets détaillés
-- 💼 Section Projets et Activité pro (Delmart Digital)
+- 🧭 Parcours (alternance, stage, formation) et section Projets : cartes de taille fixe cliquables vers une page détaillée
+- 💼 Activité pro (Delmart Digital)
 - 📧 Section Contact (email, localisation, réseaux LinkedIn/GitHub)
 - 🌐 Traduction FR/EN intégrale (y compris le tableau de compétences)
 - 🧮 Mini-projet Calculatrice
@@ -32,9 +33,11 @@ Portfolio/
 ├── css/
 │   ├── style.css
 │   ├── portfolio-style.css
+│   ├── <projet>-style.css      # Styles propres aux pages projet (nas, meteo, latice, doucebrise, kinetik, projet)
 │   └── calculatrice-style.css
 ├── js/
-│   ├── script.js              # Logique commune : nav, animations, i18n
+│   ├── script.js              # Logique commune : nav, animations, i18n, compteurs
+│   ├── i18n/<page>.en.js      # Traductions anglaises des pages projet détaillées
 │   └── calculatrice-script.js
 ├── assets/
 │   ├── images/
@@ -44,6 +47,8 @@ Portfolio/
 │   └── SEO_GOOGLE_SUBMISSION_CHECKLIST.md
 ├── pages/
 │   ├── portfolio.html          # Détail des compétences BUT Informatique
+│   ├── nas.html, meteo.html, latice.html, doucebrise.html, kinetik.html,
+│   │   sasonyx.html, legrand.html, netflix.html   # Pages projet détaillées
 │   ├── calculatrice.html
 │   └── 404.html
 ├── index.html                  # Page d'accueil
@@ -56,6 +61,7 @@ Portfolio/
 
 La logique de traduction vit dans `js/script.js` :
 - `I18N` : dictionnaire FR/EN pour les textes courants (`data-i18n`)
+- Pages projet détaillées : le dictionnaire `js/i18n/<page>.en.js` associe le texte français (clé) à sa version anglaise ; `applyDetailPageTranslation` l'applique et restaure le français au retour
 - Page Portfolio : traduction approfondie du contenu (tableau de compétences via `data-portfolio-i18n`, cartes de projets via `PORTFOLIO_REPLACEMENTS_EN`)
 - Le choix de langue est mémorisé dans `localStorage` (`site-language`)
 

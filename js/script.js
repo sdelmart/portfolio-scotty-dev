@@ -143,6 +143,45 @@ const I18N = {
             p2: 'À côté de mon alternance, je prends des projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un produit numérique concret, accessible et agréable à utiliser.',
             skills: 'Compétences & Technologies'
         },
+        parcours: {
+            title: 'Parcours',
+            sicame: {
+                date: '09/2026 — Présent',
+                title: 'Assistant chef de projet logiciel (alternance)',
+                org: 'Sicame Group · Arnac-Pompadour',
+                b1: 'Administration et paramétrage d\'outils applicatifs métiers (3D Experience) et gestion des référentiels composants.',
+                b2: 'Résolution d\'incidents techniques, automatisation de tâches par scripts et accompagnement des utilisateurs.'
+            },
+            delmart: {
+                date: 'En parallèle',
+                title: 'Développeur freelance',
+                org: 'Delmart Digital · Limoges',
+                b1: 'Sites web, logiciels sur mesure et dépannage hardware pour des particuliers et de petites structures, du devis gratuit à la maintenance.',
+                link: 'Découvrir Delmart Digital'
+            },
+            onyx: {
+                date: '04/2026 — 05/2026',
+                title: 'Développeur full-stack (stage de 8 semaines)',
+                org: 'Sasonyx',
+                b1: 'Conception et déploiement d\'un site vitrine et d\'une application de planning mobile-first avec Next.js et Supabase.',
+                b2: 'Modélisation, gestion et optimisation d\'une base PostgreSQL (normalisation 3NF).',
+                link: 'Voir le projet'
+            },
+            but: {
+                date: '2024 — En cours',
+                title: 'BUT Informatique (3ème année)',
+                org: 'IUT du Limousin · Limoges',
+                b1: 'Parcours Développement d\'applications : algorithmique, bases de données, développement web, systèmes et réseaux.',
+                b2: 'SAE menées en équipe, dont un projet pour Legrand.',
+                link: 'Voir mes compétences'
+            },
+            bac: {
+                date: '2021 — 2024',
+                title: 'Baccalauréat général',
+                org: 'Lycée E. Perrier · Tulle',
+                b1: 'Spécialités Mathématiques et NSI : première approche du développement logiciel et des algorithmes.'
+            }
+        },
         projects: {
             title: 'Mes Projets',
             featured: 'Projet phare',
@@ -177,15 +216,15 @@ const I18N = {
             sasonyx: {
                 badge: 'Stage en entreprise',
                 title: 'Sasonyx Planning',
-                short: 'Application web de gestion des interventions techniques réalisée pendant mon stage : calendrier interactif, clients et techniciens.'
+                short: 'Site vitrine et application de planning des interventions réalisés pendant mon stage : calendrier, clients, techniciens, entretiens annuels.'
             },
             netflix: {
-                title: 'Netflix — Plateforme de streaming',
-                short: 'Clone full-stack de Netflix : interface React, back-office et API REST (Express + MongoDB) avec authentification JWT.'
+                title: 'Netflix — Plateforme de location de films',
+                short: 'Clone full-stack de Netflix : interface React, API REST Express + MongoDB, catalogue, location de films et espace « Mes locations ».'
             },
             fiche: {
                 title: 'Projet réalisé pour Legrand',
-                short: 'Projet SAE pour Legrand : digitaliser la création des modes opératoires industriels, jusque-là réalisés sous Excel.'
+                short: 'SAE pour Legrand, en équipe de 5 : un éditeur web de modes opératoires pour remplacer Excel. Ma part : base de données, sécurité, recherche.'
             },
             calc: {
                 title: 'Calculatrice',
@@ -337,6 +376,45 @@ const I18N = {
             p2: 'Alongside my work-study placement, I take on client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant digital product.',
             skills: 'Skills & Technologies'
         },
+        parcours: {
+            title: 'Experience & education',
+            sicame: {
+                date: '09/2026 — Present',
+                title: 'Software project manager assistant (work-study)',
+                org: 'Sicame Group · Arnac-Pompadour',
+                b1: 'Administration and configuration of business application tools (3D Experience) and management of component reference data.',
+                b2: 'Troubleshooting technical incidents, automating tasks with scripts and supporting users.'
+            },
+            delmart: {
+                date: 'Alongside',
+                title: 'Freelance developer',
+                org: 'Delmart Digital · Limoges',
+                b1: 'Websites, custom software and hardware repair for individuals and small businesses, from the free quote to maintenance.',
+                link: 'Discover Delmart Digital'
+            },
+            onyx: {
+                date: '04/2026 — 05/2026',
+                title: 'Full-stack developer (8-week internship)',
+                org: 'Sasonyx',
+                b1: 'Design and deployment of a showcase site and a mobile-first planning application with Next.js and Supabase.',
+                b2: 'Modeling, managing and optimizing a PostgreSQL database (3NF normalization).',
+                link: 'View the project'
+            },
+            but: {
+                date: '2024 — Ongoing',
+                title: 'BUT Computer Science (3rd year)',
+                org: 'IUT du Limousin · Limoges',
+                b1: 'Application Development track: algorithmics, databases, web development, systems and networks.',
+                b2: 'Team SAE projects, including one for Legrand.',
+                link: 'See my skills'
+            },
+            bac: {
+                date: '2021 — 2024',
+                title: 'General baccalaureate',
+                org: 'Lycée E. Perrier · Tulle',
+                b1: 'Mathematics and Computer Science (NSI) specialties: first approach to software development and algorithms.'
+            }
+        },
         projects: {
             title: 'My Projects',
             featured: 'Featured project',
@@ -371,15 +449,15 @@ const I18N = {
             sasonyx: {
                 badge: 'Internship project',
                 title: 'Sasonyx Planning',
-                short: 'Web app to manage technical interventions, built during my internship: interactive calendar, clients and technicians.'
+                short: 'Showcase site and intervention-planning app built during my internship: calendar, clients, technicians, annual maintenance.'
             },
             netflix: {
-                title: 'Netflix — Streaming platform',
-                short: 'Full-stack Netflix clone: React UI, back office and REST API (Express + MongoDB) with JWT authentication.'
+                title: 'Netflix — Movie rental platform',
+                short: 'Full-stack Netflix clone: React UI, Express + MongoDB REST API, catalog, movie renting and a “My rentals” area.'
             },
             fiche: {
                 title: 'Project delivered for Legrand',
-                short: 'SAE project for Legrand: digitizing the creation of industrial operating procedures previously made in Excel.'
+                short: 'SAE for Legrand, in a team of 5: a web editor for operating procedures to replace Excel. My part: database, security, search.'
             },
             calc: {
                 title: 'Calculator',
