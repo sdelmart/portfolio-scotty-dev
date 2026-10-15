@@ -139,8 +139,8 @@ const I18N = {
         },
         about: {
             title: 'À propos de moi',
-            p1: 'Développeur en formation (BUT Informatique) basé à Limoges, je conçois des sites web, des applications et des logiciels rapides, modernes et soignés — de la conception à la livraison.',
-            p2: 'Je suis ouvert aux opportunités d\'alternance comme aux projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un produit numérique concret, accessible et agréable à utiliser.',
+            p1: 'Développeur en 3ème année de BUT Informatique à Limoges, en alternance chez Sicame Group (Arnac-Pompadour) comme assistant chef de projet logiciel. Je conçois aussi des sites web, des applications et des logiciels rapides, modernes et soignés — de la conception à la livraison.',
+            p2: 'À côté de mon alternance, je prends des projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un produit numérique concret, accessible et agréable à utiliser.',
             skills: 'Compétences & Technologies'
         },
         projects: {
@@ -150,7 +150,7 @@ const I18N = {
             code: 'Voir le code',
             delmart: {
                 title: 'Delmart Digital',
-                short: 'Mon activité de création de sites web et d\'applications sur mesure : des solutions modernes, rapides et optimisées.'
+                short: 'Mon activité freelance à Limoges : sites web, logiciels sur mesure et dépannage hardware, du devis gratuit à la maintenance.'
             },
             nas: {
                 badge: 'Projet personnel',
@@ -333,8 +333,8 @@ const I18N = {
         },
         about: {
             title: 'About me',
-            p1: 'A developer in training (BUT Computer Science) based in Limoges, I build fast, modern and polished websites, applications and software — from concept to delivery.',
-            p2: 'I\'m open to work-study (alternance) opportunities as well as client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant digital product.',
+            p1: 'Third-year computer science (BUT) student in Limoges, on a work-study placement at Sicame Group (Arnac-Pompadour) as a software project manager assistant. I also build fast, modern and polished websites, applications and software — from concept to delivery.',
+            p2: 'Alongside my work-study placement, I take on client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant digital product.',
             skills: 'Skills & Technologies'
         },
         projects: {
@@ -344,7 +344,7 @@ const I18N = {
             code: 'View the code',
             delmart: {
                 title: 'Delmart Digital',
-                short: 'My business building custom websites and applications: modern, fast and optimized solutions.'
+                short: 'My freelance business in Limoges: websites, custom software and hardware repair, from the free quote to maintenance.'
             },
             nas: {
                 badge: 'Personal project',
