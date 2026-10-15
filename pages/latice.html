@@ -20,11 +20,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20261030">
-    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/style.css?v=20261032">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20261034">
     <link rel="stylesheet" href="../css/latice-style.css?v=20260922">
 </head>
 <body>
+    <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
     <header id="navbar">
         <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
@@ -62,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="contenu">
         <!-- Hero -->
         <section class="portfolio-hero">
             <div class="container">
@@ -83,7 +84,7 @@
 
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Pourquoi le reprendre ?</h4>
+                        <h3>Pourquoi le reprendre ?</h3>
                         <ul>
                             <li>Retravailler seul un projet de groupe : reprendre en main une base de code existante plutôt que repartir de zéro</li>
                             <li>Aller au bout d'une idée jusqu'au bout — un jeu qui ne se joue qu'à deux devant le même écran est un jeu qu'on ne rejoue pas</li>
@@ -91,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Périmètre de la reprise</h4>
+                        <h3>Périmètre de la reprise</h3>
                         <p>Build entièrement réparé (le projet ne compilait plus), refonte visuelle complète, ajout d'un moteur d'IA, d'une aide au placement, d'un système de profils/historique, et d'une suite de tests sur toute la logique ajoutée — sans casser la logique de jeu d'origine (les 26 tests historiques passent toujours).</p>
                     </div>
                 </div>
@@ -149,14 +150,14 @@
                 <h2 class="section-title">🧩 Fonctionnalités</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Menu principal</h4>
+                        <h3>Menu principal</h3>
                         <ul>
                             <li>Navigation façon jeu vidéo, écrans en fondu (Jouer, Profils, Règles, Paramètres, Crédits)</li>
                             <li>Choix du fond d'écran (dégradés + photos), musique et effets sonores, tout persistant</li>
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Partie</h4>
+                        <h3>Partie</h3>
                         <ul>
                             <li>Mode 2 joueurs ou solo contre une IA</li>
                             <li>Aide au placement : surbrillance des cases légales pendant le glisser-déposer</li>
@@ -164,11 +165,11 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Intelligence artificielle</h4>
+                        <h3>Intelligence artificielle</h3>
                         <p>Stratégie gloutonne : à chaque tour, l'IA évalue toutes les positions légales pour chaque tuile de son rack et joue le coup qui rapporte le plus de points, selon les mêmes règles qu'un joueur humain. Aucune dépendance JavaFX dans le moteur de décision — testable unitairement, sans lancer l'interface graphique.</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Fin de partie & historique</h4>
+                        <h3>Fin de partie & historique</h3>
                         <ul>
                             <li>Scores détaillés par joueur, vainqueur mis en avant</li>
                             <li>Rejouer ou retourner au menu directement depuis l'écran de fin</li>
@@ -288,6 +289,6 @@ src/main/resources/css/theme.css    (thème visuel partagé par tous les écrans
     </main>
 
     <script src="../js/i18n/latice.en.js?v=20261030"></script>
-    <script src="../js/script.js?v=20261030"></script>
+    <script src="../js/script.js?v=20261031"></script>
 </body>
 </html>

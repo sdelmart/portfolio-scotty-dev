@@ -20,11 +20,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20261030">
-    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
-    <link rel="stylesheet" href="../css/projet-style.css?v=20261030">
+    <link rel="stylesheet" href="../css/style.css?v=20261032">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20261034">
+    <link rel="stylesheet" href="../css/projet-style.css?v=20261032">
 </head>
 <body>
+    <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
     <header id="navbar">
         <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
@@ -62,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="contenu">
         <section class="portfolio-hero">
             <div class="container">
                 <span class="proj-status-badge">🎓 Projet SAE — BUT 2</span>
@@ -81,11 +82,11 @@
 
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Contexte</h4>
+                        <h3>Contexte</h3>
                         <p>Projet de SAE de 2ème année de BUT Informatique (cours d'architecture logicielle), construit au fil de travaux pratiques : chaque séance a ajouté une brique (maquette, composants React, API, modèles, authentification).</p>
                     </div>
                     <div class="detail-item">
-                        <h4>État du projet</h4>
+                        <h3>État du projet</h3>
                         <p>Le catalogue, la location et l'espace « Mes locations » sont en place côté interface et côté API. Le back-office d'administration est une base (serveur et vues) et la protection complète des routes par authentification était prévue pour une séance ultérieure : je ne les présente donc pas comme terminés.</p>
                     </div>
                 </div>
@@ -127,7 +128,7 @@ frontend-admin ── Express + EJS + Tailwind (back-office, en cours de dévelo
                 <h2 class="section-title">🧩 Fonctionnalités</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Catalogue</h4>
+                        <h3>Catalogue</h3>
                         <ul>
                             <li>Page d'accueil avec carrousel, filtre par genre et barre de recherche</li>
                             <li>Page de détail d'un film avec contenu, description et films similaires côté API</li>
@@ -135,7 +136,7 @@ frontend-admin ── Express + EJS + Tailwind (back-office, en cours de dévelo
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Location</h4>
+                        <h3>Location</h3>
                         <ul>
                             <li>Panier de locations avec prix par film</li>
                             <li>Espace « Mes locations » protégé : il faut être connecté</li>
@@ -144,14 +145,14 @@ frontend-admin ── Express + EJS + Tailwind (back-office, en cours de dévelo
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Comptes</h4>
+                        <h3>Comptes</h3>
                         <ul>
                             <li>Inscription et connexion côté interface, routes protégées</li>
                             <li>Mots de passe hachés avec bcrypt dans le modèle utilisateur</li>
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>API REST</h4>
+                        <h3>API REST</h3>
                         <ul>
                             <li>Films : liste paginée avec recherche, filtre par genre et par année, tri, création, modification, suppression, statistiques et films similaires</li>
                             <li>Locations : créer, lister, annuler, statistiques et recommandations (bonus)</li>
@@ -274,6 +275,6 @@ frontend-admin ── Express + EJS + Tailwind (back-office, en cours de dévelo
     </main>
 
     <script src="../js/i18n/netflix.en.js?v=20261030"></script>
-    <script src="../js/script.js?v=20261030"></script>
+    <script src="../js/script.js?v=20261031"></script>
 </body>
 </html>

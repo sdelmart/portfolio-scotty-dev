@@ -20,11 +20,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20261030">
-    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
-    <link rel="stylesheet" href="../css/projet-style.css?v=20261030">
+    <link rel="stylesheet" href="../css/style.css?v=20261032">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20261034">
+    <link rel="stylesheet" href="../css/projet-style.css?v=20261032">
 </head>
 <body>
+    <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
     <header id="navbar">
         <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
@@ -62,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="contenu">
         <section class="portfolio-hero">
             <div class="container">
                 <span class="proj-status-badge">💼 Stage en entreprise — 2026</span>
@@ -81,11 +82,11 @@
 
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Mon rôle</h4>
+                        <h3>Mon rôle</h3>
                         <p>Conception et développement du site et de l'application en autonomie : intégration à partir d'une maquette Figma, base de données, envoi d'e-mails, sécurisation des accès et mise en ligne. Les services présentés ont été ajustés après un entretien avec ma tutrice de stage.</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Pourquoi ce projet ?</h4>
+                        <h3>Pourquoi ce projet ?</h3>
                         <ul>
                             <li>Livrer un vrai produit pour un vrai client, du besoin à la mise en ligne</li>
                             <li>Remplacer un suivi manuel par un outil partagé et à jour en temps réel</li>
@@ -113,7 +114,7 @@
                 <h2 class="section-title">🧩 Fonctionnalités</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Site vitrine</h4>
+                        <h3>Site vitrine</h3>
                         <ul>
                             <li>Design repris d'une maquette Figma : services, FAQ, réalisations, certificats, mentions légales</li>
                             <li>Formulaire de contact avec envoi par e-mail et protection anti-spam (honeypot)</li>
@@ -122,7 +123,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Planning des interventions</h4>
+                        <h3>Planning des interventions</h3>
                         <ul>
                             <li>Calendrier interactif (jour, semaine, mois, vue annuelle) avec interventions et événements</li>
                             <li>Glisser-déposer, couleur par technicien, badges de statut et de type d'énergie</li>
@@ -131,14 +132,14 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Clients et entretiens annuels</h4>
+                        <h3>Clients et entretiens annuels</h3>
                         <ul>
                             <li>Base clients : coordonnées, type d'appareil, type d'énergie, prix du dernier entretien, modification depuis la fiche</li>
                             <li>Suivi des entretiens annuels : apparition sur le calendrier au bon mois, renouvellement en un clic</li>
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Accès et sécurité</h4>
+                        <h3>Accès et sécurité</h3>
                         <ul>
                             <li>Authentification Supabase : seules les personnes connectées accèdent à l'application</li>
                             <li>Middleware qui protège l'accès aux pages du planning</li>
@@ -265,6 +266,6 @@
     </main>
 
     <script src="../js/i18n/sasonyx.en.js?v=20261030"></script>
-    <script src="../js/script.js?v=20261030"></script>
+    <script src="../js/script.js?v=20261031"></script>
 </body>
 </html>

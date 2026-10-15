@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initSunPhotoModal,
         initSmoothScroll,
         initProjectFilters,
+        initProjectLinkLabels,
         initSectionAnimations,
         initSimpleStats
     ];
@@ -24,6 +25,9 @@ const I18N = {
     fr: {
         title: 'Scotty Delmart — Développeur Web & Applications | Portfolio',
         description: 'Portfolio de Scotty Delmart, développeur web, applications et logiciels basé à Limoges. Découvrez mes projets, mes compétences et mes coordonnées.',
+        a11y: {
+            skip: 'Aller au contenu'
+        },
         nav: {
             home: 'Accueil',
             about: 'À propos',
@@ -213,6 +217,9 @@ const I18N = {
     en: {
         title: 'Scotty Delmart — Web & Software Developer | Portfolio',
         description: 'Portfolio of Scotty Delmart, web, application and software developer based in Limoges. Explore my projects, skills and contact details.',
+        a11y: {
+            skip: 'Skip to content'
+        },
         nav: {
             home: 'Home',
             about: 'About',
@@ -695,7 +702,10 @@ function ensureMobileNavActions(navMenu) {
         mobileLangToggle.addEventListener('click', toggleSiteLanguage);
     }
 
-    navMenu.appendChild(mobileActions);
+    const actionsItem = document.createElement('li');
+    actionsItem.className = 'nav-actions-item';
+    actionsItem.appendChild(mobileActions);
+    navMenu.appendChild(actionsItem);
 }
 
 function initTypingEffect() {
@@ -901,6 +911,19 @@ function computeProjectStats() {
     });
 
     return { projectsCount, techCount: techNames.size };
+}
+
+function initProjectLinkLabels() {
+    document.querySelectorAll('#projects .project-card').forEach((card, index) => {
+        const link = card.querySelector('.stretched-link');
+        const title = card.querySelector('h3');
+        if (!link || !title) {
+            return;
+        }
+        link.id = `project-link-${index}`;
+        title.id = `project-title-${index}`;
+        link.setAttribute('aria-labelledby', `${link.id} ${title.id}`);
+    });
 }
 
 function initProjectFilters() {

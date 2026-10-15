@@ -20,11 +20,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20261030">
-    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/style.css?v=20261032">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20261034">
     <link rel="stylesheet" href="../css/nas-style.css?v=20260922">
 </head>
 <body>
+    <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
     <header id="navbar">
         <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
@@ -62,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="contenu">
         <!-- Hero -->
         <section class="portfolio-hero">
             <div class="container">
@@ -83,7 +84,7 @@
 
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Pourquoi ce projet ?</h4>
+                        <h3>Pourquoi ce projet ?</h3>
                         <ul>
                             <li>Reprendre le contrôle de mes données plutôt que de payer un stockage cloud limité</li>
                             <li>Apprendre à administrer un serveur Linux en conditions réelles (réseau, sécurité, exposition internet)</li>
@@ -91,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Matériel</h4>
+                        <h3>Matériel</h3>
                         <p>ThinkPad reconverti en serveur — i3, 8 Go de RAM, SSD 2 To — allumé en permanence, connecté en Ethernet à une fibre 2 Gbps.</p>
                     </div>
                 </div>
@@ -195,7 +196,7 @@
                 <h2 class="section-title">🧩 Fonctionnalités</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Page d'accueil</h4>
+                        <h3>Page d'accueil</h3>
                         <ul>
                             <li>Vue d'ensemble du stockage (espace utilisé / disponible)</li>
                             <li>Transfert de fichiers Mac ↔ serveur</li>
@@ -203,7 +204,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Page Stockage (explorateur de fichiers)</h4>
+                        <h3>Page Stockage (explorateur de fichiers)</h3>
                         <ul>
                             <li>Navigation par espaces (stockage, sites web), fil d'Ariane, vue liste ou grille avec miniatures</li>
                             <li>Sélection multiple, déplacement par sélecteur de dossier ou glisser-déposer, renommage, suppression, téléchargement de plusieurs éléments en un ZIP</li>
@@ -213,7 +214,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Page Admin</h4>
+                        <h3>Page Admin</h3>
                         <ul>
                             <li>Monitoring temps réel du serveur (CPU, RAM, stockage)</li>
                             <li>Sections en onglets sur téléphone : toutes les pages du dashboard sont responsives</li>
@@ -221,11 +222,11 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Page Alternance</h4>
+                        <h3>Page Alternance</h3>
                         <p>Espace de prise de notes et diagrammes dédié à l'alternance et aux projets BUT.</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Minecraft Manager</h4>
+                        <h3>Minecraft Manager</h3>
                         <ul>
                             <li>Application Node/Express en service systemd, intégrée au dashboard via Caddy (chemin <code>/minecraft</code>)</li>
                             <li>Création, démarrage et arrêt de serveurs à la demande, chacun isolé dans son conteneur Docker</li>
@@ -234,7 +235,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Synchronisation & supervision</h4>
+                        <h3>Synchronisation & supervision</h3>
                         <ul>
                             <li>Syncthing : mes projets BUT et mes photos se copient automatiquement du Mac vers le serveur, tous types de fichiers confondus</li>
                             <li>Une suppression sur le Mac n'est jamais répercutée sur le serveur ; les anciennes versions sont conservées 30 jours</li>
@@ -243,7 +244,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Sécurité & accès</h4>
+                        <h3>Sécurité & accès</h3>
                         <ul>
                             <li>Sessions de connexion persistantes (jetons hachés sur disque) : un redémarrage de l'application ne déconnecte plus personne</li>
                             <li>Endpoints de fichiers durcis : noms validés (aucun <code>..</code> ni séparateur), programmes lancés sans shell, refus d'écraser un élément existant</li>
@@ -409,6 +410,6 @@ Administration distante : Tailscale (SSH) — jamais de port SSH ouvert publique
     </main>
 
     <script src="../js/i18n/nas.en.js?v=20261030"></script>
-    <script src="../js/script.js?v=20261030"></script>
+    <script src="../js/script.js?v=20261031"></script>
 </body>
 </html>

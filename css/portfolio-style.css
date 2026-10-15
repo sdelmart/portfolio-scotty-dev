@@ -24,7 +24,7 @@
     display: block;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--accent);
+    color: #ff6b6b;
     margin-top: 10px;
 }
 
@@ -261,8 +261,9 @@
     border: 1px solid rgba(255, 56, 56, 0.1);
 }
 
+.detail-item h3,
 .detail-item h4 {
-    color: var(--accent);
+    color: #ff6b6b;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;

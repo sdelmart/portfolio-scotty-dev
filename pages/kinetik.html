@@ -20,11 +20,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20261030">
-    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/style.css?v=20261032">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20261034">
     <link rel="stylesheet" href="../css/kinetik-style.css?v=20261018">
 </head>
 <body>
+    <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
     <header id="navbar">
         <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
@@ -62,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="contenu">
         <!-- Hero -->
         <section class="portfolio-hero">
             <div class="container">
@@ -87,7 +88,7 @@
 
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Pourquoi ce projet ?</h4>
+                        <h3>Pourquoi ce projet ?</h3>
                         <ul>
                             <li>Réécrire de zéro, en beaucoup plus ambitieux, un Sokoban réalisé en équipe en terminale NSI</li>
                             <li>Concevoir un vrai jeu complet : contenu, outillage, éditeur, serveur en ligne, distribution</li>
@@ -95,7 +96,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Où l'essayer ?</h4>
+                        <h3>Où l'essayer ?</h3>
                         <p>Le jeu se télécharge pour macOS (Apple Silicon et Intel), Windows et Linux depuis les releases GitHub. Le code source est public. Pas encore de démo dans le navigateur. <em>macOS : l'application n'est pas signée, la commande à lancer au premier démarrage est indiquée sur la page de téléchargement.</em></p>
                     </div>
                 </div>
@@ -182,7 +183,7 @@
                 <h2 class="section-title">🧩 Fonctionnalités</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Mode Sokoban</h4>
+                        <h3>Mode Sokoban</h3>
                         <ul>
                             <li>80 niveaux en 8 secteurs : Assemblage, Fonderie, Cryogénie, Réacteur, Noyau, Aiguillage, Coffre, Symétrie</li>
                             <li>Chaque secteur ajoute une mécanique et garde les précédentes : trappes, plaques fragiles, glace, tapis roulants, téléporteurs, interrupteurs et portes, sens uniques, serrures à clé, caisses jumelles en miroir</li>
@@ -191,11 +192,11 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Défi du jour</h4>
+                        <h3>Défi du jour</h3>
                         <p>Un niveau différent chaque jour, le même pour tout le monde, avec série de jours consécutifs.</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Mode Labyrinthe</h4>
+                        <h3>Mode Labyrinthe</h3>
                         <ul>
                             <li>7 chapitres + un mode sans fin, labyrinthes générés procéduralement, de plus en plus grands</li>
                             <li>Brouillard de guerre (lumière de torche) dans les derniers chapitres</li>
@@ -204,11 +205,11 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Atelier</h4>
+                        <h3>Atelier</h3>
                         <p>Éditeur de niveaux et de secteurs complets : test sur place, export/import par code, publication en ligne.</p>
                     </div>
                     <div class="detail-item">
-                        <h4>En ligne (serveur auto-hébergé)</h4>
+                        <h3>En ligne (serveur auto-hébergé)</h3>
                         <ul>
                             <li>Secteurs partagés par la communauté et signalement de niveaux</li>
                             <li>Classements par niveau, par secteur et général</li>
@@ -216,7 +217,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Ambiance & confort</h4>
+                        <h3>Ambiance & confort</h3>
                         <ul>
                             <li>Musique procédurale : 5 morceaux composés en code, un mode aléatoire, effets sonores synthétisés</li>
                             <li>Écran-titre avec transition 3D (la surface se brise en éclats, plongée dans un tunnel), 5 fonds animés</li>
@@ -347,11 +348,11 @@
                 <h2 class="section-title">🤝 Origine et méthode de travail</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>D'où ça vient</h4>
+                        <h3>D'où ça vient</h3>
                         <p>KINETIK est une réécriture complète, beaucoup plus ambitieuse, d'un projet Sokoban réalisé en équipe en terminale NSI (Trophées NSI 2024) en Python/Tkinter, avec trois camarades.</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Développé avec une IA comme binôme</h4>
+                        <h3>Développé avec une IA comme binôme</h3>
                         <p>J'ai développé KINETIK en programmation en binôme avec une IA (Claude). Mon rôle : direction du projet et game design, choix des fonctionnalités, tests de jeu et retours (difficulté, ergonomie, bugs), hébergement et administration du serveur (Ubuntu, Caddy, HTTPS, DuckDNS), gestion des versions et des publications.</p>
                     </div>
                 </div>
@@ -391,6 +392,6 @@
     </main>
 
     <script src="../js/i18n/kinetik.en.js?v=20261030"></script>
-    <script src="../js/script.js?v=20261030"></script>
+    <script src="../js/script.js?v=20261031"></script>
 </body>
 </html>

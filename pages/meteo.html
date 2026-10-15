@@ -20,11 +20,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=20260226c">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64.png?v=20260226c">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20260226c">
-    <link rel="stylesheet" href="../css/style.css?v=20261030">
-    <link rel="stylesheet" href="../css/portfolio-style.css?v=20260922">
+    <link rel="stylesheet" href="../css/style.css?v=20261032">
+    <link rel="stylesheet" href="../css/portfolio-style.css?v=20261034">
     <link rel="stylesheet" href="../css/meteo-style.css?v=20260922">
 </head>
 <body>
+    <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
     <header id="navbar">
         <nav class="nav-container" aria-label="Navigation principale">
             <div class="logo">
@@ -62,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="contenu">
         <!-- Hero -->
         <section class="portfolio-hero">
             <div class="container">
@@ -83,7 +84,7 @@
 
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Pourquoi ce projet ?</h4>
+                        <h3>Pourquoi ce projet ?</h3>
                         <ul>
                             <li>Aller au-delà d'un simple site météo : couvrir web, mobile et widget natif avec une seule API</li>
                             <li>Pratiquer Next.js 16 (App Router, SSR/ISR) et une vraie stratégie de tests sur la logique critique</li>
@@ -91,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Surfaces couvertes</h4>
+                        <h3>Surfaces couvertes</h3>
                         <p>Dashboard web (Next.js), PWA installable sur l'écran d'accueil iPhone, widget natif iOS via Scriptable, API REST publique (<code>/api/*</code>) et un CLI Python (<code>meteo.py</code>) pour interroger la météo directement dans le terminal.</p>
                     </div>
                 </div>
@@ -181,7 +182,7 @@
                 <h2 class="section-title">🧩 Fonctionnalités</h2>
                 <div class="card-details">
                     <div class="detail-item">
-                        <h4>Météo & prévisions</h4>
+                        <h3>Météo & prévisions</h3>
                         <ul>
                             <li>Géolocalisation automatique au chargement (web et widget)</li>
                             <li>Météo actuelle, prévisions horaires (24h) et sur 7 jours, min/max</li>
@@ -190,14 +191,14 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Recherche & villes</h4>
+                        <h3>Recherche & villes</h3>
                         <ul>
                             <li>Villes favorites en accès rapide (aucun appel réseau de géocodage)</li>
                             <li>Recherche universelle : n'importe quelle ville en France ou dans le monde, avec repli automatique multi-source</li>
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Multi-surface</h4>
+                        <h3>Multi-surface</h3>
                         <ul>
                             <li>PWA installable sur l'écran d'accueil, chargement quasi instantané</li>
                             <li>Widget natif iOS (Scriptable) : température, risque de pluie, heure de dernière mise à jour</li>
@@ -205,7 +206,7 @@
                         </ul>
                     </div>
                     <div class="detail-item">
-                        <h4>Fiabilité</h4>
+                        <h3>Fiabilité</h3>
                         <p>Aucune dépendance unique de point de défaillance sur le géocodage : à chaque étape de la cascade (favoris → géocodage mondial → API adresse française), un échec silencieux passe au niveau suivant plutôt que de planter l'application.</p>
                     </div>
                 </div>
@@ -321,6 +322,6 @@ Géolocalisation inverse (bouton "Ma position") :
     </main>
 
     <script src="../js/i18n/meteo.en.js?v=20261030"></script>
-    <script src="../js/script.js?v=20261030"></script>
+    <script src="../js/script.js?v=20261031"></script>
 </body>
 </html>
