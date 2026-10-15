@@ -1,11 +1,11 @@
 globalThis.PAGE_TRANSLATIONS_EN = {
- "@title": "Sasonyx Planning — Scotty Dev",
- "@description": "Sasonyx Planning: a showcase website and technical-intervention planning application built during my internship. Next.js, TypeScript, Supabase, FullCalendar, Tailwind, Vercel.",
+ "@title": "SAS Onyx Planning — Scotty Dev",
+ "@description": "SAS Onyx Planning: a showcase website and technical-intervention planning application built during my internship. Next.js, TypeScript, Supabase, FullCalendar, Tailwind, Vercel.",
  "💼 Stage en entreprise — 2026": "💼 Internship project — 2026",
- "Sasonyx Planning Site vitrine et application de planning des interventions techniques": "Sasonyx Planning\n                    <span class=\"portfolio-subtitle\">Showcase website and technical-intervention planning app</span>",
+ "SAS Onyx Planning Site vitrine et application de planning des interventions techniques": "SAS Onyx Planning\n                    <span class=\"portfolio-subtitle\">Showcase website and technical-intervention planning app</span>",
  "Réalisé pendant mon stage de développeur full-stack : un site vitrine et un outil interne qui remplace la planification manuelle des interventions.": "Built during my full-stack developer internship: a showcase website and an internal tool that replaces manual scheduling of interventions.",
  "🎯 Le projet": "🎯 The project",
- "Application web réalisée pendant mon stage de développeur full-stack chez Sasonyx (8 semaines). Le besoin : remplacer des outils de planification manuels par une application dynamique pour gérer les interventions techniques, affecter des techniciens et suivre l'état de chaque mission. Le projet a deux volets : un site vitrine pour présenter l'entreprise et ses services, et une application interne de planning réservée à l'équipe.": "A web application built during my 8-week full-stack developer internship at Sasonyx. The need: replace manual planning tools with a dynamic application to manage technical interventions, assign technicians and track the status of each job. The project has two parts: a <strong>showcase website</strong> presenting the company and its services, and an <strong>internal planning application</strong> reserved for the team.",
+ "Application web réalisée pendant mon stage de développeur full-stack chez SAS Onyx (8 semaines). Le besoin : remplacer des outils de planification manuels par une application dynamique pour gérer les interventions techniques, affecter des techniciens et suivre l'état de chaque mission. Le projet a deux volets : un site vitrine pour présenter l'entreprise et ses services, et une application interne de planning réservée à l'équipe.": "A web application built during my 8-week full-stack developer internship at SAS Onyx. The need: replace manual planning tools with a dynamic application to manage technical interventions, assign technicians and track the status of each job. The project has two parts: a <strong>showcase website</strong> presenting the company and its services, and an <strong>internal planning application</strong> reserved for the team.",
  "Mon rôle": "My role",
  "Conception et développement du site et de l'application en autonomie : intégration à partir d'une maquette Figma, base de données, envoi d'e-mails, sécurisation des accès et mise en ligne. Les services présentés ont été ajustés après un entretien avec ma tutrice de stage.": "Design and development of the site and the application on my own: integration from a Figma mockup, database, e-mail sending, access security and going live. The services presented were adjusted after a discussion with my internship supervisor.",
  "Pourquoi ce projet ?": "Why this project?",
@@ -13,7 +13,7 @@ globalThis.PAGE_TRANSLATIONS_EN = {
  "Remplacer un suivi manuel par un outil partagé et à jour en temps réel": "Replace manual tracking with a shared, up-to-date tool",
  "Un outil utilisable aussi bien sur ordinateur que sur téléphone": "A tool usable on a computer as well as on a phone",
  "📸 Aperçu": "📸 Preview",
- "Le site et l'application de planning Sasonyx": "The Sasonyx site and planning application",
+ "Le site et l'application de planning SAS Onyx": "The SAS Onyx site and planning application",
  "🧩 Fonctionnalités": "🧩 Features",
  "Site vitrine": "Showcase website",
  "Design repris d'une maquette Figma : services, FAQ, réalisations, certificats, mentions légales": "Design taken from a Figma mockup: services, FAQ, past work, certificates, legal notice",
@@ -69,5 +69,5 @@ globalThis.PAGE_TRANSLATIONS_EN = {
  "N'hésite pas à me contacter, ou à retourner voir le reste de mon portfolio.": "Feel free to contact me, or go back and see the rest of my portfolio.",
  "Me contacter": "Contact me",
  "Retour aux projets": "Back to projects",
- "alt:Aperçu de l'application Sasonyx": "Preview of the Sasonyx application"
+ "alt:Aperçu de l'application SAS Onyx": "Preview of the SAS Onyx application"
 };
