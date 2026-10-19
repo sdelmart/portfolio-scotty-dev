@@ -87,7 +87,7 @@ const I18N = {
             profileInfra: 'Infrastructure & réseau',
             profileWork: 'Projets en entreprise',
             cv: 'Télécharger mon CV',
-            typing: ['Développeur Web', 'Développeur d\'applications', 'Développeur logiciel', 'Résolveur de problèmes']
+            typing: ['Développeur Web & Logiciel']
         },
         stats: {
             projects: 'Projets construits',
@@ -284,7 +284,7 @@ const I18N = {
             profileInfra: 'Infrastructure & networking',
             profileWork: 'Company projects',
             cv: 'Download my CV',
-            typing: ['Web Developer', 'App Developer', 'Software Developer', 'Problem Solver']
+            typing: ['Web & Software Developer']
         },
         stats: {
             projects: 'Projects built',
@@ -720,7 +720,7 @@ function ensureMobileNavActions(navMenu) {
 
 function initTypingEffect() {
     const typingText = document.getElementById('typing-text');
-    if (!typingText || typingState.started) {
+    if (!typingText || typingState.started || typingState.phrases.length < 2) {
         return;
     }
 
