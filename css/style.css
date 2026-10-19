@@ -1617,3 +1617,9 @@ a.contact-item:hover span {
 #contenu {
   scroll-margin-top: 80px;
 }
+
+.hero-profile{margin:0 0 24px;max-width:520px}
+.hero-profile-text{font-size:.95rem;color:rgba(255,255,255,.8);margin:0 0 10px}
+.hero-profile-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.hero-profile-links a{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-size:.85rem;transition:background .2s,border-color .2s}
+.hero-profile-links a:hover,.hero-profile-links a:focus-visible{background:#c81e1e;border-color:#c81e1e}

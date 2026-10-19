@@ -82,6 +82,10 @@ const I18N = {
         hero: {
             greeting: 'Bonjour, je suis Scotty 👋',
             quote: 'Créer des sites web, des applications et des logiciels beaux et fonctionnels',
+            profile: 'Étudiant en BUT Informatique et alternant chez Sicame Group. Voir mes projets selon ce qui vous intéresse :',
+            profileWeb: 'Développement web & logiciel',
+            profileInfra: 'Infrastructure & réseau',
+            profileWork: 'Projets en entreprise',
             cv: 'Télécharger mon CV',
             typing: ['Développeur Web', 'Développeur d\'applications', 'Développeur logiciel', 'Résolveur de problèmes']
         },
@@ -275,6 +279,10 @@ const I18N = {
         hero: {
             greeting: 'Hi, I\'m Scotty 👋',
             quote: 'Building beautiful, functional websites, applications and software',
+            profile: 'Computer science student (BUT) and work-study apprentice at Sicame Group. Browse my projects by what matters to you:',
+            profileWeb: 'Web & software development',
+            profileInfra: 'Infrastructure & networking',
+            profileWork: 'Company projects',
             cv: 'Download my CV',
             typing: ['Web Developer', 'App Developer', 'Software Developer', 'Problem Solver']
         },
@@ -971,6 +979,18 @@ function initProjectFilters() {
                 url.searchParams.set('filtre', filter);
             }
             globalThis.history.replaceState(null, '', url);
+        });
+    });
+
+    document.querySelectorAll('[data-profile-filter]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const target = buttons.find((button) => button.dataset.filter === link.dataset.profileFilter);
+            if (!target) {
+                return;
+            }
+            event.preventDefault();
+            target.click();
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
