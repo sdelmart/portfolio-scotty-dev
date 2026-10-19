@@ -26,7 +26,8 @@ const I18N = {
         title: 'Scotty Delmart — Développeur Web & Logiciel | Portfolio',
         description: 'Portfolio de Scotty Delmart, développeur web, applications et logiciels basé à Limoges. Découvrez mes projets, mes compétences et mes coordonnées.',
         a11y: {
-            skip: 'Aller au contenu'
+            skip: 'Aller au contenu',
+            menu: 'Ouvrir le menu'
         },
         nav: {
             home: 'Accueil',
@@ -223,7 +224,8 @@ const I18N = {
         title: 'Scotty Delmart — Web & Software Developer | Portfolio',
         description: 'Portfolio of Scotty Delmart, web, application and software developer based in Limoges. Explore my projects, skills and contact details.',
         a11y: {
-            skip: 'Skip to content'
+            skip: 'Skip to content',
+            menu: 'Open menu'
         },
         nav: {
             home: 'Home',
