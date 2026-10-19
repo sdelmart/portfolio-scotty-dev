@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const I18N = {
     fr: {
-        title: 'Scotty Delmart — Développeur Web & Applications | Portfolio',
+        title: 'Scotty Delmart — Développeur Web & Logiciel | Portfolio',
         description: 'Portfolio de Scotty Delmart, développeur web, applications et logiciels basé à Limoges. Découvrez mes projets, mes compétences et mes coordonnées.',
         a11y: {
             skip: 'Aller au contenu'
