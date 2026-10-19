@@ -44,21 +44,21 @@ const I18N = {
             services: {
                 web: {
                     title: 'Développement web',
-                    text: 'Sites vitrines, e-commerce et applications web modernes, rapides et optimisées pour le référencement.'
+                    text: 'Sites vitrines (dès 350 €), boutiques e-commerce et applications web, rapides et optimisées pour le référencement.'
                 },
                 software: {
                     title: 'Logiciels sur mesure',
-                    text: 'Des outils métier conçus pour automatiser vos tâches et coller exactement à votre façon de travailler.'
+                    text: 'Outils métier, automatisations, bases de données, API et maintenance, conçus pour coller à votre façon de travailler. Sur devis.'
                 },
                 hardware: {
                     title: 'Dépannage & hardware',
-                    text: 'Diagnostic, réparation et optimisation de votre matériel, sur site ou à distance.'
+                    text: 'Diagnostic (25 €), montage, réparation, nettoyage et récupération de données, sur site en Limousin ou à distance.'
                 }
             },
             highlights: {
                 response: 'Délai de réponse',
-                unique: 'Interlocuteur',
-                uniqueValue: 'Unique',
+                unique: 'Livraison d\'un site vitrine',
+                uniqueValue: '2 à 3 sem.',
                 free: 'Devis sans engagement',
                 freeValue: 'Gratuit'
             }
@@ -241,21 +241,21 @@ const I18N = {
             services: {
                 web: {
                     title: 'Web development',
-                    text: 'Showcase sites, e-commerce and modern web applications, fast and optimized for search engines.'
+                    text: 'Showcase sites (from €350), online shops and web applications, fast and optimized for search engines.'
                 },
                 software: {
                     title: 'Custom software',
-                    text: 'Business tools designed to automate your tasks and fit exactly the way you work.'
+                    text: 'Business tools, automation, databases, APIs and maintenance, designed to fit the way you work. Quote-based.'
                 },
                 hardware: {
                     title: 'Repairs & hardware',
-                    text: 'Diagnostics, repair and optimization of your equipment, on-site or remotely.'
+                    text: 'Diagnostics (€25), PC building, repairs, cleaning and data recovery, on-site in the Limousin area or remotely.'
                 }
             },
             highlights: {
                 response: 'Response time',
-                unique: 'Point of contact',
-                uniqueValue: 'Single',
+                unique: 'Delivery of a showcase site',
+                uniqueValue: '2 to 3 wks',
                 free: 'No-obligation quote',
                 freeValue: 'Free'
             }
