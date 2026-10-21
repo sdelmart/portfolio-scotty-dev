@@ -79,7 +79,7 @@ const I18N = {
         },
         hero: {
             greeting: 'Bonjour, je suis Scotty',
-            quote: 'Créer des sites web, des applications et des logiciels beaux et fonctionnels',
+            quote: 'Applications web, jeux et logiciels : je les conçois, les développe et les héberge moi-même',
             profile: 'Étudiant en BUT Informatique et alternant chez Sicame Group. Cliquez sur un domaine pour filtrer mes projets :',
             profileWeb: 'Développement web & logiciel',
             profileInfra: 'Infrastructure & réseau',
@@ -94,9 +94,17 @@ const I18N = {
         },
         about: {
             title: 'À propos de moi',
-            p1: 'Développeur en 3ème année de BUT Informatique à Limoges, en alternance chez Sicame Group (Arnac-Pompadour) comme assistant chef de projet logiciel. Je conçois aussi des sites web, des applications et des logiciels rapides, modernes et soignés — de la conception à la livraison.',
-            p2: 'À côté de mon alternance, je prends des projets clients via mon activité Delmart Digital. Mon objectif : transformer une idée en un produit numérique concret, accessible et agréable à utiliser.',
-            skills: 'Compétences & Technologies'
+            p1: 'Étudiant en 3ème année de BUT Informatique (IUT du Limousin, Limoges), en alternance chez Sicame Group à Arnac-Pompadour comme assistant chef de projet logiciel : administration de 3D Experience, scripts d\'automatisation, support aux utilisateurs.',
+            p2: 'Ma spécialité : le développement web full-stack (Next.js, TypeScript, bases de données), avec une orientation infrastructure : j\'auto-héberge mon NAS, mon application météo et le serveur en ligne de KINETIK. À côté, je prends des clients via Delmart Digital.',
+            p3: 'Ce qui m\'intéresse : les jeux vidéo (j\'en ai développé deux complets), l\'administration système et l\'architecture des applications web.',
+            skills: 'Ce que je sais faire, et où le voir',
+            proof: {
+                web: 'Web full-stack',
+                games: 'Jeux et logiciels',
+                infra: 'Infrastructure et auto-hébergement',
+                team: 'Projet en équipe',
+                nas: 'NAS personnel'
+            }
         },
         parcours: {
             title: 'Parcours',
@@ -260,7 +268,7 @@ const I18N = {
         },
         hero: {
             greeting: 'Hi, I\'m Scotty',
-            quote: 'Building beautiful, functional websites, applications and software',
+            quote: 'Web apps, games and software: I design, build and self-host them',
             profile: 'Computer science student (BUT) and work-study apprentice at Sicame Group. Click a field to filter my projects:',
             profileWeb: 'Web & software development',
             profileInfra: 'Infrastructure & networking',
@@ -275,9 +283,17 @@ const I18N = {
         },
         about: {
             title: 'About me',
-            p1: 'Third-year computer science (BUT) student in Limoges, on a work-study placement at Sicame Group (Arnac-Pompadour) as a software project manager assistant. I also build fast, modern and polished websites, applications and software — from concept to delivery.',
-            p2: 'Alongside my work-study placement, I take on client projects through my Delmart Digital business. My goal: turn an idea into a real, accessible and pleasant digital product.',
-            skills: 'Skills & Technologies'
+            p1: 'Third-year computer science (BUT) student at the IUT du Limousin in Limoges, on a work-study placement at Sicame Group (Arnac-Pompadour) as a software project manager assistant: 3D Experience administration, automation scripts, user support.',
+            p2: 'My specialty: full-stack web development (Next.js, TypeScript, databases), with a focus on infrastructure: I self-host my NAS, my weather app and the online server of KINETIK. On the side, I take clients through Delmart Digital.',
+            p3: 'What interests me: video games (I have built two complete ones), system administration and web application architecture.',
+            skills: 'What I can do, and where to see it',
+            proof: {
+                web: 'Full-stack web',
+                games: 'Games and software',
+                infra: 'Infrastructure and self-hosting',
+                team: 'Team project',
+                nas: 'Personal NAS'
+            }
         },
         parcours: {
             title: 'Experience & education',
