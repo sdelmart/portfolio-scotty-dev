@@ -581,3 +581,30 @@
         align-items: center;
     }
 }
+
+/* ========================
+   COULEUR PAR COMPÉTENCE (C1 à C6)
+   ======================== */
+#c1{--c:#ff6b6b;--c-rgb:255,107,107}
+#c2{--c:#ffa94d;--c-rgb:255,169,77}
+#c3{--c:#ffd43b;--c-rgb:255,212,59}
+#c4{--c:#51cf66;--c-rgb:81,207,102}
+#c5{--c:#4dabf7;--c-rgb:77,171,247}
+#c6{--c:#b197fc;--c-rgb:177,151,252}
+.competence-section{position:relative;padding-top:90px;border-top:none;background:linear-gradient(180deg,rgba(var(--c-rgb),.10),rgba(var(--c-rgb),0) 45%)}
+.competence-section::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--c),rgba(var(--c-rgb),0))}
+.competence-header{border:1px solid rgba(var(--c-rgb),.5);border-left:8px solid var(--c);background:linear-gradient(135deg,rgba(var(--c-rgb),.16),rgba(0,0,0,.35))}
+.competence-number{background:var(--c);color:#1a0000;box-shadow:0 4px 22px rgba(var(--c-rgb),.45)}
+.competence-info h2{color:var(--c)}
+.competence-section .portfolio-card{border:1px solid rgba(var(--c-rgb),.28);border-left:5px solid var(--c)}
+.competence-section .portfolio-card:hover{border-color:rgba(var(--c-rgb),.7);box-shadow:0 15px 40px rgba(var(--c-rgb),.18)}
+.competence-section .card-badge{background:var(--c);color:#1a0000;box-shadow:0 2px 12px rgba(var(--c-rgb),.35)}
+.competence-section .detail-item h3,.competence-section .detail-item h4{color:var(--c)}
+.table-link[href="#c1"]{color:#ff6b6b}
+.table-link[href="#c2"]{color:#ffa94d}
+.table-link[href="#c3"]{color:#ffd43b}
+.table-link[href="#c4"]{color:#51cf66}
+.table-link[href="#c5"]{color:#4dabf7}
+.table-link[href="#c6"]{color:#b197fc}
+.competence-section .detail-item a{color:var(--c)}
+.competence-section .detail-item li::marker{color:var(--c)}
