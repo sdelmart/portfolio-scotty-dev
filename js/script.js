@@ -65,12 +65,6 @@ const I18N = {
             }
         },
         pages: {
-            calculator: {
-                title: 'Calculatrice - Scotty Dev',
-                description: 'Projet calculatrice de Scotty Delmart : interface moderne, support clavier/souris et calculs instantanés.',
-                heading: 'Calculatrice',
-                rights: 'Tous droits réservés.'
-            },
             notFound: {
                 title: '404 - Page introuvable | Scotty Dev',
                 description: 'La page demandée est introuvable. Retournez à l\'accueil du portfolio de Scotty Dev.',
@@ -193,22 +187,9 @@ const I18N = {
                 title: 'Projet réalisé pour Legrand',
                 short: 'SAE pour Legrand, en équipe de 5 : un éditeur web de modes opératoires pour remplacer Excel. Ma part : base de données, sécurité, recherche.'
             },
-            calc: {
-                title: 'Calculatrice',
-                short: 'Une calculatrice moderne avec support du clavier et de la souris, offrant un design épuré et des calculs instantanés.',
-                cta: 'Ouvrir la calculatrice'
-            },
-            games: {
-                title: 'Mini-jeux en Python',
-                short: 'Suite de jeux en console (Allumettes, Devinette, Puissance 4, Morpion) avec une IA jouable à plusieurs niveaux de difficulté.'
-            },
             latice: {
                 title: 'Latice — Jeu en Java',
                 short: 'Jeu de société Latice en Java/JavaFX, repris en solo : mode IA, aide au placement, historique et 35 tests JUnit 5.'
-            },
-            network: {
-                title: 'Simulation réseau — Kathara',
-                short: 'Mise en place d\'un réseau complet (serveurs DHCP & DNS, routage, SSH) et analyse du trafic avec WireShark.'
             },
             details: 'Voir le détail',
             viewAll: 'Voir tout mon portfolio'
@@ -263,12 +244,6 @@ const I18N = {
             }
         },
         pages: {
-            calculator: {
-                title: 'Calculator - Scotty Dev',
-                description: 'Calculator project by Scotty Delmart: modern interface, keyboard/mouse support and instant calculations.',
-                heading: 'Calculator',
-                rights: 'All rights reserved.'
-            },
             notFound: {
                 title: '404 - Page not found | Scotty Dev',
                 description: 'The requested page cannot be found. Return to the Scotty Dev portfolio homepage.',
@@ -391,22 +366,9 @@ const I18N = {
                 title: 'Project delivered for Legrand',
                 short: 'SAE for Legrand, in a team of 5: a web editor for operating procedures to replace Excel. My part: database, security, search.'
             },
-            calc: {
-                title: 'Calculator',
-                short: 'A modern calculator with keyboard and mouse support, featuring a clean design and instant calculations.',
-                cta: 'Open calculator'
-            },
-            games: {
-                title: 'Python mini-games',
-                short: 'A set of console games (Nim, Guessing, Connect 4, Tic-tac-toe) with a playable AI offering several difficulty levels.'
-            },
             latice: {
                 title: 'Latice — Java game',
                 short: 'Latice board game in Java/JavaFX, reworked solo: AI mode, placement hints, game history and 35 JUnit 5 tests.'
-            },
-            network: {
-                title: 'Network simulation — Kathara',
-                short: 'Setup of a complete network (DHCP & DNS servers, routing, SSH) and traffic analysis with WireShark.'
             },
             details: 'View details',
             viewAll: 'View my full portfolio'

@@ -21,7 +21,6 @@ Dans `Inspection de l'URL`, teste puis demande l'indexation pour:
 - `https://scotty-dev.netlify.app/`
 - `https://scotty-dev.netlify.app/pages/portfolio.html`
 - `https://scotty-dev.netlify.app/pages/dashboard.html`
-- `https://scotty-dev.netlify.app/pages/calculatrice.html`
 
 ## 4) Verifications rapides
 

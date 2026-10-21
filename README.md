@@ -6,7 +6,6 @@ Portfolio personnel statique (HTML/CSS/JS), bilingue FR/EN, présentant mes comp
 
 - **Portfolio** : [scotty-dev.netlify.app](https://scotty-dev.netlify.app)
 - **Détail des compétences (BUT Informatique)** : [scotty-dev.netlify.app/pages/portfolio.html](https://scotty-dev.netlify.app/pages/portfolio.html)
-- **Calculatrice** : [scotty-dev.netlify.app/pages/calculatrice.html](https://scotty-dev.netlify.app/pages/calculatrice.html)
 
 ## Fonctionnalités
 
@@ -16,7 +15,6 @@ Portfolio personnel statique (HTML/CSS/JS), bilingue FR/EN, présentant mes comp
 - 💼 Activité pro (Delmart Digital)
 - 📧 Section Contact (email, localisation, réseaux LinkedIn/GitHub)
 - 🌐 Traduction FR/EN intégrale (y compris le tableau de compétences)
-- 🧮 Mini-projet Calculatrice
 - 🎯 Design responsive, thème sombre
 
 ## Technologies
@@ -34,11 +32,9 @@ Portfolio/
 │   ├── style.css
 │   ├── portfolio-style.css
 │   ├── <projet>-style.css      # Styles propres aux pages projet (nas, meteo, latice, doucebrise, kinetik, projet)
-│   └── calculatrice-style.css
 ├── js/
 │   ├── script.js              # Logique commune : nav, animations, i18n, compteurs
 │   ├── i18n/<page>.en.js      # Traductions anglaises des pages projet détaillées
-│   └── calculatrice-script.js
 ├── assets/
 │   ├── images/
 │   └── documents/              # CV téléchargeable
@@ -49,7 +45,6 @@ Portfolio/
 │   ├── portfolio.html          # Détail des compétences BUT Informatique
 │   ├── nas.html, meteo.html, latice.html, doucebrise.html, kinetik.html,
 │   │   sasonyx.html, legrand.html, netflix.html   # Pages projet détaillées
-│   ├── calculatrice.html
 │   └── 404.html
 ├── index.html                  # Page d'accueil
 ├── netlify.toml                 # Config Netlify (redirections, cache, headers)

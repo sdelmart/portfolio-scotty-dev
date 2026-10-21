@@ -18,23 +18,8 @@
   status = 301
 
 [[redirects]]
-  from = "/calculatrice.html"
-  to = "/pages/calculatrice.html"
-  status = 301
-
-[[redirects]]
-  from = "/calculatrice"
-  to = "/pages/calculatrice.html"
-  status = 301
-
-[[redirects]]
   from = "/pages/portfolio"
   to = "/pages/portfolio.html"
-  status = 301
-
-[[redirects]]
-  from = "/pages/calculatrice"
-  to = "/pages/calculatrice.html"
   status = 301
 
 [[redirects]]
