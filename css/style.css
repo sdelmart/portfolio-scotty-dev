@@ -1648,3 +1648,10 @@ a.contact-item:hover span {
 .hero-facts dt{color:#ff8a8a;font-weight:700;font-size:.74rem;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
 .hero-facts dd{margin:0;font-size:.95rem;color:rgba(255,255,255,.9)}
 @media (max-width:1024px){.hero-facts{grid-template-columns:1fr;row-gap:0;text-align:center}.hero-facts dt{margin-top:6px}}
+.hero-title{margin-bottom:26px}
+.hero-quote{margin-bottom:40px}
+.hero-facts{margin-bottom:34px;row-gap:14px}
+.hero-profile{margin-bottom:40px}
+.hero-profile-text{margin-bottom:16px}
+.hero-profile-links{gap:12px}
+.hero-buttons{margin-bottom:44px}
