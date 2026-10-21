@@ -30,6 +30,8 @@ const I18N = {
         description: 'Portfolio de Scotty Delmart, développeur web, applications et logiciels basé à Limoges. Découvrez mes projets, mes compétences et mes coordonnées.',
         a11y: {
             skip: 'Aller au contenu',
+            photo: 'Agrandir la photo',
+            close: 'Fermer',
             menu: 'Ouvrir le menu'
         },
         nav: {
@@ -242,6 +244,8 @@ const I18N = {
         description: 'Portfolio of Scotty Delmart, web, application and software developer based in Limoges. Explore my projects, skills and contact details.',
         a11y: {
             skip: 'Skip to content',
+            photo: 'Enlarge photo',
+            close: 'Close',
             menu: 'Open menu'
         },
         nav: {
@@ -846,33 +850,82 @@ function initOrbitAnimations() {
 
 function initSunPhotoModal() {
     const sun = document.querySelector('.sun-core');
-    const modal = document.getElementById('photo-modal');
-    const closeBtn = document.querySelector('.close');
-    const randomPhoto = document.getElementById('random-photo');
-
-    if (sun && modal && closeBtn && randomPhoto) {
-        sun.addEventListener('click', () => {
-            const randomId = Math.floor(Math.random() * 1000) + 1;
-            randomPhoto.src = `https://picsum.photos/600/400?random=${randomId}`;
-            modal.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        globalThis.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
-            }
-        });
+    if (!sun) {
+        return;
     }
+
+    let overlay = null;
+    let lastFocus = null;
+
+    const close = () => {
+        if (!overlay) {
+            return;
+        }
+        overlay.classList.remove('is-open');
+        document.body.classList.remove('lightbox-open');
+        document.removeEventListener('keydown', onKey);
+        const closing = overlay;
+        overlay = null;
+        setTimeout(() => closing.remove(), 300);
+        if (lastFocus) {
+            lastFocus.focus();
+        }
+    };
+
+    function onKey(event) {
+        if (event.key === 'Escape') {
+            close();
+        }
+    }
+
+    const open = () => {
+        if (overlay) {
+            return;
+        }
+        const dictionary = I18N[currentLanguage] || I18N.fr;
+        const source = sun.dataset.full || sun.querySelector('img')?.src;
+        const originalAlt = sun.querySelector('img')?.getAttribute('alt') || '';
+
+        overlay = document.createElement('div');
+        overlay.className = 'photo-lightbox';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', dictionary.a11y.photo);
+
+        const image = document.createElement('img');
+        image.src = source;
+        image.alt = originalAlt;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'photo-lightbox-close';
+        button.setAttribute('aria-label', dictionary.a11y.close);
+        button.innerHTML = '&times;';
+        button.addEventListener('click', close);
+
+        overlay.append(image, button);
+        overlay.addEventListener('click', (event) => {
+            if (event.target !== image) {
+                close();
+            }
+        });
+        lastFocus = document.activeElement;
+        document.body.appendChild(overlay);
+        document.body.classList.add('lightbox-open');
+        document.addEventListener('keydown', onKey);
+        requestAnimationFrame(() => {
+            overlay.classList.add('is-open');
+            button.focus();
+        });
+    };
+
+    sun.addEventListener('click', open);
+    sun.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            open();
+        }
+    });
 }
 
 let activeScrollCancel = null;
