@@ -1655,3 +1655,11 @@ a.contact-item:hover span {
 .hero-profile-text{margin-bottom:16px}
 .hero-profile-links{gap:12px}
 .hero-buttons{margin-bottom:44px}
+
+#about .about-content{grid-template-columns:1fr}
+#about .about-text{max-width:none}
+#about .proof-list{grid-template-columns:repeat(2,1fr);gap:18px}
+#about .proof-list li{gap:6px;padding:18px 20px}
+#about .proof-domain{font-size:1.1rem}
+.proof-desc{font-size:.92rem;color:rgba(255,255,255,.8);line-height:1.5;margin-top:4px}
+@media (max-width:768px){#about .proof-list{grid-template-columns:1fr}}

@@ -34,7 +34,7 @@ const I18N = {
         },
         nav: {
             home: 'Accueil',
-            about: 'À propos',
+            about: 'Compétences',
             parcours: 'Parcours',
             projects: 'Projets',
             pro: 'Freelance',
@@ -103,14 +103,17 @@ const I18N = {
             response: 'Réponse moyenne (h)'
         },
         about: {
-            title: 'À propos de moi',
-            skills: 'Ce que je sais faire, et où le voir',
+            title: 'Compétences',
             proof: {
                 web: 'Web full-stack',
                 games: 'Jeux et logiciels',
                 infra: 'Infrastructure et auto-hébergement',
                 team: 'Projet en équipe',
-                nas: 'NAS personnel'
+                nas: 'NAS personnel',
+                webDesc: 'Plateforme mobile-first déployée en stage de 8 semaines, base PostgreSQL en 3ème forme normale.',
+                gamesDesc: 'Deux jeux complets : 41 000 lignes de JavaScript pour Doucebrise, 571 tests automatisés pour KINETIK.',
+                infraDesc: 'NAS personnel avec tableau de bord d\'administration, application météo auto-hébergée sous Docker.',
+                teamDesc: 'SAE pour Legrand en équipe de 5 : base de données, sécurité et recherche.'
             }
         },
         parcours: {
@@ -230,7 +233,7 @@ const I18N = {
         },
         nav: {
             home: 'Home',
-            about: 'About',
+            about: 'Skills',
             parcours: 'Career',
             projects: 'Projects',
             pro: 'Freelance',
@@ -299,14 +302,17 @@ const I18N = {
             response: 'Average response (h)'
         },
         about: {
-            title: 'About me',
-            skills: 'What I can do, and where to see it',
+            title: 'Skills',
             proof: {
                 web: 'Full-stack web',
                 games: 'Games and software',
                 infra: 'Infrastructure and self-hosting',
                 team: 'Team project',
-                nas: 'Personal NAS'
+                nas: 'Personal NAS',
+                webDesc: 'Mobile-first platform deployed during an 8-week internship, PostgreSQL database in third normal form.',
+                gamesDesc: 'Two complete games: 41,000 lines of JavaScript for Doucebrise, 571 automated tests for KINETIK.',
+                infraDesc: 'Personal NAS with an admin dashboard, self-hosted weather app running on Docker.',
+                teamDesc: 'University project for Legrand in a team of 5: database, security and search.'
             }
         },
         parcours: {
