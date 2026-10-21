@@ -80,7 +80,17 @@ const I18N = {
         hero: {
             greeting: 'Bonjour, je suis Scotty',
             quote: 'Applications web, jeux et logiciels : je les conçois, les développe et les héberge moi-même',
-            profile: 'Étudiant en BUT Informatique et alternant chez Sicame Group. Cliquez sur un domaine pour filtrer mes projets :',
+            profile: 'Voir mes projets par domaine :',
+            facts: {
+                studyLabel: 'Formation',
+                study: 'BUT Informatique (3ème année), IUT du Limousin',
+                workLabel: 'En entreprise',
+                work: 'Alternant chez Sicame Group',
+                specLabel: 'Spécialité',
+                spec: 'Web full-stack, orientation infrastructure',
+                interestLabel: 'Intérêts',
+                interest: 'Jeux vidéo, administration système'
+            },
             profileWeb: 'Développement web & logiciel',
             profileInfra: 'Infrastructure & réseau',
             profileWork: 'Projets en entreprise',
@@ -269,7 +279,17 @@ const I18N = {
         hero: {
             greeting: 'Hi, I\'m Scotty',
             quote: 'Web apps, games and software: I design, build and self-host them',
-            profile: 'Computer science student (BUT) and work-study apprentice at Sicame Group. Click a field to filter my projects:',
+            profile: 'Browse my projects by field:',
+            facts: {
+                studyLabel: 'Studies',
+                study: 'BUT Computer Science (3rd year), IUT du Limousin',
+                workLabel: 'At work',
+                work: 'Work-study at Sicame Group',
+                specLabel: 'Specialty',
+                spec: 'Full-stack web, infrastructure focus',
+                interestLabel: 'Interests',
+                interest: 'Video games, system administration'
+            },
             profileWeb: 'Web & software development',
             profileInfra: 'Infrastructure & networking',
             profileWork: 'Company projects',
