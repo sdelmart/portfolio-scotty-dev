@@ -1643,8 +1643,8 @@ a.contact-item:hover span {
 .proof-links a{color:#ff8a8a;text-decoration:none;font-weight:600}
 .proof-links a:hover,.proof-links a:focus-visible{text-decoration:underline}
 
-.hero-facts{margin:0 0 16px;display:grid;gap:6px}
-.hero-facts>div{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:baseline;font-size:.95rem}
-.hero-facts dt{color:#ff8a8a;font-weight:700;font-size:.78rem;letter-spacing:1px;text-transform:uppercase}
-.hero-facts dd{margin:0;color:rgba(255,255,255,.9)}
-@media (max-width:1024px){.hero-facts>div{grid-template-columns:1fr;gap:0;text-align:center}.hero-facts dt{margin-top:4px}}
+.hero-facts{margin:0 0 14px;display:grid;grid-template-columns:max-content 1fr;column-gap:18px;row-gap:5px;align-items:baseline}
+.hero-facts>div{display:contents}
+.hero-facts dt{color:#ff8a8a;font-weight:700;font-size:.74rem;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.hero-facts dd{margin:0;font-size:.95rem;color:rgba(255,255,255,.9)}
+@media (max-width:1024px){.hero-facts{grid-template-columns:1fr;row-gap:0;text-align:center}.hero-facts dt{margin-top:6px}}
