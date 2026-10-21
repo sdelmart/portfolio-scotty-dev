@@ -591,9 +591,9 @@
 #c4{--c:#51cf66;--c-rgb:81,207,102}
 #c5{--c:#4dabf7;--c-rgb:77,171,247}
 #c6{--c:#b197fc;--c-rgb:177,151,252}
-.competence-section{position:relative;padding-top:90px;border-top:none;background:linear-gradient(180deg,rgba(var(--c-rgb),.10),rgba(var(--c-rgb),0) 45%)}
-.competence-section::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--c),rgba(var(--c-rgb),0))}
-.competence-header{border:1px solid rgba(var(--c-rgb),.5);border-left:8px solid var(--c);background:linear-gradient(135deg,rgba(var(--c-rgb),.16),rgba(0,0,0,.35))}
+.competence-section{position:relative;padding-top:90px;border-top:none;background:none}
+.competence-section::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c);opacity:.85}
+.competence-header{border:1px solid rgba(var(--c-rgb),.5);border-left:8px solid var(--c);background:rgba(0,0,0,.4)}
 .competence-number{background:var(--c);color:#1a0000;box-shadow:0 4px 22px rgba(var(--c-rgb),.45)}
 .competence-info h2{color:var(--c)}
 .competence-section .portfolio-card{border:1px solid rgba(var(--c-rgb),.28);border-left:5px solid var(--c)}
