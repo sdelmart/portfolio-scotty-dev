@@ -415,7 +415,7 @@ select:focus-visible {
 }
 
 .avatar-container {
-  --sun: 168px;
+  --sun: 200px;
   --icon: 64px;
   --orbit-gap: 20px;
   --r1: calc(var(--sun) / 2 + var(--icon) / 2 + var(--orbit-gap));
@@ -738,7 +738,7 @@ select:focus-visible {
   }
 
   .avatar-container {
-    --sun: 132px;
+    --sun: 156px;
     --icon: 48px;
     --orbit-gap: 14px;
   }
@@ -804,7 +804,7 @@ select:focus-visible {
   }
 
   .avatar-container {
-    --sun: 112px;
+    --sun: 120px;
     --icon: 44px;
     --orbit-gap: 10px;
   }
@@ -1509,7 +1509,7 @@ a.contact-item:hover span {
 
 @media (max-width: 380px) {
   .avatar-container {
-    --sun: 96px;
+    --sun: 104px;
     --icon: 40px;
     --orbit-gap: 8px;
   }
