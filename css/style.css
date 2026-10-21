@@ -1616,3 +1616,7 @@ a.contact-item:hover span {
 .hero-profile-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .hero-profile-links a{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-size:.85rem;transition:background .2s,border-color .2s}
 .hero-profile-links a:hover,.hero-profile-links a:focus-visible{background:#c81e1e;border-color:#c81e1e}
+
+.copy-email{margin-top:14px;padding:8px 18px;border:1px solid rgba(255,107,107,.5);border-radius:999px;background:rgba(255,56,56,.08);color:#ff8a8a;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.copy-email:hover,.copy-email:focus-visible{background:#c81e1e;border-color:#c81e1e;color:#fff}
+.copy-email.is-copied{background:#c81e1e;border-color:#c81e1e;color:#fff}

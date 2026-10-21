@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initSunPhotoModal,
         initSmoothScroll,
         initProjectFilters,
+        initCopyEmail,
         initProjectLinkLabels,
         initSectionAnimations,
         initSimpleStats
@@ -197,7 +198,9 @@ const I18N = {
         contact: {
             title: 'Contactez-moi',
             intro: 'Une question, un projet ou une opportunité ? N\'hésitez pas à me contacter.',
-            location: 'Limoges (87), France'
+            location: 'Limoges (87), France',
+            copy: 'Copier mon adresse',
+            copied: 'Adresse copiée !'
         },
         langToggle: 'FR / EN (FR)'
     },
@@ -376,7 +379,9 @@ const I18N = {
         contact: {
             title: 'Contact me',
             intro: 'A question, a project or an opportunity? Feel free to get in touch.',
-            location: 'Limoges (87), France'
+            location: 'Limoges (87), France',
+            copy: 'Copy my address',
+            copied: 'Address copied!'
         },
         langToggle: 'FR / EN (EN)'
     }
@@ -962,6 +967,50 @@ function initProjectFilters() {
     if (requested && validFilters.has(requested)) {
         apply(requested);
     }
+}
+
+function initCopyEmail() {
+    const button = document.querySelector('.copy-email');
+    if (!button) {
+        return;
+    }
+    const label = button.querySelector('span');
+    let timer = null;
+
+    const fallbackCopy = (text) => {
+        const field = document.createElement('textarea');
+        field.value = text;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        const done = document.execCommand('copy');
+        field.remove();
+        return done;
+    };
+
+    button.addEventListener('click', async () => {
+        const email = button.dataset.email;
+        let ok = false;
+        try {
+            await navigator.clipboard.writeText(email);
+            ok = true;
+        } catch (error) {
+            ok = fallbackCopy(email);
+        }
+        if (!ok) {
+            return;
+        }
+        const dictionary = I18N[currentLanguage] || I18N.fr;
+        label.textContent = dictionary.contact.copied;
+        button.classList.add('is-copied');
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            label.textContent = dictionary.contact.copy;
+            button.classList.remove('is-copied');
+        }, 2000);
+    });
 }
 
 function initSimpleStats() {
