@@ -1614,8 +1614,10 @@ a.contact-item:hover span {
 .hero-profile{margin:0 0 24px;max-width:520px}
 .hero-profile-text{font-size:.95rem;color:rgba(255,255,255,.8);margin:0 0 10px}
 .hero-profile-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.hero-profile-links a{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-size:.85rem;transition:background .2s,border-color .2s}
-.hero-profile-links a:hover,.hero-profile-links a:focus-visible{background:#c81e1e;border-color:#c81e1e}
+.hero-profile-links a{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,107,107,.6);background:rgba(255,56,56,.14);color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;cursor:pointer;box-shadow:0 2px 10px rgba(255,56,56,.15);transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}
+.hero-profile-links a::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);transition:transform .2s}
+.hero-profile-links a:hover,.hero-profile-links a:focus-visible{background:#c81e1e;border-color:#c81e1e;transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,56,56,.35)}
+.hero-profile-links a:hover::after,.hero-profile-links a:focus-visible::after{transform:rotate(45deg) translate(1px,1px)}
 
 .contact-email{position:relative;display:inline-flex;align-items:center;gap:6px;margin-bottom:0;padding:6px 6px 6px 18px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .contact-email .contact-item{margin:0}

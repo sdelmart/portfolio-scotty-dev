@@ -80,7 +80,7 @@ const I18N = {
         hero: {
             greeting: 'Bonjour, je suis Scotty',
             quote: 'Créer des sites web, des applications et des logiciels beaux et fonctionnels',
-            profile: 'Étudiant en BUT Informatique et alternant chez Sicame Group. Voir mes projets selon ce qui vous intéresse :',
+            profile: 'Étudiant en BUT Informatique et alternant chez Sicame Group. Cliquez sur un domaine pour filtrer mes projets :',
             profileWeb: 'Développement web & logiciel',
             profileInfra: 'Infrastructure & réseau',
             profileWork: 'Projets en entreprise',
@@ -261,7 +261,7 @@ const I18N = {
         hero: {
             greeting: 'Hi, I\'m Scotty',
             quote: 'Building beautiful, functional websites, applications and software',
-            profile: 'Computer science student (BUT) and work-study apprentice at Sicame Group. Browse my projects by what matters to you:',
+            profile: 'Computer science student (BUT) and work-study apprentice at Sicame Group. Click a field to filter my projects:',
             profileWeb: 'Web & software development',
             profileInfra: 'Infrastructure & networking',
             profileWork: 'Company projects',
