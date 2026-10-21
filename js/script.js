@@ -104,9 +104,6 @@ const I18N = {
         },
         about: {
             title: 'À propos de moi',
-            p1: 'Étudiant en 3ème année de BUT Informatique (IUT du Limousin, Limoges), en alternance chez Sicame Group à Arnac-Pompadour comme assistant chef de projet logiciel : administration de 3D Experience, scripts d\'automatisation, support aux utilisateurs.',
-            p2: 'Ma spécialité : le développement web full-stack (Next.js, TypeScript, bases de données), avec une orientation infrastructure : j\'auto-héberge mon NAS, mon application météo et le serveur en ligne de KINETIK. À côté, je prends des clients via Delmart Digital.',
-            p3: 'Ce qui m\'intéresse : les jeux vidéo (j\'en ai développé deux complets), l\'administration système et l\'architecture des applications web.',
             skills: 'Ce que je sais faire, et où le voir',
             proof: {
                 web: 'Web full-stack',
@@ -303,9 +300,6 @@ const I18N = {
         },
         about: {
             title: 'About me',
-            p1: 'Third-year computer science (BUT) student at the IUT du Limousin in Limoges, on a work-study placement at Sicame Group (Arnac-Pompadour) as a software project manager assistant: 3D Experience administration, automation scripts, user support.',
-            p2: 'My specialty: full-stack web development (Next.js, TypeScript, databases), with a focus on infrastructure: I self-host my NAS, my weather app and the online server of KINETIK. On the side, I take clients through Delmart Digital.',
-            p3: 'What interests me: video games (I have built two complete ones), system administration and web application architecture.',
             skills: 'What I can do, and where to see it',
             proof: {
                 web: 'Full-stack web',
