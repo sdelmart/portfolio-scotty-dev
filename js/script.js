@@ -113,7 +113,8 @@ const I18N = {
                 webDesc: 'Plateforme mobile-first déployée en stage de 8 semaines, base PostgreSQL en 3ème forme normale.',
                 gamesDesc: 'Deux jeux complets : 41 000 lignes de JavaScript pour Doucebrise, 571 tests automatisés pour KINETIK.',
                 infraDesc: 'NAS personnel avec tableau de bord d\'administration, application météo auto-hébergée sous Docker.',
-                teamDesc: 'SAE pour Legrand en équipe de 5 : base de données, sécurité et recherche.'
+                teamDesc: 'SAE pour Legrand en équipe de 5 : base de données, sécurité et recherche.',
+                teamTech: 'Vue.js · Express · base de données'
             }
         },
         parcours: {
@@ -156,6 +157,18 @@ const I18N = {
             }
         },
         projects: {
+            alt: {
+                hero: 'Portrait de Scotty',
+                delmart: 'Aperçu du site Delmart Digital : « Votre informatique, de A à Z »',
+                nas: 'Aperçu du dashboard d\'administration du NAS personnel',
+                doucebrise: 'Écran titre du jeu Doucebrise : un gros chat roux sur le toit du Café des Chats',
+                kinetik: 'Niveau du jeu KINETIK : un puzzle Sokoban futuriste avec trappes, tapis roulants et serrures',
+                meteo: 'Aperçu de l\'application météo Scott\'Météo',
+                sasonyx: 'Aperçu de l\'application SAS Onyx',
+                legrand: 'Aperçu de l\'application Legrand de création de modes opératoires',
+                netflix: 'Aperçu du clone Netflix',
+                latice: 'Aperçu du jeu Latice développé en JavaFX'
+            },
             title: 'Mes Projets',
             featured: 'Projet phare',
             viewSite: 'Voir le site',
@@ -312,7 +325,8 @@ const I18N = {
                 webDesc: 'Mobile-first platform deployed during an 8-week internship, PostgreSQL database in third normal form.',
                 gamesDesc: 'Two complete games: 41,000 lines of JavaScript for Doucebrise, 571 automated tests for KINETIK.',
                 infraDesc: 'Personal NAS with an admin dashboard, self-hosted weather app running on Docker.',
-                teamDesc: 'University project for Legrand in a team of 5: database, security and search.'
+                teamDesc: 'University project for Legrand in a team of 5: database, security and search.',
+                teamTech: 'Vue.js · Express · database'
             }
         },
         parcours: {
@@ -355,6 +369,18 @@ const I18N = {
             }
         },
         projects: {
+            alt: {
+                hero: 'Portrait of Scotty',
+                delmart: 'Preview of the Delmart Digital website: “Your IT, from A to Z”',
+                nas: 'Preview of the personal NAS admin dashboard',
+                doucebrise: 'Title screen of the game Doucebrise: a big ginger cat on the roof of the Café des Chats',
+                kinetik: 'Level from the game KINETIK: a futuristic Sokoban puzzle with trapdoors, conveyor belts and locks',
+                meteo: 'Preview of the Scott\'Météo weather app',
+                sasonyx: 'Preview of the SAS Onyx application',
+                legrand: 'Preview of the Legrand application for creating operating procedures',
+                netflix: 'Preview of the Netflix clone',
+                latice: 'Preview of the Latice game built with JavaFX'
+            },
             title: 'My Projects',
             featured: 'Featured project',
             viewSite: 'Visit the site',
@@ -576,6 +602,13 @@ function applyLanguage(language) {
             if (node.hasAttribute('data-i18n-title')) {
                 node.setAttribute('title', translated);
             }
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach((node) => {
+        const translated = getNestedValue(dictionary, node.dataset.i18nAlt);
+        if (typeof translated === 'string') {
+            node.setAttribute('alt', translated);
         }
     });
 
@@ -1014,8 +1047,46 @@ function initProjectFilters() {
                 return;
             }
             event.preventDefault();
-            target.click();
-            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            const section = document.getElementById('projects');
+            if (!section) {
+                target.click();
+                return;
+            }
+            // Slow, eased scroll down to the projects; the filter is applied part-way through
+            // so the cards play their entrance animation when they come into view.
+            const startY = globalThis.scrollY;
+            const endY = Math.max(0, section.getBoundingClientRect().top + startY - 80);
+            const distance = endY - startY;
+            const duration = Math.min(2600, Math.max(1500, Math.abs(distance) * 0.9));
+            const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - ((-2 * t + 2) ** 3) / 2);
+            const startTime = performance.now();
+            let applied = false;
+            let cancelled = false;
+            const cancel = () => { cancelled = true; };
+            ['wheel', 'touchstart', 'keydown'].forEach((name) => {
+                globalThis.addEventListener(name, cancel, { once: true, passive: true });
+            });
+
+            const frame = (now) => {
+                if (cancelled) {
+                    if (!applied) {
+                        target.click();
+                    }
+                    return;
+                }
+                const progress = Math.min((now - startTime) / duration, 1);
+                globalThis.scrollTo({ top: startY + distance * ease(progress), behavior: 'instant' });
+                if (!applied && progress >= 0.55) {
+                    applied = true;
+                    target.click();
+                }
+                if (progress < 1) {
+                    globalThis.requestAnimationFrame(frame);
+                } else if (!applied) {
+                    target.click();
+                }
+            };
+            globalThis.requestAnimationFrame(frame);
         });
     });
 

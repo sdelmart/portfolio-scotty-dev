@@ -1,4 +1,6 @@
 globalThis.PAGE_TRANSLATIONS_EN = {
+ "Modélisation, gestion et optimisation de la base de données relationnelle pendant le stage.": "Modeling, management and optimization of the relational database during the internship.",
+ "Vue.js · Express · base de données": "Vue.js · Express · database",
  "Qui je suis": "Who I am",
  "Étudiant en 3ème année de BUT Informatique (IUT du Limousin, Limoges), en alternance chez Sicame Group à Arnac-Pompadour comme assistant chef de projet logiciel : administration de 3D Experience, scripts d'automatisation, support aux utilisateurs.": "Third-year computer science (BUT) student at the IUT du Limousin in Limoges, on a work-study placement at Sicame Group (Arnac-Pompadour) as a software project manager assistant: 3D Experience administration, automation scripts, user support.",
  "Ma spécialité : le développement web full-stack (Next.js, TypeScript, bases de données), avec une orientation infrastructure : j'auto-héberge mon NAS, mon application météo et le serveur en ligne de KINETIK. À côté, je prends des clients via Delmart Digital.": "My specialty: full-stack web development (Next.js, TypeScript, databases), with a focus on infrastructure: I self-host my NAS, my weather app and the online server of KINETIK. On the side, I take clients through Delmart Digital.",
