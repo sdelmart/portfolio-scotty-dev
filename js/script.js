@@ -875,6 +875,55 @@ function initSunPhotoModal() {
     }
 }
 
+let activeScrollCancel = null;
+
+// Eased scroll shared by the navbar links and the profile filter buttons.
+// onProgress(progress) is called every frame (0 to 1); onDone() once, even if the user interrupts.
+function smoothScrollToY(endY, { onProgress, onDone } = {}) {
+    if (activeScrollCancel) {
+        activeScrollCancel();
+    }
+    const startY = globalThis.scrollY;
+    const distance = Math.max(0, endY) - startY;
+    const duration = Math.min(1700, Math.max(1000, Math.abs(distance) * 0.5));
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - ((-2 * t + 2) ** 3) / 2);
+    const startTime = performance.now();
+    let finished = false;
+
+    const finish = () => {
+        if (finished) {
+            return;
+        }
+        finished = true;
+        ['wheel', 'touchstart', 'keydown'].forEach((name) => globalThis.removeEventListener(name, finish));
+        activeScrollCancel = null;
+        if (onDone) {
+            onDone();
+        }
+    };
+    activeScrollCancel = finish;
+    ['wheel', 'touchstart', 'keydown'].forEach((name) => {
+        globalThis.addEventListener(name, finish, { passive: true });
+    });
+
+    const frame = (now) => {
+        if (finished) {
+            return;
+        }
+        const progress = Math.min((now - startTime) / duration, 1);
+        globalThis.scrollTo({ top: startY + distance * ease(progress), behavior: 'instant' });
+        if (onProgress) {
+            onProgress(progress);
+        }
+        if (progress < 1) {
+            globalThis.requestAnimationFrame(frame);
+        } else {
+            finish();
+        }
+    };
+    globalThis.requestAnimationFrame(frame);
+}
+
 function initSmoothScroll() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
     const isHomePage = globalThis.location.pathname === '/' || globalThis.location.pathname.endsWith('/index.html');
@@ -887,12 +936,7 @@ function initSmoothScroll() {
 
         const headerOffset = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + globalThis.pageYOffset - headerOffset;
-
-        globalThis.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+        smoothScrollToY(elementPosition + globalThis.pageYOffset - headerOffset);
     };
 
     navLinks.forEach(link => {
@@ -1052,41 +1096,23 @@ function initProjectFilters() {
                 target.click();
                 return;
             }
-            // Slow, eased scroll down to the projects; the filter is applied part-way through
+            // Eased scroll down to the projects; the filter is applied part-way through
             // so the cards play their entrance animation when they come into view.
-            const startY = globalThis.scrollY;
-            const endY = Math.max(0, section.getBoundingClientRect().top + startY - 80);
-            const distance = endY - startY;
-            const duration = Math.min(1700, Math.max(1000, Math.abs(distance) * 0.5));
-            const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - ((-2 * t + 2) ** 3) / 2);
-            const startTime = performance.now();
             let applied = false;
-            let cancelled = false;
-            const cancel = () => { cancelled = true; };
-            ['wheel', 'touchstart', 'keydown'].forEach((name) => {
-                globalThis.addEventListener(name, cancel, { once: true, passive: true });
-            });
-
-            const frame = (now) => {
-                if (cancelled) {
-                    if (!applied) {
-                        target.click();
-                    }
-                    return;
-                }
-                const progress = Math.min((now - startTime) / duration, 1);
-                globalThis.scrollTo({ top: startY + distance * ease(progress), behavior: 'instant' });
-                if (!applied && progress >= 0.55) {
+            const applyFilter = () => {
+                if (!applied) {
                     applied = true;
                     target.click();
                 }
-                if (progress < 1) {
-                    globalThis.requestAnimationFrame(frame);
-                } else if (!applied) {
-                    target.click();
-                }
             };
-            globalThis.requestAnimationFrame(frame);
+            smoothScrollToY(section.getBoundingClientRect().top + globalThis.scrollY - 80, {
+                onProgress: (progress) => {
+                    if (progress >= 0.55) {
+                        applyFilter();
+                    }
+                },
+                onDone: applyFilter
+            });
         });
     });
 
