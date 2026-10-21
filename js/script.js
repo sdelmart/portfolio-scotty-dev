@@ -1057,7 +1057,7 @@ function initProjectFilters() {
             const startY = globalThis.scrollY;
             const endY = Math.max(0, section.getBoundingClientRect().top + startY - 80);
             const distance = endY - startY;
-            const duration = Math.min(2600, Math.max(1500, Math.abs(distance) * 0.9));
+            const duration = Math.min(1700, Math.max(1000, Math.abs(distance) * 0.5));
             const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - ((-2 * t + 2) ** 3) / 2);
             const startTime = performance.now();
             let applied = false;
