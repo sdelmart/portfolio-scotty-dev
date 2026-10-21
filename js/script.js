@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
         initCopyEmail,
         initProjectLinkLabels,
         initSectionAnimations,
-        initSimpleStats
+        initSimpleStats,
+        initScrollReveal,
+        initHeroVisibility
     ];
 
     initializers.forEach((initializer) => {
@@ -1033,6 +1035,68 @@ function initCopyEmail() {
             }
         }, 2200);
     });
+}
+
+function initScrollReveal() {
+    if (!('IntersectionObserver' in globalThis)) {
+        return;
+    }
+
+    const selector = [
+        '.section-title',
+        '.stat-card',
+        '.timeline-item',
+        '#projects .project-filters',
+        '#projects .project-card',
+        '.pro-eyebrow',
+        '.contact-intro'
+    ].join(',');
+    const containers = '.slide-in-left, .slide-in-right, .slide-in-up';
+
+    // Elements below the fold stay hidden until they are scrolled into view; the ones already
+    // visible at load time are left alone so the top of the page never flashes.
+    const viewportBottom = globalThis.innerHeight;
+    const targets = [...document.querySelectorAll(selector)].filter((element) => {
+        if (element.closest(containers) || element.closest('[hidden]')) {
+            return false;
+        }
+        return element.getBoundingClientRect().top > viewportBottom * 0.9;
+    });
+    if (targets.length === 0) {
+        return;
+    }
+
+    targets.forEach((element) => element.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        visible.forEach((entry, index) => {
+            const element = entry.target;
+            observer.unobserve(element);
+            element.style.setProperty('--reveal-delay', `${Math.min(index, 5) * 0.09}s`);
+            element.classList.add('is-visible');
+            // Drop the helper classes afterwards so hover transitions on the element come back.
+            setTimeout(() => {
+                element.classList.remove('reveal', 'is-visible');
+                element.style.removeProperty('--reveal-delay');
+            }, 1100);
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach((element) => observer.observe(element));
+}
+
+function initHeroVisibility() {
+    const container = document.querySelector('.avatar-container');
+    if (!container || !('IntersectionObserver' in globalThis)) {
+        return;
+    }
+    // The orbit and the glow only run while the photo is on screen.
+    new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            container.classList.toggle('is-offscreen', !entry.isIntersecting);
+        });
+    }).observe(container);
 }
 
 function initSimpleStats() {

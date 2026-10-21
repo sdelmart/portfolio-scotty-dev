@@ -1627,3 +1627,7 @@ a.contact-item:hover span {
 .copy-email.is-copied .check-icon{display:block}
 .copy-feedback{position:absolute;bottom:calc(100% + 4px);left:0;right:0;margin:0;text-align:center;font-size:.85rem;font-weight:600;line-height:1.4;color:#7be0a4;pointer-events:none}
 @media (max-width:480px){.contact-email{padding-left:12px}.contact-email .contact-item span{font-size:.9rem}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease var(--reveal-delay,0s),transform .7s ease var(--reveal-delay,0s)}
+.reveal.is-visible{opacity:1;transform:none}
+.avatar-container.is-offscreen,.avatar-container.is-offscreen *{animation-play-state:paused !important}
