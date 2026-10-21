@@ -535,6 +535,9 @@ function applyLanguage(language) {
         const translated = getNestedValue(dictionary, node.dataset.i18nAriaLabel);
         if (typeof translated === 'string') {
             node.setAttribute('aria-label', translated);
+            if (node.hasAttribute('data-i18n-title')) {
+                node.setAttribute('title', translated);
+            }
         }
     });
 
@@ -971,10 +974,10 @@ function initProjectFilters() {
 
 function initCopyEmail() {
     const button = document.querySelector('.copy-email');
+    const feedback = document.querySelector('.copy-feedback');
     if (!button) {
         return;
     }
-    const label = button.querySelector('span');
     let timer = null;
 
     const fallbackCopy = (text) => {
@@ -1003,13 +1006,17 @@ function initCopyEmail() {
             return;
         }
         const dictionary = I18N[currentLanguage] || I18N.fr;
-        label.textContent = dictionary.contact.copied;
         button.classList.add('is-copied');
+        if (feedback) {
+            feedback.textContent = dictionary.contact.copied;
+        }
         clearTimeout(timer);
         timer = setTimeout(() => {
-            label.textContent = dictionary.contact.copy;
             button.classList.remove('is-copied');
-        }, 2000);
+            if (feedback) {
+                feedback.textContent = '';
+            }
+        }, 2200);
     });
 }
 

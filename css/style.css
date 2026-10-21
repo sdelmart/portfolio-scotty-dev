@@ -1617,6 +1617,13 @@ a.contact-item:hover span {
 .hero-profile-links a{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-size:.85rem;transition:background .2s,border-color .2s}
 .hero-profile-links a:hover,.hero-profile-links a:focus-visible{background:#c81e1e;border-color:#c81e1e}
 
-.copy-email{margin-top:14px;padding:8px 18px;border:1px solid rgba(255,107,107,.5);border-radius:999px;background:rgba(255,56,56,.08);color:#ff8a8a;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-.copy-email:hover,.copy-email:focus-visible{background:#c81e1e;border-color:#c81e1e;color:#fff}
-.copy-email.is-copied{background:#c81e1e;border-color:#c81e1e;color:#fff}
+.contact-email{display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;padding:6px 6px 6px 18px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.contact-email .contact-item{margin:0}
+.copy-email{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:1px solid rgba(255,107,107,.4);border-radius:50%;background:rgba(255,56,56,.12);color:#ff8a8a;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s}
+.copy-email:hover,.copy-email:focus-visible{background:#c81e1e;border-color:#c81e1e;color:#fff;transform:scale(1.06)}
+.copy-email .check-icon{display:none}
+.copy-email.is-copied{background:#1f9d55;border-color:#1f9d55;color:#fff}
+.copy-email.is-copied .copy-icon{display:none}
+.copy-email.is-copied .check-icon{display:block}
+.copy-feedback{min-height:1.4em;margin:0 0 14px;font-size:.85rem;font-weight:600;color:#7be0a4}
+@media (max-width:480px){.contact-email{padding-left:12px}.contact-email .contact-item span{font-size:.9rem}}
