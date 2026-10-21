@@ -740,21 +740,36 @@ function initOrbitAnimations() {
         return;
     }
 
-    // Each icon keeps its own radius, speed, direction and starting angle, so the orbits drift
-    // out of sync. Radii stay between --r1 and --r2 (CSS variables derived from the photo size),
-    // so an icon can cross another one but never touches the photo, at any screen size.
+    // Two rings, one radius each (--r1 / --r2 are CSS variables derived from the photo size).
+    // The ring spacing is larger than an icon, and the icons of a ring share one speed and are
+    // evenly spaced, so two icons can never overlap or touch the photo, at any screen size.
+    // Each ring has its own random speed and direction, and a random starting angle, so the
+    // whole thing never moves in lockstep.
     const order = planets.map((_, index) => index);
     for (let i = order.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [order[i], order[j]] = [order[j], order[i]];
     }
 
-    planets.forEach((planet, index) => {
-        const ratio = planets.length > 1 ? order[index] / (planets.length - 1) : 0;
-        planet.style.setProperty('--start', `${Math.round(Math.random() * 360)}deg`);
-        planet.style.setProperty('--radius', `calc(var(--r1) + (var(--r2) - var(--r1)) * ${ratio.toFixed(3)})`);
-        planet.style.setProperty('--orbit-duration', `${Math.round(35 + Math.random() * 40)}s`);
-        planet.style.setProperty('--orbit-direction', Math.random() > 0.5 ? 'normal' : 'reverse');
+    const inner = Math.floor(planets.length / 2);
+    const rings = [
+        { radius: 'var(--r1)', members: order.slice(0, inner) },
+        { radius: 'var(--r2)', members: order.slice(inner) }
+    ];
+    const firstDirection = Math.random() > 0.5 ? 'normal' : 'reverse';
+
+    rings.forEach((ring, ringIndex) => {
+        const baseAngle = Math.random() * 360;
+        const duration = Math.round(40 + Math.random() * 35);
+        const direction = ringIndex === 0 ? firstDirection : (firstDirection === 'normal' ? 'reverse' : 'normal');
+        ring.members.forEach((planetIndex, position) => {
+            const planet = planets[planetIndex];
+            const angle = baseAngle + (360 / ring.members.length) * position;
+            planet.style.setProperty('--start', `${Math.round(angle)}deg`);
+            planet.style.setProperty('--radius', ring.radius);
+            planet.style.setProperty('--orbit-duration', `${duration}s`);
+            planet.style.setProperty('--orbit-direction', direction);
+        });
     });
 }
 
