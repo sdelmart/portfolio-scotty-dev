@@ -1673,10 +1673,6 @@ a.contact-item:hover span {
 .photo-lightbox.is-open img{transform:scale(1)}
 .photo-lightbox-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;transition:background .2s}
 .photo-lightbox-close:hover,.photo-lightbox-close:focus-visible{background:#c81e1e}
-
-.hero-title{display:flex;flex-direction:column;gap:6px;margin-bottom:26px}
-.hero-name{font-size:3.6rem;font-weight:800;line-height:1.05;color:#fff}
-.hero-role{font-size:1.7rem;font-weight:600;line-height:1.25;color:#ff8a8a}
-@media (max-width:1024px){.hero-name{font-size:3rem}.hero-role{font-size:1.5rem}}
-@media (max-width:768px){.hero-name{font-size:2.4rem}.hero-role{font-size:1.25rem}}
-@media (max-width:380px){.hero-name{font-size:2rem}.hero-role{font-size:1.1rem}}
+.hero-visual{flex-direction:column;align-items:center}
+.hero-caption{margin:18px 0 0;font-size:1.5rem;font-weight:700;letter-spacing:.5px;color:#fff;text-align:center}
+@media (max-width:768px){.hero-caption{font-size:1.25rem;margin-top:12px}}
